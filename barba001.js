@@ -21,7 +21,7 @@ function init(){
                 xPercent: -5
             },
             { 
-                duration: 0.8,
+                duration: 2,
                 xPercent: 0,
                 scaleX: 1, 
                 rotation: 0,
@@ -33,7 +33,7 @@ function init(){
     function loaderAway() {
         // GSAP tween to hide the loading screen
         return gsap.to(loader, { 
-            duration: 0.8, 
+            duration: 2, 
             scaleX: 0,
             xPercent: 5, 
             rotation: 0, 
