@@ -42,7 +42,7 @@ function init() {
                 autoAlpha: 1, x: triggerLeft + (triggerWidth / 2), y: triggerTop + (triggerHeight / 2), width: loaderSize, height: loaderSize, xPercent: -50, yPercent: -50
             })
             .fromTo(loader, { scale: 0, transformOrigin: 'center center' },
-                { duration: 0.8, scale: 1, ease: 'Power4.out' });
+                { duration: 0.3, scale: 1, ease: 'Power4.out' });
         return tl;
     }
 
@@ -79,9 +79,9 @@ function init() {
 
     const tl = gsap.timeline();
         return tl.to(loader, {
-            duration: 0.8, scaleX: 0.5, /* squash the loader */ scaleY: 0.1, /* squash the loader */ yPercent: 0, /* move it down */ ease: 'Power4.inOut'
+            duration: 0.3, scaleX: 0.5, /* squash the loader */ scaleY: 0.5, /* squash the loader */ /*yPercent: 0, /* move it down */ ease: 'Power4.inOut'
         })
-            .fromTo([h1, p, img], { autoAlpha: 0 }, { duration: 0.8, autoAlpha: 1, stagger: 0.02, ease: 'none' }, 0.3);
+            .fromTo([h1, p, img], { autoAlpha: 0 }, { duration: 0.3, autoAlpha: 1, stagger: 0.02, ease: 'none' }, 0.3);
     }
 
     /* 
