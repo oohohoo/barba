@@ -78,7 +78,8 @@ function init() {
     */ 
 
     const tl = gsap.timeline();
-        return tl.to(loader, {duration: 0.3, scale: 0, /* squash the loader *//* scaleY: 0.1,*/ /* squash the loader */ /*yPercent: 0, /* move it down */ ease: 'Power4.inOut'
+        return tl.to(loader, {
+            duration: 0.3, scaleX: 0.5, /* squash the loader */ scaleY: 0.1, /* squash the loader */ yPercent: 0, /* move it down */ ease: 'Power4.inOut'
         })
             .fromTo([h1, p, img], { autoAlpha: 0 }, { duration: 0.3, autoAlpha: 1, stagger: 0.02, ease: 'none' }, 0.3);
     }
