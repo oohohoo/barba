@@ -1,41 +1,100 @@
-function init(){
+function init() {
+
+    const loader = document.querySelector('.loader003');
+
+    // reset loader to be invisible on page load
+    gsap.set('.loader003', { scale: 0 });
+    /*
+    =======================================================================================================================================
+    How to scale up from where the user clicked
     
-    const loader = document.querySelector('.loader002');
+    Each Barba.js hook receives the same data argument that contains the current and next page properties, 
+    it also includes trigger that is the link that triggered the transition.
+    =======================================================================================================================================
+    */
+    function loaderIn(trigger) {
+        
+    // Getting the dimensions of the trigger and its top and left offset 
+    // relative to the viewport using the javascript getBoundingClientRect() method.
+        const { height, width, top, left } = trigger.getBoundingClientRect();
+        const triggerTop = Math.floor(top);
+        const triggerLeft = Math.floor(left);
+        const triggerWidth = Math.floor(width);
+        const triggerHeight = Math.floor(height);
 
-    // reset position of the loading screen
-    gsap.set(loader, {
-        scaleX: 0,
-        rotation: 10,
-        xPercent: -5,
-        yPercent: -50,
-        transformOrigin: 'left center',
-        autoAlpha: 1
-    });
+    // Because the loader will always scale up from the center of the clicked element 
+    // we need to make sure it is twice the size of the viewport.
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+        const loaderSize = viewportHeight > viewportWidth ? viewportHeight * 2 : viewportWidth * 2;
 
-
-    function loaderIn() {
-    // GSAP tween to stretch the loading screen across the whole screen
-        return gsap.fromTo(loader, {rotation: 10, scaleX: 0, xPercent: -5},
-            {duration: 0.8, xPercent: 0, scaleX: 1, rotation: 0, ease: 'power4.inOut', transformOrigin: 'left center'});
+    /*
+    =======================================================================================================================================
+    Firstly we use the .set tween to set the right position of the loader and resize it according to the viewport.
+    We use xPercent: -50 and yPercent: -50 to center, the middle of the loader in the center of the clicked link.
+    The .fromTo tween scales the loader from 0 to 1.
+    Regardless of where the link is on the page, the loader will always scale up from there and cover the whole screen.
+    =======================================================================================================================================
+    */
+    const tl = gsap.timeline();
+        tl
+            .set(loader, {
+                autoAlpha: 1, x: triggerLeft + (triggerWidth / 2), y: triggerTop + (triggerHeight / 2), width: loaderSize, height: loaderSize, xPercent: -50, yPercent: -50
+            })
+            .fromTo(loader, { scale: 0, transformOrigin: 'center center' },
+                { duration: 0.8, scale: 1, ease: 'Power4.out' });
+        return tl;
     }
 
-    function loaderAway() {
-    // GSAP tween to hide the loading screen
-        return gsap.to(loader, {duration: 0.8, scaleX: 0,  xPercent: 5, rotation: -10, transformOrigin: 'right center', ease: 'power4.inOut'});
+    /*
+    =======================================================================================================================================
+    Remember Barba.js only replaces the content of the data-barba="container”. This means that the body class would stay the same when navigating between the pages.
+    We have to manually update it like this:
+    =======================================================================================================================================
+    */
+    function loaderAway(next) {
+        document.body.removeAttribute('class');
+        document.body.classList.add(next.container.dataset.class);
+
+    /*
+    =======================================================================================================================================
+    Remember Barba.js only replaces the content of the data-barba="container”. This means that the body class would stay the same when navigating between the pages.
+    We have to manually update it like this:
+    =======================================================================================================================================
+    */    
+        // const bodyClass = trigger.dataset.class;
+        // console.log(bodyClass);
+        // GSAP tween to hide the loading screen
+        // maybe a different effect for the reveal?
+        const h1 = next.container.querySelector('h1');
+        const p = next.container.querySelectorAll('p');
+        const img = next.container.querySelector('img');
+
+    /*
+    =======================================================================================================================================
+    Now we have the whole page covered by the scaled-up loader, Barba updated the page under the loader and we are ready to reveal it.
+    The loader is a simple div, with a border-radius set to 100% to appear as a circle.
+    =======================================================================================================================================
+    */ 
+
+    const tl = gsap.timeline();
+        return tl.to(loader, {
+            duration: 1, scaleX: 0.5, /* squash the loader */ scaleY: 0.1, /* squash the loader */ yPercent: 0, /* move it down */ ease: 'Power4.inOut'
+        })
+            .fromTo([h1, p, img], { autoAlpha: 0 }, { duration: 0.9, autoAlpha: 1, stagger: 0.02, ease: 'none' }, 0.3);
     }
 
-/* 
-=======================================================================================================================================
+    /* 
+    =======================================================================================================================================
     Barba.js also gives you access to specific lifecycle methods or hooks that you can tap into.
     One common example would be to add css class to your page to prevent users from double clicking on links.
-=======================================================================================================================================
-*/
+    =======================================================================================================================================
+    */
 
     // do something before the transition starts
     barba.hooks.before(() => {
 
         document.querySelector('html').classList.add('is-transitioning');
-        barba.wrapper.classList.add('is-animating');
 
     });
 
@@ -43,15 +102,8 @@ function init(){
     barba.hooks.after(() => {
 
         document.querySelector('html').classList.remove('is-transitioning');
-        barba.wrapper.classList.remove('is-animating');
 
     });
-
-/*
-=======================================================================================================================================
-Another example would be to enable scrolling to the top of the newly loaded page. We can use .enter hook for that.
-=======================================================================================================================================
-*/
 
     // scroll to the top of the page
     barba.hooks.enter(() => {
@@ -61,33 +113,25 @@ Another example would be to enable scrolling to the top of the newly loaded page
     });
 
 
-/* 
-=======================================================================================================================================
-In the main.js, we then initiate Barba.js to create our transition.
-leave() will be executed first, followed by enter().
-loaderIn() is a function that returns GSAP tween which stretches our .loader to cover the whole screen.
-loaderAway() is a function that returns GSAP tween which scales the loader back to scaleX:0, when the new page is loaded underneath it. 
-/* 
-========================================================================================================================================
-*/
-
+    /*
+    =======================================================================================================================================
+    We have two transitions leave() and enter(), but this time we are passing trigger to the loaderIn function and next to the loaderAway function.
+    =======================================================================================================================================
+    */
     barba.init({
-      debug: true,
         transitions: [{
-            async leave() {
-                await loaderIn();
-        
+            async leave({ trigger }) {
+                await loaderIn(trigger);
+
             },
-            enter() {
-                loaderAway();
+            enter({ next }) {
+                loaderAway(next);
             }
         }]
     })
 
 }
 
-// GO when everything is loaded 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     init();
 });
-
