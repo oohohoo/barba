@@ -4,13 +4,13 @@ function init(){
 
     // reset position of the loading screen
     gsap.set(loader, {
-        scaleX: 0, yPercent: 0, transformOrigin: 'left center', autoAlpha: 1
+        scaleX: 0, /*yPercent: 0,*/ transformOrigin: 'left center', autoAlpha: 1
     });
 
     function loaderIn() {
     // GSAP tween to stretch the loading screen across the whole screen
         return gsap.fromTo(loader, {scaleX: 0},
-            {duration: 0.8, xPercent: 0, scaleX: 1, ease: 'Expo.easeInOut', transformOrigin: 'left center'});
+            {duration: 0.8, /*xPercent: 0,*/ scaleX: 1, ease: 'Expo.easeInOut', transformOrigin: 'left center'});
     }
 
     function loaderAway() {
