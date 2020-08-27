@@ -4,7 +4,7 @@ function init(){
 
     // reset position of the loading screen
     gsap.set(loader, {
-        scaleX: 0, /*yPercent: -50,*/ transformOrigin: 'left center', autoAlpha: 1
+        scaleX: 0, yPercent: 0, transformOrigin: 'left center', autoAlpha: 1
     });
 
     function loaderIn() {
