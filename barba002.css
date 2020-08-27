@@ -1,0 +1,17 @@
+/* OVERLAY LAYER KOJI IDE KAO TRANSFORMACIJA */
+.loader {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+.b-img {
+    width: calc(65vh*21/29.7);
+    height: 65vh;
+    }
+
+/* KILL WEBFLOW BADGE */
+.w-webflow-badge {
+    position: relative !important;
+    right: 1000px !important;
+}
