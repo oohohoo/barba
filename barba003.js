@@ -3,7 +3,14 @@ function init(){
     const loader = document.querySelector('.loader002');
 
     // reset position of the loading screen
-    gsap.set(loader, {scaleX: 0, rotation: 10, xPercent: -5, yPercent: -50, transformOrigin: 'left center', autoAlpha: 1});
+    gsap.set(loader, {
+        scaleX: 0,
+        rotation: 10,
+        xPercent: -5,
+        yPercent: -50,
+        transformOrigin: 'left center',
+        autoAlpha: 1
+    });
 
 
     function loaderIn() {
