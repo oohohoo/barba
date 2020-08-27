@@ -1,7 +1,14 @@
+/* BARBA CSS */
+
 /* OVERLAY LAYER KOJI IDE KAO TRANSFORMACIJA */
 .loader {
     visibility: hidden;
     pointer-events: none;
+}
+
+.is-transitioning {
+    pointer-events: none;
+    cursor: progress;
 }
 
 
