@@ -21,11 +21,11 @@ function init(){
                 xPercent: -5
             },
             { 
-                duration: 0.5,
+                duration: 0.3,
                 xPercent: 0,
                 scaleX: 1, 
                 rotation: 0,
-                ease: 'Power4.inOut', 
+                ease: 'Expo.easeInOut', 
                 transformOrigin: 'left center'
             });
     }
@@ -33,12 +33,12 @@ function init(){
     function loaderAway() {
         // GSAP tween to hide the loading screen
         return gsap.to(loader, { 
-            duration: 0.5, 
+            duration: 0.3, 
             scaleX: 0,
             xPercent: 5, 
             rotation: 0, 
             transformOrigin: 'right center', 
-            ease: 'Power4.inOut'
+            ease: 'Expo.easeInOut'
         });
     }
 
