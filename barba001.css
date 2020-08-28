@@ -11,20 +11,14 @@
     cursor: progress;
 }
 
-/* OLD ASPECT RATIO
+/* ASPECT RATIO */
 .b-img {
     width: calc(65vh*21/29.7);
     height: 65vh;
     }
- */
 
- /* NEW ASPECT RATIO */
- .b-img {
-    --size: 42em;
-    --aspect-ratio: 3;
-    width: var(--size);
-    height: calc(var(--size) / var(--aspect-ratio));
-  }
+
+
 
 
 
