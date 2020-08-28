@@ -21,7 +21,7 @@
  /* NEW ASPECT RATIO */
  .b-img {
     --size: 42em;
-    --aspect-ratio: 1.5;
+    --aspect-ratio: 3;
     width: var(--size);
     height: calc(var(--size) / var(--aspect-ratio));
   }
