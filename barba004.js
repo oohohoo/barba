@@ -1,6 +1,6 @@
 function leaveAnimation(e) {
     return new Promise(async resolve => {
-      const elements = e.querySelectorAll("img, h1");
+      const elements = e.querySelectorAll(".b-img");
       await gsap
         .to(elements, {duration: 1, y: 100, opacity: 0, ease: "power2.inOut", stagger: 0.3})
         .then();
@@ -10,7 +10,7 @@ function leaveAnimation(e) {
   
   function enterAnimation(e) {
     return new Promise(resolve => {
-      const elements = e.querySelectorAll("img, h1");
+      const elements = e.querySelectorAll(".b-img");
       gsap
         .from(elements, {duration: 1, y: 100, opacity: 0, ease: "power2.inOut", stagger: 0.3})
         .then(resolve());
