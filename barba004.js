@@ -32,9 +32,9 @@ barba.init({
   transitions: [
     {
       sync: true,
-      leave: ({ current }) => leaveAnimation(current.container.querySelector(".b-bg")),
-      //once: ({ next }) => enterAnimation(next.container.querySelector(".b-bg")),
-      enter: ({ next }) => enterAnimation(next.container.querySelector(".b-bg"))
+      leave: ({ current }) => leaveAnimation(current.container.querySelector(".main-inner")),
+      once: ({ next }) => enterAnimation(next.container.querySelector(".main-inner")),
+      enter: ({ next }) => enterAnimation(next.container.querySelector(".main-inner"))
     }
   ]
 });
