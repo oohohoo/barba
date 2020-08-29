@@ -2,6 +2,11 @@ body {
 	overflow: hidden;
 }
 
+
+.content {
+	opacity: 0;
+}
+
 /* ASPECT RATIO */
 .b-img {
     width: calc(65vh*21/29.7);
