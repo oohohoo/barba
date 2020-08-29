@@ -1,6 +1,6 @@
 function leaveAnimation(e) {
 
-    const elements = e.querySelector(".b-content2");
+    const elements = e.querySelector(".b-content");
      return gsap
       .to(elements, {
         duration: 1,
@@ -14,7 +14,7 @@ function leaveAnimation(e) {
 
 function enterAnimation(e) {
 
-    const elements = e.querySelector(".b-content");
+    const elements = e.querySelector(".b-content2");
     return gsap
       .from(elements, {
         duration: 1,
@@ -33,7 +33,7 @@ barba.init({
     {
       sync: true,
       leave: ({ current }) => leaveAnimation(current.container.querySelector(".b-bg")),
-      once: ({ next }) => enterAnimation(next.container.querySelector(".b-bg")),
+      //once: ({ next }) => enterAnimation(next.container.querySelector(".b-bg")),
       enter: ({ next }) => enterAnimation(next.container.querySelector(".b-bg"))
     }
   ]
