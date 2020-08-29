@@ -66,9 +66,10 @@ function init() {
         // console.log(bodyClass);
         // GSAP tween to hide the loading screen
         // maybe a different effect for the reveal?
+        const img = next.container.querySelector('img');
         const h1 = next.container.querySelector('h1');
         const p = next.container.querySelectorAll('p');
-        const img = next.container.querySelector('img');
+        
 
     /*
     =======================================================================================================================================
@@ -80,7 +81,7 @@ function init() {
     const tl = gsap.timeline();
         return tl.to(loader, {duration: 0.5, scaleX: 0.4, /* squash the loader */ scaleY: 0.1, /* squash the loader */ yPercent: 50, /* move it down */ ease: 'Power4.inOut'
         })
-            .fromTo([h1, p, img], { y:100, autoAlpha: 0 }, {y:0, duration: 0.3, autoAlpha: 1, stagger: 0.1, ease: 'Power4.inOut' }, 0.3);
+            .fromTo([img, h1, p], { y:100, autoAlpha: 0 }, {y:0, duration: 0.3, autoAlpha: 1, stagger: 0.1, ease: 'Power4.inOut' }, 0.3);
     }
 
     /* 
