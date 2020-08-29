@@ -1,32 +1,40 @@
 function leaveAnimation(e) {
-    return new Promise(async resolve => {
-      const elements = e.querySelectorAll(".b-img");
-      await gsap
-        .to(elements, {duration: 1, y: 100, opacity: 0, ease: "power2.inOut", stagger: 0.3})
-        .then();
-      resolve()
-    });
-  }
-  
-  function enterAnimation(e) {
-    return new Promise(resolve => {
-      const elements = e.querySelectorAll(".b-img");
-      gsap
-        .from(elements, {duration: 1, y: 100, opacity: 0, ease: "power2.inOut", stagger: 0.3})
-        .then(resolve());
-  
-    });
-  }
-  
-  barba.init({
-    debug: true,
-    transitions: [
-      {
-        sync: false,
-        leave: ({ current }) =>
-          leaveAnimation(current.container.querySelector("main")),
-        once: ({ next }) => enterAnimation(next.container.querySelector("main")),
-        enter: ({ next }) => enterAnimation(next.container.querySelector("main"))
-      }
-    ]
-  });
+
+    const elements = e.querySelector(".b-content");
+     return gsap
+      .to(elements, {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.inOut",
+      })
+
+ 
+}
+
+function enterAnimation(e) {
+
+    const elements = e.querySelector(".b-content");
+    return gsap
+      .from(elements, {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.inOut",
+      })
+
+
+
+}
+
+barba.init({
+  debug: true,
+  transitions: [
+    {
+      sync: true,
+      leave: ({ current }) => leaveAnimation(current.container.querySelector(".b-bg")),
+      once: ({ next }) => enterAnimation(next.container.querySelector(".b-bg")),
+      enter: ({ next }) => enterAnimation(next.container.querySelector(".b-bg"))
+    }
+  ]
+});
