@@ -1,5 +1,9 @@
 /* BARBA CSS */
 
+body {
+	overflow: hidden;
+}
+
 /* OVERLAY LAYER KOJI IDE KAO TRANSFORMACIJA */
 .loader {
     visibility: hidden;
