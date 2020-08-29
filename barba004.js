@@ -17,8 +17,8 @@ function enterAnimation(e) {
     const elements = e.querySelector(".b-content");
     return gsap
    
-      .fromTo(elements, {y: 100, opacity: 0, },
-        {duration: 1, y: 0, opacity: 1, ease: "power2.inOut"});
+      .fromTo(elements, {y: 100, opacity: 0},
+        {duration: 1, y: 0, rotate:45, opacity: 1, ease: "power2.inOut"});
 
 }
 
