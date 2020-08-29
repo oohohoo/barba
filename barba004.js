@@ -14,7 +14,7 @@ function leaveAnimation(e) {
 
 function enterAnimation(e) {
 
-    const elements = e.querySelector(".b-content2");
+    const elements = e.querySelector(".b-content");
     return gsap
       .from(elements, {
         duration: 1,
