@@ -4,6 +4,7 @@ function leaveAnimation(e) {
      return gsap
       .to(elements, {
         duration: 1,
+        rotate:-45,
         y: 100,
         opacity: 0,
         ease: "power2.inOut",
