@@ -1,6 +1,9 @@
 body {
 	overflow: hidden;
 }
+.zero {
+    visibility: hidden;
+    }
 
 /* ASPECT RATIO */
 .b-img {

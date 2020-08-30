@@ -32,14 +32,14 @@ barba.init({
       leave: (data) => {
           
         return gsap.to(data.current.container, {
-          opacity: 0
+          autoAlpha: 0
         });
        
       },
       enter: (data) => {
 
-        return gsap.fromTo(data.next.container, {
-          opacity: 0, y:100}, {duration: 1, opacity: 1, y:0
+        return gsap.from(data.next.container, {
+          autoAlpha: 1, y:100
         });
 
 
