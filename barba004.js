@@ -33,7 +33,7 @@ barba.init({
       leave: (data) => {
           
         return gsap.to(data.current.container, {
-          opacity: 0
+          opacity: 1
         });
        
 
