@@ -25,9 +25,9 @@
  */
 
 barba.init({
+  sync: true,
   transitions: [{
-    sync: true,
-    name: 'legacy-example',
+       name: 'legacy-example',
     leave: function(data) {
       var done = this.async();
       gsap.to(data.current.container, {
