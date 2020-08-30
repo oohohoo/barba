@@ -1,10 +1,10 @@
 // SIMPLE VERSION from BARBA documentation
  
-
-/* barba.init({
+/* 
+ barba.init({
   debug: true,
-  sync: true,
   transitions: [{
+    name: 'legacy-example',
       leave: (data) => {
           
         return gsap.to(data.current.container, {
@@ -21,30 +21,29 @@
 
       },
   }]
-}); */
-
-
+}); 
+ */
 
 barba.init({
-  debug: true,
-    transitions: [{
-      sync: true,
-      name: 'opacity-transition',
-      leave: (data) => {
-          
-        return gsap.to(data.current.container, {
-          opacity: 1
-        });
-       
-
-      },
-      enter: (data) => {
-        gsap.set(data.next.container, {opacity:0})
-        return gsap.to(data.next.container, {
-          opacity: 1, y:100
-        });
-
-
-      },
+  transitions: [{
+    name: 'legacy-example',
+    leave: function(data) {
+      var done = this.async();
+      gsap.to(data.current.container, {
+        duration:3, 
+        opacity: 0,
+        onComplete: done
+      });
+    },
+    enter: function(data) {
+      gsap.from(data.next.container, {
+        duration:3,
+        opacity: 0,
+        onComplete: () => {
+          this.async();
+        }
+      });
+    }
   }]
 });
+
