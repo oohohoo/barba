@@ -1,28 +1,4 @@
-// SIMPLE VERSION from BARBA documentation
- 
-/* 
- barba.init({
-  debug: true,
-  transitions: [{
-    name: 'legacy-example',
-      leave: (data) => {
-          
-        return gsap.to(data.current.container, {
-          opacity: 0
-        });
-       
-      },
-      enter: (data) => {
-
-        return gsap.from(data.next.container, {
-          opacity: 0, y:100
-        });
-
-
-      },
-  }]
-}); 
- */
+// SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
 
 barba.init({
   sync: true,
@@ -40,7 +16,6 @@ barba.init({
       gsap.from(data.next.container, {
         duration:0.3,
         opacity: 0,
-        rotate:45,
         onComplete: () => {
           this.async();
         }
