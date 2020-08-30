@@ -40,6 +40,7 @@ barba.init({
       gsap.from(data.next.container, {
         duration:0.3,
         opacity: 0,
+        rotate:45,
         onComplete: () => {
           this.async();
         }
