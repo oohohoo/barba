@@ -5,7 +5,7 @@ barba.init({
         leave: (data) => {
             return new Promise(resolve => {
                 gsap.to(data.current.container, {
-                    duration:0.3, 
+                    duration:2, 
                     opacity: 0,
                     complete: () => {
                         resolve();
@@ -15,7 +15,7 @@ barba.init({
         },
         enter: (data) => {
             gsap.from(data.next.container, {
-                duration:0.3,
+                duration:2,
                 opacity: 0,
             });
         },
