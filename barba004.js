@@ -35,7 +35,7 @@ barba.init({
 
 
         return gsap.from(data.next.container, {
-          opacity: 0
+          opacity: 0, rotate:45
         });
 
 
