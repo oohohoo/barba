@@ -3,8 +3,8 @@ barba.init({
     transitions: [{
         leave: (data) => {
             return new Promise(resolve => {
-                anime({
-                    targets: data.current.container,
+                gsap.to(data.current.container, {
+                    duration:0.3, 
                     opacity: 0,
                     complete: () => {
                         resolve();
@@ -13,10 +13,38 @@ barba.init({
             });
         },
         enter: (data) => {
-            anime({
-                targets: data.next.container,
-                opacity: [0, 1],
+            gsap.from(data.next.container, {
+                duration:0.3,
+                opacity: 0,
             });
         },
     }]
 });
+
+
+
+/* barba.init({
+    sync: true,
+    transitions: [{
+         name: 'legacy-example',
+      leave: function(data) {
+        var done = this.async();
+        gsap.to(data.current.container, {
+          duration:0.3, 
+          opacity: 0,
+          onComplete: done
+        });
+      },
+      enter: function(data) {
+        gsap.from(data.next.container, {
+          duration:0.3,
+          opacity: 0,
+          onComplete: () => {
+            this.async();
+          }
+        });
+      }
+    }]
+  }); */
+  
+  
