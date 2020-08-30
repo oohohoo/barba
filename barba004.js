@@ -1,17 +1,20 @@
 // SIMPLE VERSION from BARBA documentation
+
 barba.init({
+  debug: true,
     transitions: [{
-      sync: true,
+      //sync: true,
       name: 'opacity-transition',
       leave(data) {
         return gsap.to(data.current.container, {
-          opacity: 0, y:100
+          opacity: 0
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
-          opacity: 0, rotate:45, y:100
+          opacity: 0
         });
       }
     }]
   });
+
