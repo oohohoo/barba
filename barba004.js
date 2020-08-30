@@ -40,8 +40,8 @@ barba.init({
       },
       enter: (data) => {
         gsap.set(data.next.container, {opacity:0})
-        return gsap.from(data.next.container, {
-          opacity: 0, y:100
+        return gsap.to(data.next.container, {
+          opacity: 1, y:100
         });
 
 
