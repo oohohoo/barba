@@ -31,7 +31,7 @@ barba.init({
       leave: (data) => {
           
         return gsap.to(data.current.container, {
-          autoAlpha: 0
+          opacity: 0
         });
        
 
@@ -39,7 +39,7 @@ barba.init({
       enter: (data) => {
 
         return gsap.from(data.next.container, {
-          autoAlpha: 0, y:100
+          opacity: 0, y:100
         });
 
 
