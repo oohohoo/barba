@@ -35,11 +35,12 @@ barba.init({
           autoAlpha: 0
         });
        
+
       },
       enter: (data) => {
 
         return gsap.from(data.next.container, {
-          autoAlpha: 1, y:100
+          autoAlpha: 0, y:100
         });
 
 
