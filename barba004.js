@@ -27,8 +27,7 @@
 
 barba.init({
   debug: true,
-  sync: true,
-  transitions: [{
+    transitions: [{
       leave: (data) => {
           
         return gsap.to(data.current.container, {
