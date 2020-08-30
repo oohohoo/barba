@@ -28,6 +28,8 @@
 barba.init({
   debug: true,
     transitions: [{
+      sync: true,
+      name: 'opacity-transition',
       leave: (data) => {
           
         return gsap.to(data.current.container, {
