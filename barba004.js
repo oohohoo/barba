@@ -26,6 +26,7 @@
 
 barba.init({
   transitions: [{
+    sync: true,
     name: 'legacy-example',
     leave: function(data) {
       var done = this.async();
