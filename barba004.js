@@ -1,8 +1,7 @@
 // SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
 
 barba.init({
-  sync: true,
-  transitions: [{
+    transitions: [{
        name: 'legacy-example',
     leave: function(data) {
       var done = this.async();
