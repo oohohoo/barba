@@ -60,7 +60,7 @@ gsap.ticker.add((time, deltaTime) => {
 gsap.utils.toArray(".test").forEach(container => {
     let 
     /*info = container.querySelector(".information"),*/
-       ball = container.querySelector(".cursor"),
+       ball = document.querySelector(".cursor"),
    
         tl = gsap.timeline({ paused: true });
     
@@ -70,6 +70,6 @@ gsap.utils.toArray(".test").forEach(container => {
      .to(ball, { scale:4, ease: "power2.inOut", duration: 0.3, autoAlpha:0.7}, 0);
     
     
-    container.addEventListener("mouseenter", () => tl.play() );
-    container.addEventListener("mouseleave", () => tl.reverse() );
+    document.addEventListener("mouseenter", () => tl.play() );
+    document.addEventListener("mouseleave", () => tl.reverse() );
   });
