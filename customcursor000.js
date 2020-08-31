@@ -61,12 +61,12 @@ gsap.ticker.add((time, deltaTime) => {
 gsap.utils.toArray(".c-image-overlay").forEach(container => {
     let 
     /*info = container.querySelector(".information"),*/
-       cursorgrow = container.querySelector(".cursor"),
+       //cursorgrow = container.querySelector(".cursor"),
         tl = gsap.timeline({ paused: true });
     
     tl
     /*.to(info, { yPercent: 20 })*/
-      .to(cursorgrow, { width:"20em", ease: "power2.inOut", duration: 0.3 }, 0);
+      .to(ball, { width:"20em", ease: "power2.inOut", duration: 0.3 }, 0);
     
     
     
