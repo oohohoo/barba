@@ -1,3 +1,8 @@
+body {
+	overflow: hidden;
+}
+
+
 /* KILL WEBFLOW BADGE */
 .w-webflow-badge {
     position: relative !important;
