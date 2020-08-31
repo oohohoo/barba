@@ -1,5 +1,5 @@
 // GSAP QUICK SETTER
-gsap.set(".ball", {xPercent: -50, yPercent: -50});
+gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
 var ball = document.querySelector(".cursor");
 var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
