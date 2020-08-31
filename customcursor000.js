@@ -26,6 +26,7 @@ gsap.ticker.add(() => {
 
 
 
+
 /* // BLAKE BOWEN QUICK SETTER
 gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
