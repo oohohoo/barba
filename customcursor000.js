@@ -27,7 +27,7 @@ gsap.ticker.add(() => {
 
 
 // BLAKE BOWEN QUICK SETTER
-gsap.set(".cursor", {xPercent: -50, yPercent: -50});
+/* gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
 var ball = document.querySelector(".cursor");
 var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -54,13 +54,13 @@ gsap.ticker.add((time, deltaTime) => {
   pos.y += (mouse.y - pos.y) * dt;
   xSet(pos.x);
   ySet(pos.y);
-});
+}); */
 
 //-----
-gsap.utils.toArray(".test").forEach(container => {
+gsap.utils.toArray(".c-image-overlay").forEach(container => {
     let 
     /*info = container.querySelector(".information"),*/
-      var test = container.querySelector(".test"),
+      test = container.querySelector(".test"),
    
         tl = gsap.timeline({ paused: true });
     
