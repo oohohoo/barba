@@ -1,4 +1,4 @@
-/* 
+
 // GSAP ORIGINAL quickSetter
 gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
@@ -22,11 +22,11 @@ gsap.ticker.add(() => {
   pos.y += (mouse.y - pos.y) * dt;
   xSet(pos.x);
   ySet(pos.y);
-}); */
+}); 
 
 
 
-// BLAKE BOWEN QUICK SETTER
+/* // BLAKE BOWEN QUICK SETTER
 gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
 var ball = document.querySelector(".cursor");
@@ -55,7 +55,7 @@ gsap.ticker.add((time, deltaTime) => {
   xSet(pos.x);
   ySet(pos.y);
 });
-
+ */
 //-----
 gsap.utils.toArray(".c-image-overlay").forEach(container => {
     let 
