@@ -60,14 +60,14 @@ gsap.ticker.add((time, deltaTime) => {
 gsap.utils.toArray(".test").forEach(container => {
     let 
     /*info = container.querySelector(".information"),*/
-      var ball = container.querySelector(".cursor"),
+      var test = container.querySelector(".test"),
    
         tl = gsap.timeline({ paused: true });
     
     tl
     /*.to(info, { yPercent: 20 })*/
       //.from(supscript, { ease: "power2.inOut", duration: 0.2, y: 20, autoAlpha:0, color: "#12335B", overwrite:"all" }, 0)
-     .to(ball, { scale:4, ease: "power2.inOut", duration: 0.3, autoAlpha:0.7}, 0);
+     .to(test, { scale:4, ease: "power2.inOut", duration: 0.3, autoAlpha:0.7}, 0);
     
     
     container.addEventListener("mouseenter", () => tl.play() );
