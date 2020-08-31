@@ -66,7 +66,7 @@ gsap.utils.toArray(".c-image-overlay").forEach(container => {
     
     tl
     /*.to(info, { yPercent: 20 })*/
-      .to(cursorgrow, { width:100, ease: "power2.inOut", duration: 0.3 }, 0);
+      .to(cursorgrow, { width:"20em", ease: "power2.inOut", duration: 0.3 }, 0);
     
     
     
