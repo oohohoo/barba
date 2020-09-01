@@ -64,13 +64,13 @@ gsap.ticker.add((time, deltaTime) => {
 var cursor = document.querySelector('.cursor');
 var overlay = document.querySelectorAll('.project-overlay');
   
-/* function moveCircle(e) {
+function moveCircle(e) {
 gsap.to(cursor, {duration:0.3,
       x: e.clientX,
       y: e.clientY,
       delay:0.03
   });
-    }  */
+    } 
     
   
    
@@ -87,7 +87,7 @@ document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloud
       flag = true;
       gsap.to(cursor, {duration:0.3, scale: 1, autoAlpha: 1});
       overlay.forEach(item =>{
-        item.addEventListener("mousemove", cursor);
+        item.addEventListener("mousemove", moveCircle);
         })
       })
 	});
