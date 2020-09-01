@@ -42,53 +42,39 @@ ScrollTrigger.refresh();
 
 
 // SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
-
 let scroll;
+
+barba.hooks.after(() => {
+	scroll.init();
+});
 
 barba.init({
   transitions: [{
-    sync: true,
-    name: 'opacity-transition',
-
-    leave: function(data) {
-      var done = this.async();
-      gsap.to(data.current.container, {
-        duration:0.3, 
-        opacity: 0,
-        onComplete: done
-      });
-    },
-    enter: function(data) {
-      gsap.from(data.next.container, {
-        duration:0.3,
-        opacity: 0,
-        onComplete: () => {
-          this.async();
-        }
-      });
-    },
-
-
-
+    name: 'custom-transition',
     once({ next }) {
-      initScroll(next.container);
+
+      // init LocomotiveScroll on page load
+      smooth(next.container);
     },
+    leave(){},
     beforeEnter({ next }) {
+
+      // destroy the previous scroll
       scroll.destroy();
-      initScroll(next.container);
-    }
+
+      // init LocomotiveScroll regarding the next page
+      smooth(next.container);
+    },
+    enter(){}
   }]
 });
 
-function initScroll(container) {
-  if (container.hasAttribute('data-scroll-container')) {
-    scroll = new LocomotiveScroll({
-      el: container,
-      smooth: true
-    });
-  }
+function smooth(container) {
+  scroll = new LocomotiveScroll({
+    el: container.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
 }
-
 
 // ---- PRVA VERZIJA
 
