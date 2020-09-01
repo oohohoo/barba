@@ -43,7 +43,7 @@ ScrollTrigger.refresh();
 
 // SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
 // vidi da li?
-//let locoScroll;
+let locoScroll;
 
 barba.init({
   transitions: [{
