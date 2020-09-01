@@ -82,11 +82,12 @@ prevent: ({ event, href }) => {
 
       // automatically scroll to the top of the page on same location
       if (window.scrollY !== 0) {
-        window.scroll({
+        scroll.scrollTo('#top')
+        /* window.scroll({
           top: 0,
           left: 0,
           behavior: 'smooth'
-        });
+        }); */
       }
 
       return true;
