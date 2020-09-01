@@ -43,7 +43,7 @@ ScrollTrigger.refresh();
 
 // SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
 // vidi da li?
-let locoScroll;
+let scroll;
 
 barba.init({
   transitions: [{
@@ -63,7 +63,7 @@ barba.init({
       initScroll(next.container);
     },
     beforeEnter({ next }) {
-      locoScroll.destroy();
+      scroll.destroy();
       initScroll(next.container);
     }
   }]
@@ -71,7 +71,7 @@ barba.init({
 
 function initScroll(container) {
   if (container.hasAttribute('data-scroll-container')) {
-    locoScroll = new LocomotiveScroll({
+    scroll = new LocomotiveScroll({
       el: container,
       smooth: true
     });
