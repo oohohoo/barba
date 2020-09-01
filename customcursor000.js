@@ -28,7 +28,7 @@ gsap.ticker.add(() => {
 
 
 // BLAKE BOWEN QUICK SETTER
-gsap.set(".cursor", {xPercent: -50, yPercent: -50});
+/* gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
 var ball = document.querySelector(".cursor");
 var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -55,7 +55,7 @@ gsap.ticker.add((time, deltaTime) => {
   pos.y += (mouse.y - pos.y) * dt;
   xSet(pos.x);
   ySet(pos.y);
-});
+}); */
 
 //---------------------------------------------------------------------------------------
 
@@ -74,7 +74,7 @@ gsap.to(cursor, {duration:0.3,
     
   
    
-document.querySelector('.p-1').addEventListener("mouseenter", function(){
+document.querySelector('.p-1').addEventListener("mouseover", function(){
 document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive1_fkkxso.jpg)"});
 /* document.querySelector('.p-2').addEventListener("mouseover", function(){
 document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive2_gcrxje.jpg)"}); */
@@ -93,7 +93,7 @@ document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloud
 	});
 	
 	
-    overlay.forEach(item => {item.addEventListener("mouseleave", function(){
+    overlay.forEach(item => {item.addEventListener("mouseout", function(){
      flag = false;
      gsap.to(cursor, {duration:0.3, scale: 0.1, autoAlpha: 0});
     })
