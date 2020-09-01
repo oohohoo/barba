@@ -1,9 +1,11 @@
 // SIMPLE VERSION / FADEOUT -> FADEIN // from GITHUB comments
 
+/* ++++IZGLEDA DA NE RADI KAKO TREBA++++ */
+
 barba.init({
     debug: true,
     transitions: [{
-        sync: true,
+       // sync: true,
         leave: (data) => {
             return new Promise(resolve => {
                 gsap.to(data.current.container, {
