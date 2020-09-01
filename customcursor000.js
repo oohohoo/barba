@@ -74,7 +74,7 @@ gsap.to(cursor, {duration:0.3,
     
   
    
-document.querySelector('.p-1').addEventListener("mouseover", function(){
+document.querySelector('.p-1').addEventListener("mouseenter", function(){
 document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive1_fkkxso.jpg)"});
 /* document.querySelector('.p-2').addEventListener("mouseover", function(){
 document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive2_gcrxje.jpg)"}); */
@@ -93,7 +93,7 @@ document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloud
 	});
 	
 	
-    overlay.forEach(item => {item.addEventListener("mouseout", function(){
+    overlay.forEach(item => {item.addEventListener("mouseleave", function(){
      flag = false;
      gsap.to(cursor, {duration:0.3, scale: 0.1, autoAlpha: 0});
     })
