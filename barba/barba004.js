@@ -79,6 +79,7 @@ function initScroll(container) {
 }
 
 
+
 // ---- PRVA VERZIJA
 /* 
 barba.init({
