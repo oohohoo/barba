@@ -42,12 +42,12 @@ ScrollTrigger.refresh();
 
 
 // SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
-// vidi da li?
+
 let scroll;
 
 barba.init({
   transitions: [{
-    sync: true,
+    //sync: true,
     name: 'opacity-transition',
     leave(data) {
       return gsap.to(data.current.container, {
