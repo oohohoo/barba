@@ -47,18 +47,29 @@ let scroll;
 
 barba.init({
   transitions: [{
-    //sync: true,
+    sync: true,
     name: 'opacity-transition',
-    leave(data) {
-      return gsap.to(data.current.container, {
-        opacity: 0
+
+    leave: function(data) {
+      var done = this.async();
+      gsap.to(data.current.container, {
+        duration:0.3, 
+        opacity: 0,
+        onComplete: done
       });
     },
-    enter(data) {
-      return gsap.from(data.next.container, {
-        opacity: 0
+    enter: function(data) {
+      gsap.from(data.next.container, {
+        duration:0.3,
+        opacity: 0,
+        onComplete: () => {
+          this.async();
+        }
       });
     },
+
+
+
     once({ next }) {
       initScroll(next.container);
     },
@@ -77,6 +88,42 @@ function initScroll(container) {
     });
   }
 }
+
+
+// ---- PRVA VERZIJA
+
+barba.init({
+  transitions: [{
+    sync: true, // ---- check
+     name: 'legacy-example',
+  
+  leave: function(data) {
+    var done = this.async();
+    gsap.to(data.current.container, {
+      duration:0.3, 
+      opacity: 0,
+      onComplete: done
+    });
+  },
+  enter: function(data) {
+    gsap.from(data.next.container, {
+      duration:0.3,
+      opacity: 0,
+      onComplete: () => {
+        this.async();
+      }
+    });
+  }
+
+
+  
+}]
+});
+
+
+
+
+
 
 
 
