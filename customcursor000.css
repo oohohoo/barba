@@ -14,6 +14,20 @@ body {
 /* VESNA IMAGE CURSOR */
 
 .cursor {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: #558b86;
+  }
+
+.cursorx {
     width: 41.250em;
     height: 22.500em;
     background: no-repeat 50% 50%;
