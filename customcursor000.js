@@ -87,7 +87,7 @@ document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloud
       flag = true;
       gsap.to(cursor, {duration:0.3, scale: 1, autoAlpha: 1});
       overlay.forEach(item =>{
-        item.addEventListener("mousemove", moveCircle);
+        item.addEventListener("mousemove");
         })
       })
 	});
