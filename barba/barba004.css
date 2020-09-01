@@ -1,6 +1,6 @@
-body {
+/* body {
 	overflow: hidden;
-}
+} */
 /* ASPECT RATIO */
 .b-img {
     width: calc(65vh*21/29.7);
