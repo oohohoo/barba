@@ -69,7 +69,32 @@ barba.init({
       smooth(next.container);
     },
     enter(){}
-  }]
+  }],
+
+// ---------------------------------------- PREVENT CURRENT LINK - Scroll to top
+prevent: ({ event, href }) => {
+  if (event.type === 'click') {
+
+    // prevent the user to reload the page if the location is the same
+    if (href === window.location.href) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      // automatically scroll to the top of the page on same location
+      if (window.scrollY !== 0) {
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      return true;
+    }
+  }
+}
+// -------------------------------------------------------------------------
+
 });
 
 function smooth(container) {
@@ -79,6 +104,16 @@ function smooth(container) {
     scrollFromAnywhere: true
   });
 }
+
+
+
+
+
+
+
+
+
+
 
 // SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
 
