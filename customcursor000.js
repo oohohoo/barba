@@ -1,5 +1,5 @@
 
-// GSAP ORIGINAL quickSetter
+/* // GSAP ORIGINAL quickSetter
 gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
 var ball = document.querySelector(".cursor");
@@ -22,12 +22,12 @@ gsap.ticker.add(() => {
   pos.y += (mouse.y - pos.y) * dt;
   xSet(pos.x);
   ySet(pos.y);
-}); 
+});  */
 
 
 
 
-/* // BLAKE BOWEN QUICK SETTER
+// BLAKE BOWEN QUICK SETTER
 gsap.set(".cursor", {xPercent: -50, yPercent: -50});
 
 var ball = document.querySelector(".cursor");
@@ -56,8 +56,62 @@ gsap.ticker.add((time, deltaTime) => {
   xSet(pos.x);
   ySet(pos.y);
 });
- */
-//-----
+
+//---------------------------------------------------------------------------------------
+
+// VESNA -- image overlay 
+
+var cursor = document.querySelector('.cursor');
+var overlay = document.querySelectorAll('.project-overlay');
+  
+/* function moveCircle(e) {
+gsap.to(cursor, {duration:0.3,
+      x: e.clientX,
+      y: e.clientY,
+      delay:0.03
+  });
+    }  */
+    
+  
+   
+document.querySelector('.p-1').addEventListener("mouseover", function(){
+document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive1_fkkxso.jpg)"});
+document.querySelector('.p-2').addEventListener("mouseover", function(){
+document.querySelector('.cursor').style.backgroundImage = "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive2_gcrxje.jpg)"});
+
+
+
+ var flag = false;
+    overlay.forEach(item => {
+      item.addEventListener("mousemove", function(){
+      flag = true;
+      gsap.to(cursor, {duration:0.3, scale: 1, autoAlpha: 1});
+      overlay.forEach(item =>{
+        item.addEventListener("mousemove", moveCircle);
+        })
+      })
+	});
+	
+	
+    overlay.forEach(item => {item.addEventListener("mouseout", function(){
+     flag = false;
+     gsap.to(cursor, {duration:0.3, scale: 0.1, autoAlpha: 0});
+    })
+	});
+	
+
+
+
+
+
+
+
+
+
+
+
+/* 
+// GSAP UTILS TO ARRAY ----- kao radi ali sa zamuckivanjem
 gsap.utils.toArray(".c-image-overlay").forEach(container => {
     let 
     /*info = container.querySelector(".information"),*/
@@ -73,4 +127,4 @@ gsap.utils.toArray(".c-image-overlay").forEach(container => {
     
     container.addEventListener("mouseenter", () => tl.play() );
     container.addEventListener("mouseleave", () => tl.reverse() );
-  });
+  }); */

@@ -8,3 +8,15 @@ body {
     position: relative !important;
     right: 1000px !important;
 }
+
+
+
+/* VESNA IMAGE CURSOR */
+
+.cursor {
+    width: 41.250em;
+    height: 22.500em;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+    z-index: 0;
+}
