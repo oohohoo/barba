@@ -41,11 +41,14 @@ ScrollTrigger.refresh();
  */
 
 
-// SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
+
+
+// LOCOMOTIVE SCROLL -- RADI
+
 let scroll;
 
-barba.hooks.after(() => {
-	scroll.init();
+barba.hooks.after (() => {
+             scroll.update() ();
 });
 
 barba.init({
@@ -71,12 +74,16 @@ barba.init({
 
 function smooth(container) {
   scroll = new LocomotiveScroll({
-    el: container.querySelector('[data-scroll-container]'),
+    el: document.querySelector('.smooth-scroll'),
     smooth: true
   });
 }
 
-// ---- PRVA VERZIJA
+// SIMPLE VERSION / FADEOUT -> FADEIN // from SLACK
+
+// spoji sa gore
+
+/*
 
 barba.init({
   transitions: [{
@@ -107,35 +114,6 @@ barba.init({
 });
 
 
+*/
 
 
-
-
-
-
-// ---- PRVA VERZIJA
-/* 
-barba.init({
-  transitions: [{
-    sync: true, // ---- check
-     name: 'legacy-example',
-  
-  leave: function(data) {
-    var done = this.async();
-    gsap.to(data.current.container, {
-      duration:0.3, 
-      opacity: 0,
-      onComplete: done
-    });
-  },
-  enter: function(data) {
-    gsap.from(data.next.container, {
-      duration:0.3,
-      opacity: 0,
-      onComplete: () => {
-        this.async();
-      }
-    });
-  }
-}]
-}); */
