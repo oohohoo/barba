@@ -75,7 +75,8 @@ barba.init({
 function smooth(container) {
   scroll = new LocomotiveScroll({
     el: document.querySelector('.smooth-scroll'),
-    smooth: true
+    smooth: true,
+    scrollFromAnywhere: true
   });
 }
 
