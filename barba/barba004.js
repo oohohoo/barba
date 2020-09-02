@@ -104,13 +104,13 @@ prevent: ({ event, href }) => {
 
    // method that will update the active class on the menu, based on a given url
    function updateMenu(url) {
-    const active = document.querySelector('.nav a.active');
+    const active = document.querySelector('.nav-link a.active');
 
     if (active !== null) {
       active.classList.remove('active');
     }
 
-    const links = Array.from(document.querySelectorAll('.nav a'));
+    const links = Array.from(document.querySelectorAll('.nav-link a'));
 
     const index = links.map(link => link.href).findIndex((href) => {
       return url.indexOf(href) !== -1;
