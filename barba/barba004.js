@@ -43,7 +43,7 @@ ScrollTrigger.refresh();
 
 /*
   ================================================================================
-    666 BARBA + LOCOMOTIVESCROLL UPDATE
+  BARBA + LOCOMOTIVESCROLL UPDATE
   ================================================================================
 */
 
@@ -73,6 +73,7 @@ barba.init({
     enter(){}
   }],
 
+  
 // ---------------------------------------- PREVENT CURRENT LINK - Scroll to top
 prevent: ({ event, href }) => {
   if (event.type === 'click') {
@@ -96,9 +97,38 @@ prevent: ({ event, href }) => {
     }
   }
 }
-// -------------------------------------------------------------------------
 
 });
+
+// -------------------------------------------------------------------------
+
+   // method that will update the active class on the menu, based on a given url
+   function updateMenu(url) {
+    const active = document.querySelector('.nav a.active');
+
+    if (active !== null) {
+      active.classList.remove('active');
+    }
+
+    const links = Array.from(document.querySelectorAll('.nav a'));
+
+    const index = links.map(link => link.href).findIndex((href) => {
+      return url.indexOf(href) !== -1;
+    });
+
+    if (index !== -1) {
+      links[index].classList.add('active');
+    }
+  }
+
+  // hooks that will be triggered before any page transition
+  // meaning your menu active class will be updated before going to the next page
+  barba.hooks.before((data) => {
+    updateMenu(data.trigger.href);
+  });
+
+
+// -------------------------------------------------------------------------
 
 function smooth(container) {
   scroll = new LocomotiveScroll({
