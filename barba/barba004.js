@@ -121,6 +121,7 @@ prevent: ({ event, href }) => {
     }
   }
 
+  
   // hooks that will be triggered before any page transition
   // meaning your menu active class will be updated before going to the next page
   barba.hooks.before((data) => {
