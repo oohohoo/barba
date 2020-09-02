@@ -41,8 +41,6 @@ ScrollTrigger.refresh();
  */
 
 
-
-
 /*
   ================================================================================
     BARBA + LOCOMOTIVESCROLL UPDATE
