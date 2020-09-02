@@ -104,7 +104,7 @@ prevent: ({ event, href }) => {
 
    // method that will update the active class on the menu, based on a given url
    function updateMenu(url) {
-    const active = document.querySelector('.nav-link a.active');
+    const active = document.querySelector('.nav-link');
 
     if (active !== null) {
       active.classList.remove('active');
