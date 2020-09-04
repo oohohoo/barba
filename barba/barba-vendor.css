@@ -35,7 +35,7 @@ html.has-scroll-smooth {
     background-color: black;
     opacity: 0.5;
     width: 7px;
-    border-radius: 10px;
+    border-radius: 0px;
     margin: 2px;
     cursor: -webkit-grab;
     cursor: grab; }
