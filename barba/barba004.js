@@ -1,45 +1,3 @@
-/*
-  ================================================================================
-    SMOOTH SCROLL + SCROLLTRIGGER
-  ================================================================================
-*/
-
-/* // --- REGISTER SCROLLTRIGGER
-gsap.registerPlugin(ScrollTrigger);
-
-// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-const locoScroll = new LocomotiveScroll({
-	el: document.querySelector(".smooth-scroll"),
-	smooth: true,
-	getDirection: true,
-	//smoothMobile: true,
-	//lerp: .05
-});
-// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-locoScroll.on("scroll", ScrollTrigger.update);
-
-// tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-ScrollTrigger.scrollerProxy(".smooth-scroll", {
-	scrollTop(value) {
-		return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-	}, // we don't have to define a scrollLeft because we're only scrolling vertically.
-	getBoundingClientRect() {
-		return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-	},
-	
-	// LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, 
-	// we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-	// UKLJUČITI SAMO NA MOBILNOJ VERZIJI
-	// pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
-});
-
-// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-ScrollTrigger.refresh();
- */
-
 
 /*
   ================================================================================
@@ -50,7 +8,7 @@ ScrollTrigger.refresh();
 let scroll;
 
 barba.hooks.after (() => {
-             scroll.update() ();
+  scroll.update() ();
 });
 
 barba.init({
@@ -73,8 +31,12 @@ barba.init({
     enter(){}
   }],
 
-  
-// ---------------------------------------- PREVENT CURRENT LINK - Scroll to top
+/*
+  ================================================================================
+  PREVENT CURRENT LINK + SCROLL TO TOP
+  ================================================================================
+*/  
+
 prevent: ({ event, href }) => {
   if (event.type === 'click') {
 
@@ -82,35 +44,28 @@ prevent: ({ event, href }) => {
     if (href === window.location.href) {
       event.preventDefault();
       event.stopPropagation();
-
       // automatically scroll to the top of the page on same location
-      //if (window.scrollY !== 0) {
         scroll.scrollTo('#top')
-        /* window.scroll({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        }); */
-     // }
-
-      return true;
+     return true;
     }
   }
 }
 
 });
 
-// -------------------------------------------------------------------------
-
-   // method that will update the active class on the menu, based on a given url
-   function updateMenu(url) {
-    const active = document.querySelector('.nav-link');
+/*
+  ================================================================================
+  UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
+  ================================================================================
+*/  
+ function updateMenu(url) {
+   const active = document.querySelector('.g-header .nav-link.active');
 
     if (active !== null) {
       active.classList.remove('active');
     }
 
-    const links = Array.from(document.querySelectorAll('.nav-link a'));
+    const links = Array.from(document.querySelectorAll('.g-header .nav-link'));
 
     const index = links.map(link => link.href).findIndex((href) => {
       return url.indexOf(href) !== -1;
@@ -121,7 +76,7 @@ prevent: ({ event, href }) => {
     }
   }
 
-    // hooks that will be triggered before any page transition
+  // hooks that will be triggered before any page transition
   // meaning your menu active class will be updated before going to the next page
   barba.hooks.before((data) => {
     updateMenu(data.trigger.href);
@@ -129,7 +84,7 @@ prevent: ({ event, href }) => {
 
 
 // -------------------------------------------------------------------------
-
+  
 function smooth(container) {
   scroll = new LocomotiveScroll({
     el: document.querySelector('.smooth-scroll'),
@@ -177,12 +132,61 @@ barba.init({
     });
   }
 
-
   
 }]
 });
 
 
 */
+
+
+
+
+
+
+
+/*
+  ================================================================================
+    SMOOTH SCROLL + SCROLLTRIGGER
+  ================================================================================
+*/
+/*
+// --- REGISTER SCROLLTRIGGER
+gsap.registerPlugin(ScrollTrigger);
+
+// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+const locoScroll = new LocomotiveScroll({
+	el: document.querySelector(".smooth-scroll"),
+	smooth: true,
+	getDirection: true,
+	//smoothMobile: true,
+	//lerp: .05
+});
+// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+locoScroll.on("scroll", ScrollTrigger.update);
+
+// tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+ScrollTrigger.scrollerProxy(".smooth-scroll", {
+	scrollTop(value) {
+		return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+	}, // we don't have to define a scrollLeft because we're only scrolling vertically.
+	getBoundingClientRect() {
+		return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+	},
+	
+	// LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, 
+	// we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+	// UKLJUČITI SAMO NA MOBILNOJ VERZIJI
+	// pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
+});
+
+// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+ScrollTrigger.refresh();
+
+*/
+
 
 
