@@ -92,7 +92,8 @@ function initScroll(container) {
   if (container.hasAttribute('data-scroll-container')) {
     scroll = new LocomotiveScroll({
       el: container,
-      smooth: true
+      smooth: true,
+      scrollFromAnywhere: true
     });
   }
 }
