@@ -29,6 +29,24 @@ https://codepen.io/GreenSock/project/editor/ZybaPo
 TweenMax tips and tricks (2015 -- prebaci u library)
 https://medium.com/@nicolasdesle/tweenmax-tips-and-tricks-bbfff2d71b21
 
+---
+/*
+  ================================================================================
+  ovo je gotov primjer i ima clean code za pobrstit funkcije i barba i gsap JEBENOOOOOO:
+  ================================================================================
+*/ 
+
+https://jamiehunter.design/
+
+/*
+  ================================================================================
+  TIERRY MICHEL DEV TO
+  barba.js, v2, is (almost) out… ima primjer za GSAP čekiraj ASYNC i WAIT blah
+  ================================================================================
+*/ 
+
+https://dev.to/thierrymichel/barba-js-v2-is-almost-out-30bc-temp-slug-634323?preview=5b43009e03707f97a468b0d345e06bc473295a746ae5c121543c692d9f99c00cba82d8432108015e39355af254df5dc8791055273491e99d348e6de6
+
 
 /*
   ================================================================================

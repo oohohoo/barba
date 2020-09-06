@@ -15,3 +15,4 @@ gsap.utils.toArray(".c-image-overlay").forEach(container => {
     container.addEventListener("mouseenter", () => tl.play() );
     container.addEventListener("mouseleave", () => tl.reverse() );
   }); 
+
