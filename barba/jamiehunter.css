@@ -1,0 +1,1209 @@
+.about {
+    padding: 10vw 10vw 0 10vw;
+    background-color: #292C28;
+    color: white
+}
+
+.about header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: -10vw -10vw 10vw -10vw
+}
+
+.about header .about-image {
+    opacity: 0.5;
+    overflow: hidden
+}
+
+.about header ul {
+    z-index: 20000;
+    position: absolute;
+    left: 10vw;
+    font-size: calc(3vw + 1.5rem);
+    line-height: 1.2;
+    font-weight: 900;
+    width: 60%;
+    bottom: 0
+}
+
+@media screen and (orientation: landscape) {
+    .about header ul {
+        font-size:calc(4vw + 2rem);
+        bottom: initial
+    }
+}
+
+.about header ul li:not(:first-child) {
+    display: none
+}
+
+.about header figure {
+    text-align: right;
+    height: 50vh
+}
+
+@media screen and (orientation: landscape) {
+    .about header figure {
+        height:100vh
+    }
+}
+
+.about header figure img {
+    width: auto;
+    height: 100%
+}
+
+@media screen and (orientation: landscape) {
+    .about header figure img {
+        width:auto;
+        height: 100%
+    }
+}
+
+.layout {
+    display: flex;
+    flex-direction: column
+}
+
+@media screen and (orientation: landscape) {
+    .layout {
+        flex-direction:row;
+        margin-right: 5vw
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .layout-reverse {
+        flex-direction:row-reverse
+    }
+}
+
+.layout .text {
+    font-weight: 300;
+    font-size: calc(1vw + 1rem);
+    width: 100%;
+    max-width: none !important
+}
+
+.lists {
+    display: flex;
+    flex-direction: column
+}
+
+@media screen and (orientation: landscape) {
+    .lists {
+        margin-bottom:10vw;
+        width: 25rem
+    }
+}
+
+.lists ul {
+    margin-bottom: 2em
+}
+
+.lists h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem
+}
+
+.lists h3,.lists li {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 0.9rem
+}
+
+.lists li {
+    margin-bottom: 0.25em
+}
+
+.contact {
+    color: #1A1A1A;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900
+}
+
+.contact h4 {
+    overflow: hidden;
+    font-size: calc(1vw + 1.5rem);
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 1em
+}
+
+.contact h4 span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom
+}
+
+@media screen and (orientation: landscape) {
+    .contact h4 {
+        font-size:calc(1vw + 2rem)
+    }
+}
+
+.contact .text {
+    width: 70vw;
+    max-width: 100%;
+    font-size: calc(1vw + 1.5rem);
+    padding-bottom: 1.5em
+}
+
+@media screen and (orientation: landscape) {
+    .contact .text {
+        font-size:calc(2vw + 2rem)
+    }
+}
+
+.contact .text ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0
+}
+
+@media screen and (orientation: landscape) {
+    .contact .text ul {
+        flex-direction:row
+    }
+}
+
+.contact .text ul li {
+    position: relative;
+    margin-bottom: 0.5em
+}
+
+.contact .text ul li a {
+    font-weight: 900
+}
+
+.contact .text .copied {
+    position: absolute;
+    left: 0;
+    top: 90%;
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    width: 75vw;
+    white-space: nowrap;
+    opacity: 0;
+    color: #1A1A1A
+}
+
+.text {
+    max-width: 35rem;
+    margin: 0 auto
+}
+
+.grid {
+    display: grid;
+    list-style: none;
+    grid-gap: 1rem;
+    line-height: 0;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: dense
+}
+
+.grid li {
+    position: relative;
+    --cols:1;--rows:1;overflow: hidden;
+    background: #000;
+    line-height: 0
+}
+
+.grid li:first-child {
+    --cols:2;--rows:2}
+
+.grid li:nth-child(5) {
+    --cols:2}
+
+.grid li:nth-child(6) {
+    --rows:2}
+
+.grid li:nth-child(7) {
+    --cols:2}
+
+.grid a {
+    display: block;
+    height: 10rem
+}
+
+.grid img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s
+}
+
+.grid figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 1;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    font-size: .875rem;
+    letter-spacing: .125em;
+    font-weight: 600
+}
+
+@media screen and (min-width: 45em) {
+    .grid {
+        grid-template-columns:repeat(3, 1fr)
+    }
+
+    .grid li {
+        grid-column-start: span var(--cols);
+        grid-row-start: span var(--rows)
+    }
+
+    .grid a {
+        padding-bottom: 52.65%
+    }
+}
+
+.note {
+    max-width: 35rem;
+    margin: 0 auto
+}
+
+.note-header {
+    text-align: center
+}
+
+.note-date {
+    margin-bottom: .5rem;
+    display: block
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 3rem 0
+}
+
+.gallery figure a {
+    border: 0
+}
+
+.gallery figure {
+    margin: 0;
+    padding: 0
+}
+
+@media screen and (min-width: 45rem) {
+    .gallery {
+        margin-left:-3rem;
+        margin-right: -3rem
+    }
+}
+
+.notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 1.5rem;
+    grid-auto-rows: 1fr
+}
+
+.note {
+    border: 2px solid #000
+}
+
+.note a {
+    display: block;
+    padding: 1rem;
+    line-height: 1.25em
+}
+
+.note h2 {
+    font-size: 1rem
+}
+
+.note time {
+    font-size: .75rem
+}
+
+.projects {
+    list-style: none;
+    line-height: 0
+}
+
+.projects li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw
+}
+
+.projects li:not(:last-child) {
+    margin-bottom: 1px
+}
+
+@media screen and (orientation: landscape) {
+    .projects li {
+        justify-content:center
+    }
+}
+
+.projects figure {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center
+}
+
+.projects .figure-cropper {
+    max-width: 35%;
+    overflow: hidden
+}
+
+@media screen and (orientation: landscape) {
+    .projects .figure-cropper {
+        max-width:45%
+    }
+}
+
+.projects figcaption,.projectnames-js figcaption {
+    position: absolute;
+    z-index: 5000;
+    line-height: 1.1;
+    vertical-align: bottom;
+    left: 60vw;
+    font-weight: 900;
+    font-size: calc(2.5vw + 1.5rem);
+    color: #1a1a1a;
+    margin: 0 10vw 0 0
+}
+
+@media screen and (orientation: landscape) {
+    .projects figcaption,.projectnames-js figcaption {
+        left:0;
+        font-size: calc(2.5vw + 2rem)
+    }
+}
+
+.projects img,.projects video {
+    width: 150vw;
+    height: auto
+}
+
+@media screen and (orientation: landscape) {
+    .projects img,.projects video {
+        max-width:75vw
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .project:not(:last-child) {
+        margin-bottom:10vh
+    }
+}
+
+.projectnames-js {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 7000;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none
+}
+
+.projectnames-js .title-container {
+    text-align: left;
+    position: absolute;
+    width: 70%;
+    height: 2em
+}
+
+.projectnames-js .title-container figcaption {
+    width: 90%;
+    left: 0;
+    visibility: hidden;
+    margin: 0
+}
+
+.projectnames-js .title-container figcaption .project-name {
+    vertical-align: bottom
+}
+
+.projectnames-js .title-container figcaption .no-wrap {
+    display: inline-block;
+    white-space: nowrap
+}
+
+.next-project figure {
+    align-items: flex-start;
+    flex-direction: row !important
+}
+
+.next-project figcaption {
+    top: calc(50% - 1em);
+    margin: 0 5vw
+}
+
+@media screen and (orientation: landscape) {
+    .next-project figcaption {
+        margin:0;
+        width: 80%
+    }
+}
+
+.next-project_label {
+    position: absolute;
+    top: -2.5em;
+    font-size: calc(1vw + 1rem);
+    color: white
+}
+
+@media screen and (orientation: landscape) {
+    .next-project_label {
+        font-size:calc(1vw + 2rem)
+    }
+}
+
+.next-project .project-middle {
+    top: 50%
+}
+
+.next-project .figure-cropper {
+    right: 0
+}
+
+.project-middle {
+    position: absolute;
+    width: 100%;
+    height: 1px
+}
+
+.projects-js .project {
+    visibility: hidden
+}
+
+.projects-js .forward {
+    visibility: hidden
+}
+
+.projectpage header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto
+}
+
+@media screen and (orientation: landscape) {
+    .projectpage header {
+        width:70vw
+    }
+}
+
+.projectpage header .figure-cropper {
+    max-width: 100%;
+    overflow: hidden
+}
+
+.projectpage header .figure-cropper figure {
+    width: 100vw
+}
+
+@media screen and (orientation: landscape) {
+    .projectpage header .figure-cropper figure {
+        max-width:70vw
+    }
+}
+
+.projectpage header .figure-cropper figure video {
+    max-height: 882px
+}
+
+.projectpage figure {
+    margin: 0 auto;
+    line-height: 0;
+    flex-direction: column
+}
+
+@media screen and (orientation: landscape) {
+    .projectpage figure {
+        flex-direction:initial
+    }
+}
+
+.projectpage-intro {
+    font-size: 1.25rem;
+    margin-top: -10rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: auto
+}
+
+@media screen and (orientation: landscape) {
+    .projectpage-intro {
+        font-size:1.75rem;
+        margin: 0 auto;
+        margin-bottom: 3em;
+        width: auto;
+        max-width: 50rem
+    }
+}
+
+@media (min-width: 1540px) {
+    .projectpage-intro {
+        margin-top:5vw
+    }
+}
+
+.projectpage-lists {
+    margin: 10vw;
+    margin-bottom: 20vw
+}
+
+.projectpage-lists h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem
+}
+
+.projectpage-lists h3,.projectpage-lists li {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 0.9rem
+}
+
+.projectpage-lists li {
+    margin-bottom: 0.25em
+}
+
+@media screen and (orientation: landscape) {
+    .projectpage-lists {
+        margin:0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10vw;
+        width: auto;
+        max-width: 50rem
+    }
+}
+
+.projectpage-text {
+    margin: 0 10vw 10vw 10vw;
+    text-align: left
+}
+
+@media screen and (orientation: landscape) {
+    .projectpage-text {
+        margin:0 auto;
+        margin-bottom: 10vw;
+        font-size: 1.25rem;
+        max-width: 50rem
+    }
+}
+
+.projectpage-text h2 {
+    text-align: left
+}
+
+.case-section {
+    padding-top: 10vw
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10vw !important
+}
+
+@media screen and (orientation: landscape) {
+    .container {
+        width:70vw;
+        justify-content: space-between
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .container-image:nth-child(2) {
+        margin:0 5vw
+    }
+}
+
+.container-image {
+    width: 100%
+}
+
+.half {
+    max-width: 50%;
+    padding-bottom: 10vw !important
+}
+
+@media screen and (orientation: landscape) {
+    .half {
+        max-width:33%
+    }
+}
+
+.text-image {
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+@media screen and (orientation: landscape) {
+    .text-image img,.text-image video {
+        width:75vw
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 992px) {
+    .text-image img,.text-image video {
+        width:auto;
+        max-width: 100%;
+        max-height: 75vh
+    }
+}
+
+.text-image figcaption {
+    margin: 10vw;
+    line-height: 1.5
+}
+
+@media screen and (orientation: landscape) and (min-width: 992px) {
+    .text-image figcaption {
+        flex-direction:row;
+        width: 60%;
+        font-size: 1.25rem
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 992px) {
+    .text-image {
+        flex-direction:row;
+        padding-bottom: 10vw
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 992px) {
+    .text-right {
+        flex-direction:row !important;
+        margin-left: 10vw !important
+    }
+
+    .text-right .container-image {
+        text-align: right
+    }
+
+    .text-right .text {
+        margin: 10vw 15vw 10vw 5vw
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 992px) {
+    .text-left {
+        flex-direction:row-reverse !important;
+        margin-right: 10vw !important
+    }
+
+    .text-left .container-image {
+        text-align: left
+    }
+
+    .text-left .text {
+        margin: 10vw 5vw 10vw 15vw
+    }
+}
+
+.text-center {
+    text-align: center
+}
+
+.scale-trans {
+    overflow: hidden
+}
+
+.shadow {
+    overflow: inherit;
+    max-width: 50vw;
+    margin-bottom: 10vw
+}
+
+@media screen and (orientation: landscape) {
+    .shadow {
+        max-width:initial;
+        margin-bottom: initial
+    }
+}
+
+.shadow img {
+    border-radius: 1vw;
+    box-shadow: 0 2vw 3vw rgba(0,0,0,0.1)
+}
+
+.shadow video {
+    border-radius: 1vw;
+    box-shadow: 0 2vw 3vw rgba(0,0,0,0.1)
+}
+
+.scrollWrapper {
+    width: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden;
+    position: absolute !important;
+    top: 0
+}
+
+#slider-indicator {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 4.5vw;
+    display: flex;
+    align-items: center
+}
+
+@media screen and (orientation: landscape) {
+    #slider-indicator {
+        left:6vw;
+        display: flex
+    }
+}
+
+#slider-indicator_inner {
+    position: relative;
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.7rem;
+    width: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+#slider-indicator_inner_labels {
+    position: absolute;
+    right: calc(100% + 1em);
+    height: 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+    display: none
+}
+
+@media screen and (orientation: landscape) {
+    #slider-indicator_inner_labels {
+        display:block
+    }
+}
+
+#slider-indicator_inner_labels_wrapper {
+    transform: translateY(calc(-100% + 16px))
+}
+
+#slider-indicator_inner_labels_wrapper ul {
+    text-align: right
+}
+
+#slider-indicator_inner_labels_wrapper ul li {
+    margin-bottom: 0
+}
+
+#slider-indicator_inner_labels_wrapper ul li span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom
+}
+
+#slider-indicator_inner_line {
+    width: 1px;
+    height: calc(40vh);
+    background-color: rgba(0,0,0,0.1);
+    position: relative
+}
+
+#slider-indicator_inner_line_marker {
+    transform: translateY(-50%);
+    position: absolute;
+    left: -3px;
+    width: 7px;
+    height: 1px;
+    background-color: #1A1A1A
+}
+
+#slider-indicator_inner_line_dots .slider-indicator_inner_line_dots_dot {
+    transform: scale(0);
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: black;
+    border-radius: 1.5px;
+    left: -1px;
+    transform: translateY(-1.5px);
+    transition: top 0.5s
+}
+
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000
+}
+
+.cursor {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    z-index: 100000;
+    transform: translate(-50%, -50%)
+}
+
+@media screen and (orientation: landscape) {
+    .cursor {
+        display:block
+    }
+}
+
+.cursor svg {
+    transition: transform 0.1s
+}
+
+.cursor svg path {
+    stroke-width: 2;
+    transform-origin: center;
+    transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
+    stroke-dashoffset: 0;
+    transform: scale(1)
+}
+
+.cursor.active {
+    visibility: visible
+}
+
+body.cursoractive {
+    overflow: hidden
+}
+
+@media screen and (orientation: landscape) {
+    body.cursoractive {
+        cursor:none
+    }
+}
+
+@media screen and (orientation: landscape) {
+    a.cursoractive {
+        cursor:none
+    }
+}
+
+.hover svg path {
+    stroke-width: 20;
+    transform: scale(0.25)
+}
+
+.thinking svg path {
+    stroke-width: 2;
+    animation: dash 1s infinite;
+    transform: scale(1.2)
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 126;
+        transform: rotate(180deg)
+    }
+}
+
+*,*:after,*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    overflow: hidden;
+    font-family: warnock-pro, serif;
+    font-size: 15px;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100)
+}
+
+body {
+    height: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    opacity: 0
+}
+
+.barba-container {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100)
+}
+
+.darkBG {
+    background-color: #1A1A1A;
+    color: #F2F2F2
+}
+
+.lightBG {
+    background-color: #F2F2F2;
+    color: #1A1A1A
+}
+
+.dark {
+    color: #F2F2F2
+}
+
+.light {
+    color: #1A1A1A
+}
+
+li {
+    list-style: none
+}
+
+a {
+    color: currentColor;
+    text-decoration: none
+}
+
+p a:after {
+    position: absolute;
+    bottom: 0.2em;
+    left: 0;
+    right: 0;
+    height: 1px;
+    content: '';
+    background-color: black
+}
+
+strong,b {
+    font-weight: 500
+}
+
+img {
+    width: 100%
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    pointer-events: none
+}
+
+.header a {
+    pointer-events: auto
+}
+
+.header .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5%;
+    margin-left: 7%;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: lowercase;
+    color: #1A1A1A
+}
+
+@media screen and (orientation: landscape) {
+    .header .logo {
+        margin:5%;
+        margin-top: 4%
+    }
+}
+
+.header .menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 7% 5%;
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.9rem
+}
+
+@media screen and (orientation: landscape) {
+    .header .menu {
+        top:0;
+        right: 0;
+        left: auto;
+        width: auto;
+        height: 100%;
+        padding: 7% 5%
+    }
+}
+
+.header .menu ul {
+    display: flex;
+    justify-content: space-between
+}
+
+@media screen and (orientation: landscape) {
+    .header .menu ul {
+        flex-direction:column;
+        height: 100%
+    }
+}
+
+.header .menu ul li {
+    text-transform: lowercase;
+    transform: rotate(45deg)
+}
+
+.header .menu ul li span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom
+}
+
+a {
+    color: #1A1A1A
+}
+
+main {
+    height: 100%
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
+    width: 100vw;
+    height: 100vh
+}
+
+.intro-container {
+    width: 10em;
+    max-width: 10em;
+    font-size: calc(2vw + 2rem);
+    line-height: 1.2;
+    position: relative
+}
+
+.intro-container h1,.intro-container p {
+    height: auto;
+    display: inline;
+    text-align: left;
+    position: relative;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-size: calc(2vw + 2rem);
+    z-index: 1;
+    line-height: 1.2
+}
+
+.intro-container p {
+    color: #999
+}
+
+.title-js-positioning {
+    align-items: flex-start;
+    padding-top: calc(50vh - (2vw + 2rem))
+}
+
+.lowercase {
+    text-transform: lowercase
+}
+
+.tags {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    font-size: .75rem;
+    font-weight: 600
+}
+
+.text {
+    line-height: 1.5em
+}
+
+.text p,.text figure,.text ul,.text ol {
+    margin-bottom: 1.5em
+}
+
+.text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem
+}
+
+.text>*:first-child {
+    margin-top: 0
+}
+
+.text a {
+    position: relative;
+    white-space: nowrap;
+    font-weight: 500;
+    z-index: 1;
+    display: inline-block
+}
+
+.text figure {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem
+}
+
+.text img {
+    width: 100%
+}
+
+.words,.dot,.lettering p span,.lettering span,.logo span,.next-project_label span,.forward span,.about header ul li span,.contact li span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom
+}
+
+#timer {
+    margin-top: 0.5em;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    width: calc(4vw + 2rem);
+    height: calc(4vw + 2rem);
+    transform: rotate(90deg)
+}
+
+#timer svg {
+    position: absolute
+}
+
+.scrollbar-track {
+    visibility: hidden
+}

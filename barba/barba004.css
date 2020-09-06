@@ -1,11 +1,46 @@
 /* body {
 	overflow: hidden;
 } */
+/* BOX SIZING FIX -- check*/
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+/* HTML HIDE SCROLLBARS */
+    overflow: hidden;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100)
+}
+
+body {
+    height: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    /* opacity: 0 */
+}
+
+.barba-container {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100)
+}
+
+
+
+
+
 /* ASPECT RATIO */
 .b-img {
     width: calc(65vh*21/29.7);
     height: 65vh;
-    }
+}
 
 /* KILL WEBFLOW BADGE */
 .w-webflow-badge {
