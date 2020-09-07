@@ -1,7 +1,7 @@
 /* body {
 	overflow: hidden;
 } */
-/* BOX SIZING FIX -- check*/
+/* BOX SIZING FIX -- check
 html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
     -moz-box-sizing: inherit;
     box-sizing: inherit;
 }
-
+*/
 /* The trick to viewport units on mobile */
 /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
 .vhfix {
