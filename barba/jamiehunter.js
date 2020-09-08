@@ -1291,6 +1291,7 @@ VIEWS - init or destroy things / or call FUNCTION
       },
       beforeLeave(data){
       },
+      
     },
   ],
 });
