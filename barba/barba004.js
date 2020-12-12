@@ -51,7 +51,7 @@ window.addEventListener('load', function () {
       leave(data) {
         const done = this.async(); // ovo i onComplete:done je dodano
         return gsap.to(data.current.container, {
-          xPercent:-100, duration: 1.3, force3D: true, ease: 'expo.inOut', onComplete:done
+          yPercent:-100, duration: 1.3, force3D: true, ease: 'expo.inOut', onComplete:done
           //opacity: 0
         });
       },
@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
       enter(data) {
         const done = this.async(); // ovo i onComplete:done je dodano
         return gsap.from(data.next.container, {
-        xPercent:100, duration: 1.3,  force3D: true, ease: 'expo.inOut', onComplete:done
+        yPercent:100, duration: 1.3,  force3D: true, ease: 'expo.inOut', onComplete:done
         // opacity: 0
         });
       },
