@@ -366,7 +366,7 @@ BARBA PREFETCH
 */
 
 barba.use(barbaPrefetch);
-
+console.log("Prefetch loaded");
 /*
 ================================================================================
 BARBA INIT 
