@@ -2,6 +2,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 let locoScroll;
 
+/*
+================================================================================
+PRELOADER
+  ================================================================================
+*/
+
+
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
 
@@ -9,6 +16,12 @@ const loader = select('.loaderx');
 const loaderInner = select('.inner-loader');
 const progressBar = select('.progress');
 const loaderMask = select('.loader__mask');
+
+/*
+================================================================================
+IMAGES LOADED
+================================================================================
+*/
 
 function init() {
 
@@ -21,7 +34,6 @@ function init() {
   // make a tween that scales the loader
   const progressTween = gsap.to(progressBar, {paused: true, scaleX: 0, ease: 'none', transformOrigin: 'right'});
 
-  // --- IMAGES LOADED
   // setup variables
   let loadedImageCount = 0,
     imageCount;
@@ -66,7 +78,12 @@ function init() {
 
 init();
 
-// PRELOADER INIT
+
+/*
+================================================================================
+PRELOADER ANIMATIONS & INIT
+================================================================================
+*/
 function initLoader() {
 
   const tlLoaderIn = gsap.timeline({
@@ -114,7 +131,11 @@ function initLoader() {
     .add(tlLoaderOut);
 }
 
-// INIT CONTENT
+/*
+================================================================================
+CONTENT INITIALISATION
+================================================================================
+*/
 function initContent() {
 
   select('body').classList.remove('is-loading');
@@ -125,8 +146,12 @@ console.log("CONTENT FUNCTIONS LOADED");
   //initHeaderTilt();
 
 }
-//
-// LOCOMOTIVESCROLL
+
+/*
+================================================================================
+LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
+================================================================================
+*/
 function initLocomotiveScroll() {
 
 
@@ -164,11 +189,11 @@ function initLocomotiveScroll() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 
-  /*
-  ================================================================================
-  SCROLLTRIGGER TEST
-  ================================================================================
- */
+/*
+================================================================================
+SCROLLTRIGGER TEST
+================================================================================
+*/
   gsap.utils.toArray('.block1').forEach((el, i) => {
     gsap.from(el, {
       scrollTrigger: {
@@ -184,7 +209,11 @@ function initLocomotiveScroll() {
   });
 }
 
-// HOME ANIMATIONS
+/*
+================================================================================
+HOME ANIMATIONS
+================================================================================
+*/
 
 function homeanimations() {
  
@@ -204,10 +233,16 @@ tl
 }        
 
 /*
+================================================================================
 BARBA
+================================================================================
 */
 
-// BARBA PAGE IN
+/*
+================================================================================
+BARBA PAGE IN
+================================================================================
+*/
 function pageTransitionIn({
   container
 }) {
@@ -223,7 +258,11 @@ function pageTransitionIn({
   return tl;
 }
 
-// ---  BARBA PAGE OUT
+/*
+================================================================================
+BARBA PAGE OUT
+================================================================================
+*/
 function pageTransitionOut({
   container
 }) {
@@ -239,7 +278,11 @@ function pageTransitionOut({
   return tl;
 }
 
-// ---  BARBA PAGE TRANS
+/*
+================================================================================
+BARBA HOOKS (GLOBAL?)
+================================================================================
+*/
 function initPageTransitions() {
   // do something before the transition starts
   barba.hooks.before(() => {
@@ -255,7 +298,11 @@ function initPageTransitions() {
     window.scrollTo(0, 0);
   });
 
-// -- BARBA INIT
+/*
+================================================================================
+BARBA INIT
+================================================================================
+*/
   barba.init({
    debug: true,
     transitions: [{once() {
