@@ -383,7 +383,9 @@ barba.init({
         console.log("ABOUT");
      },
 
-    name: 'home',
+     leave: ({current}) => aboutanimations(current.container),
+    
+     name: 'home',
     to: {
       namespace: ['home']
     },
@@ -391,8 +393,6 @@ barba.init({
        // do something once on the initial page load
        initLoader();
         homeanimations();
-      
-       
         console.log("ONCE");
      },
 
