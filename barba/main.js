@@ -421,17 +421,18 @@ BARBA TRANSITIONS
 
      beforeEnter({next}) {
        console.log("BEFORE ENTER");
-   //   ScrollTrigger.refresh();
+   //   
   // destroy all ScrollTriggers
-     // ScrollTrigger.getAll().forEach(t => t.kill());
-     //  console.log("scrolltrigger killed");
+      ScrollTrigger.getAll().forEach(t => t.kill());
+       console.log("scrolltrigger killed");
      },
      
       afterEnter({next}) {
+        
        homeanimations();
 console.log("HOME ANIMATIONS LOADED");
-
-       console.log("AFTER ENTER");
+ScrollTrigger.refresh();
+       console.log("SCROLLTRIGGER REFRESH");
 
      },
 
