@@ -198,7 +198,7 @@ SCROLLTRIGGER TEST
     gsap.from(el, {
       scrollTrigger: {
         trigger: el,
-        markers: true,
+       // markers: true,
         scroller: '[data-scroll-container]',
         start: 'top bottom',
         end: "top top",
