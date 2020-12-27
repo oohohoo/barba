@@ -373,7 +373,7 @@ BARBA VIEWS
 ================================================================================
 */  
   views: [{
-    namespace: ['about']
+    namespace: 'about',
     beforeEnter(){
       console.log("Hello world before enter views!");
 
