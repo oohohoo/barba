@@ -401,6 +401,7 @@ barba.init({
        // animate loading screen in
        await pageTransitionIn(current);
        console.log("LEAVE");
+       aboutanimations();
      },
      enter({next}) {
        // animate loading screen away
@@ -419,7 +420,7 @@ barba.init({
       afterEnter({next}) {
        homeanimations();
 console.log("HOME ANIMATIONS LOADED");
-aboutanimations();
+
        console.log("AFTER ENTER");
 
      },
