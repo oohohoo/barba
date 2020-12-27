@@ -375,6 +375,7 @@ BARBA VIEWS
   views: [{
     namespace: 'about',
     beforeEnter(){
+      ScrollTrigger.refresh();
       console.log("Hello world before enter views!");
 
     } 
