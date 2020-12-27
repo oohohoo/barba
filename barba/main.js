@@ -366,7 +366,12 @@ BARBA
 */
 barba.init({
   debug: true,
-   transitions: [{once() {
+   transitions: [
+     
+    {
+    
+    name: 'home',
+    once() {
        // do something once on the initial page load
        initLoader();
         homeanimations();
@@ -374,6 +379,17 @@ barba.init({
        
         console.log("ONCE");
      },
+
+     name: 'about',
+     once() {
+        // do something once on the initial page load
+        initLoader();
+        aboutanimations()
+       
+        
+         console.log("ABOUT");
+      },
+
      async leave({current}) {
        // animate loading screen in
        await pageTransitionIn(current);
@@ -398,7 +414,11 @@ barba.init({
 console.log("HOME ANIMATIONS LOADED");
        console.log("AFTER ENTER");
 
-     }
+     },
+
+   
+
+
 
    }],
 
