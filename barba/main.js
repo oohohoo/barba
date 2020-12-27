@@ -164,7 +164,7 @@ function initLocomotiveScroll() {
     getDirection: true,
     scrollFromAnywhere: true,
     touchMultiplier: 4,
-    scrollbarContainer: document.querySelector('#primary'),
+    scrollbarContainer: document.querySelector('#main'),
     smartphone: {
           smooth: true,
       },
