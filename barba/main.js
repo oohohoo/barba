@@ -369,7 +369,7 @@ function initPageTransitions() {
    barba.hooks.afterEnter(() => {
     initLocomotiveScroll();
     console.log("novi lokomotiv"); 
-      console.log("afterenteeeer");
+   
       
   });
  
