@@ -384,13 +384,9 @@ function initPageTransitions() {
    barba.hooks.afterEnter(() => {
  
     //ScrollTrigger.update();
-    console.log("SCROLLTRIGGER REFRESHED");
     strigtest();
-    // initLocomotiveScroll();
-  
-    console.log("SCROLLTRIGGER ANIMACIJE"); 
-   
-      
+    console.log("SCROLLTRIGGER REFRESHED");
+    
   });
  
 
@@ -463,14 +459,7 @@ BARBA TRANSITIONS
      //  console.log("scrolltrigger killed");
      },
      
-      afterEnter({next}) {
-       // initLoader();
-       
-console.log("HOME ANIMATIONS LOADED");
-//ScrollTrigger.refresh();
-    //   console.log("SCROLLTRIGGER REFRESH");
-
-     },
+  
 
    
 
