@@ -280,14 +280,14 @@ function aboutanimations() {
   const tl = gsap.timeline({
   defaults: {
   
-    duration: 0.4, ease: 'power4.out'
+    duration: 5, ease: 'power4.out'
   }
   });
   
   tl
-     .from(mask, {rotate:-23},0)
-     .from(homeimg, {rotate:45},0)
-     .from(text, {rotate:360},0);
+     .to(mask, {rotate:-23},0)
+     .to(homeimg, {rotate:45},0)
+     .to(text, {rotate:360},0);
      console.log("leave animation triggered");
      return tl
   }   
@@ -381,6 +381,11 @@ BARBA VIEWS
 
 
 }],
+/*
+================================================================================
+BARBA TRANSITIONS
+================================================================================
+*/  
    transitions: [
          {
     // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
