@@ -371,6 +371,7 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
         window.scrollTo(0, 0);
+        strigtest();
    
   });
    //kill scrolltrigger
@@ -383,7 +384,7 @@ function initPageTransitions() {
    barba.hooks.afterEnter(() => {
  
     //ScrollTrigger.update();
-    strigtest();
+    
     console.log("SCROLLTRIGGER REFRESHED");
     
   });
@@ -433,7 +434,7 @@ BARBA TRANSITIONS
     once() {
        // do something once on the initial page load
        initLoader();
-       strigtest();
+     
         //homeanimations();
         console.log("ONCE");
      },
