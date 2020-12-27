@@ -363,7 +363,7 @@ function initPageTransitions() {
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
     ScrollTrigger.getAll().forEach(t => t.kill());
-      console.log("KILLSCROLLTRIGGER!!!");
+      console.log("KRUMBAMMAMAMA!!!");
       
   });
   //init scrolltrigger
