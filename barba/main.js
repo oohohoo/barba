@@ -357,7 +357,8 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
     window.scrollTo(0, 0);
-    initLocomotiveScroll(); 
+    initLocomotiveScroll();
+    console.log("novi lokomotiv"); 
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
