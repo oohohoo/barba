@@ -370,25 +370,8 @@ barba.init({
      
     {
     // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
-    name: 'about',
-    to: {
-      namespace: ['about']
-    },
-    once() {
-       // do something once on the initial page load
-       initLoader();
-       
-      
-       
-        console.log("ABOUT");
-     },
-
-     leave: ({current}) => aboutanimations(current.container),
     
-     name: 'home',
-    to: {
-      namespace: ['home']
-    },
+
     once() {
        // do something once on the initial page load
        initLoader();
