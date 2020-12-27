@@ -361,28 +361,14 @@ function initPageTransitions() {
 
 /*
 ================================================================================
-BARBA INIT 
+BARBA 
 ================================================================================
 */
 barba.init({
   debug: true,
-
-/*
-================================================================================
-BARBA VIEWS
-================================================================================
-*/  
-  views: [{
-    namespace: ['about']
-    beforeEnter(){
-      console.log("Hello world before enter views!");
-
-    } 
-
-
-}],
    transitions: [
-         {
+     
+    {
     // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
     
 
