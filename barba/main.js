@@ -291,7 +291,7 @@ function aboutanimations() {
      .to(mask, {rotate:-23},0)
      .to(homeimg, {rotate:45},0)
      .to(text, {rotate:360},0);
-     console.log("leave animation triggered");
+     console.log("about animation triggered");
      return tl
   }   
 
@@ -306,7 +306,7 @@ triggers.forEach( trigger => {
 	trigger.kill();
 });
 }
-
+console.log("kill scrolltrigger function");
 /*
 ================================================================================
 BARBA
@@ -457,7 +457,7 @@ BARBA TRANSITIONS
    //   
   // destroy all ScrollTriggers
      // ScrollTrigger.getAll().forEach(t => t.kill());
-       console.log("scrolltrigger killed");
+     //  console.log("scrolltrigger killed");
      },
      
       afterEnter({next}) {
