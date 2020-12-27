@@ -200,7 +200,7 @@ gsap.utils.toArray('.block1').forEach((el, i) => {
   gsap.from(el, {
     scrollTrigger: {
       trigger: el,
-      markers: true,
+     // markers: true,
       scroller: '[data-scroll-container]',
       start: 'top bottom',
       end: "top top",
