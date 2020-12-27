@@ -426,7 +426,6 @@ BARBA TRANSITIONS
 
 
      async leave({current}) {
-      data.current.container.remove();
        // animate loading screen in
        await pageTransitionIn(current);
        console.log("LEAVE");
@@ -438,8 +437,7 @@ BARBA TRANSITIONS
          console.log("NEXT");
      },
 
-     async beforeEnter({next}) {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+     beforeEnter({next}) {
        console.log("BEFORE ENTER");
    //   
   // destroy all ScrollTriggers
