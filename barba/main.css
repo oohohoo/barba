@@ -15,9 +15,9 @@ html {
 
 /* LOADER 
 hide page content by default */
-#main {
+/*#main {
  display: none; 
-}
+} */
 
 .is-loading {
   background-color: var(--bcg-loaderblue);
