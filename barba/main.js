@@ -221,7 +221,8 @@ function homeanimations() {
  
 const mask = select('.b-img');
 const text = select('.b-header');
-
+const homeimg = select('.homeimg');
+homeimg
 const tl = gsap.timeline({
 defaults: {
 
@@ -230,7 +231,8 @@ defaults: {
 });
 
 tl
-   .from(mask, {rotate:45});
+   .from(mask, {xPercent:-101})
+   .from(homeimg, {xPercent:101});
    console.log("image mask shit");
    return tl
 }        
