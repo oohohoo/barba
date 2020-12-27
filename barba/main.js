@@ -383,6 +383,10 @@ BARBA VIEWS
   views: [{
     namespace: 'about',
     beforeEnter(){
+      let triggers = ScrollTrigger.getAll();
+triggers.forEach( trigger => {			
+	trigger.kill();
+});
         aboutanimations();
         console.log("About anomations tregered!");
     } 
@@ -411,7 +415,7 @@ BARBA TRANSITIONS
        // animate loading screen in
        await pageTransitionIn(current);
        console.log("LEAVE");
-       aboutanimations();
+       
      },
      enter({next}) {
        // animate loading screen away
@@ -423,7 +427,7 @@ BARBA TRANSITIONS
        console.log("BEFORE ENTER");
    //   
   // destroy all ScrollTriggers
-      ScrollTrigger.getAll().forEach(t => t.kill());
+     // ScrollTrigger.getAll().forEach(t => t.kill());
        console.log("scrolltrigger killed");
      },
      
