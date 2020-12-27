@@ -1,4 +1,5 @@
 
+gsap.registerPlugin(ScrollTrigger);
 
 let locoScroll;
 
@@ -155,7 +156,7 @@ LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
 function initLocomotiveScroll() {
-  gsap.registerPlugin(ScrollTrigger);
+
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-scroll"),
