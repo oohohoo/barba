@@ -378,7 +378,7 @@ function initPageTransitions() {
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-    // initLocomotiveScroll();
+     initLocomotiveScroll();
   
     console.log("---"); 
    
