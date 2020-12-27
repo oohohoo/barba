@@ -383,7 +383,7 @@ function initPageTransitions() {
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
  
-    ScrollTrigger.update();
+    //ScrollTrigger.update();
     console.log("SCROLLTRIGGER REFRESHED");
     scrolltriggertest();
     // initLocomotiveScroll();
