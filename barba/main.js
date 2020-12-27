@@ -34,6 +34,7 @@ function init() {
   // make a tween that scales the loader
   const progressTween = gsap.to(progressBar, {paused: true, scaleX: 0, ease: 'none', transformOrigin: 'right'});
 
+  // --- IMAGES LOADED
   // setup variables
   let loadedImageCount = 0,
     imageCount;
@@ -131,6 +132,7 @@ function initLoader() {
     .add(tlLoaderOut);
 }
 
+
 /*
 ================================================================================
 CONTENT INITIALISATION
@@ -194,19 +196,19 @@ function initLocomotiveScroll() {
 SCROLLTRIGGER TEST
 ================================================================================
 */
-  gsap.utils.toArray('.block1').forEach((el, i) => {
-    gsap.from(el, {
-      scrollTrigger: {
-        trigger: el,
-        markers: true,
-        scroller: '[data-scroll-container]',
-        start: 'top bottom',
-        end: "top top",
-      },
-      y: 100,
-      opacity: 0
-    })
-  });
+gsap.utils.toArray('.block1').forEach((el, i) => {
+  gsap.from(el, {
+    scrollTrigger: {
+      trigger: el,
+      markers: true,
+      scroller: '[data-scroll-container]',
+      start: 'top bottom',
+      end: "top top",
+    },
+    y: 100,
+    opacity: 0
+  })
+});
 }
 
 /*
@@ -303,102 +305,102 @@ function initPageTransitions() {
 BARBA 
 ================================================================================
 */
-  barba.init({
-   debug: true,
-    transitions: [{once() {
-        // do something once on the initial page load
-        initLoader();
-     	//	homeanimations();
-       
-        
-         console.log("MAKNI FOTKU");
-      },
-      async leave({current}) {
-        // animate loading screen in
-        await pageTransitionIn(current);
-        console.log("LEAVE");
-      },
-      enter({next}) {
-        // animate loading screen away
-        pageTransitionOut(next);
-          console.log("NEXT");
-      },
-
-      beforeEnter({next}) {
-        console.log("BEFORE ENTER");
-    //   ScrollTrigger.refresh();
-   // destroy all ScrollTriggers
-      // ScrollTrigger.getAll().forEach(t => t.kill());
-      //  console.log("scrolltrigger killed");
-      },
-      
-       afterEnter({next}) {
+barba.init({
+  debug: true,
+   transitions: [{once() {
+       // do something once on the initial page load
+       initLoader();
         homeanimations();
-        console.log("HOME ANIMATIONS LOADED");
-        console.log("AFTER ENTER");
+      
+       
+        console.log("MAKNI FOTKU");
+     },
+     async leave({current}) {
+       // animate loading screen in
+       await pageTransitionIn(current);
+       console.log("LEAVE");
+     },
+     enter({next}) {
+       // animate loading screen away
+       pageTransitionOut(next);
+         console.log("NEXT");
+     },
 
-      }
+     beforeEnter({next}) {
+       console.log("BEFORE ENTER");
+   //   ScrollTrigger.refresh();
+  // destroy all ScrollTriggers
+     // ScrollTrigger.getAll().forEach(t => t.kill());
+     //  console.log("scrolltrigger killed");
+     },
+     
+      afterEnter({next}) {
+       homeanimations();
+console.log("HOME ANIMATIONS LOADED");
+       console.log("AFTER ENTER");
 
-    }],
+     }
+
+   }],
 
  /*
  ================================================================================
  PREVENT / CLICKS DURRING TRANSITION AND CURRENT LINK + SCROLL TO TOP
  ================================================================================
  */
-    prevent: ({
-      event,
-      href
-    }) => {
-      if (event.type === 'click') {
+prevent: ({
+  event,
+  href
+}) => {
+  if (event.type === 'click') {
 
-        // prevent the user to reload the page if the location is the same
-        if (href === window.location.href) {
-          event.preventDefault();
-          event.stopPropagation();
-          // automatically scroll to the top of the page on same location
-       //   locoScroll.scrollTo('#top')
-          return true;
-        }
-        if (barba.transitions.isRunning) {
-          event.preventDefault();
-          event.stopPropagation();
-
-          return true;
-        }
-      }
+    // prevent the user to reload the page if the location is the same
+    if (href === window.location.href) {
+      event.preventDefault();
+      event.stopPropagation();
+      // automatically scroll to the top of the page on same location
+   //   locoScroll.scrollTo('#top')
+      return true;
     }
-  });
+    if (barba.transitions.isRunning) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      return true;
+    }
+  }
+}
+});
 /*
 ================================================================================
 UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
 ================================================================================
 */
-  function updateMenu(url) {
-    const active = document.querySelector('.g-header .nav-link.active');
+function updateMenu(url) {
+  const active = document.querySelector('.g-header .nav-link.active');
 
-    if (active !== null) {
-      active.classList.remove('active');
-    }
-
-    const links = Array.from(document.querySelectorAll('.g-header .nav-link'));
-
-    const index = links.map(link => link.href).findIndex((href) => {
-      return url.indexOf(href) !== -1;
-    });
-
-    if (index !== -1) {
-      links[index].classList.add('active');
-    }
+  if (active !== null) {
+    active.classList.remove('active');
   }
 
-  // hooks that will be triggered before any page transition
-  // meaning your menu active class will be updated before going to the next page
-  barba.hooks.before((data) => {
-    updateMenu(data.trigger.href);
+  const links = Array.from(document.querySelectorAll('.g-header .nav-link'));
+
+  const index = links.map(link => link.href).findIndex((href) => {
+    return url.indexOf(href) !== -1;
   });
 
-  function init() {
-    initLoader();
+  if (index !== -1) {
+    links[index].classList.add('active');
   }
+}
+
+// hooks that will be triggered before any page transition
+// meaning your menu active class will be updated before going to the next page
+barba.hooks.before((data) => {
+  updateMenu(data.trigger.href);
+});
+
+function init() {
+  initLoader();
+}
 }
