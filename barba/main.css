@@ -31,7 +31,7 @@ html {
   
     --easing: cubic-bezier(0.5, 0.7, 0.4, 1);
   }
-  
+
 
 .is-transitioning {
   pointer-events: none;
@@ -177,3 +177,22 @@ main {
 }
 */
 
+/* The trick to viewport units on mobile */
+/* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+.vhfix {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100)
+}
+
+
+/* ASPECT RATIO */
+.b-img {
+    width: calc(65vh*21/29.7);
+    height: 65vh;
+}
+
+/* KILL WEBFLOW BADGE */
+.w-webflow-badge {
+    position: relative !important;
+    right: 1000px !important;
+}
