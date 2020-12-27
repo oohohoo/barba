@@ -381,7 +381,7 @@ function initPageTransitions() {
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-    ScrollTrigger.refresh();
+    ScrollTrigger.update();
     console.log("SCROLLTRIGGER REFRESHED");
     // initLocomotiveScroll();
   
