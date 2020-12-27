@@ -369,7 +369,17 @@ barba.init({
    transitions: [
      
     {
-    
+    // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
+    name: 'about',
+    once() {
+       // do something once on the initial page load
+       initLoader();
+       aboutanimations()
+      
+       
+        console.log("ABOUT");
+     },
+     
     name: 'home',
     once() {
        // do something once on the initial page load
@@ -379,16 +389,7 @@ barba.init({
        
         console.log("ONCE");
      },
-// ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
-     name: 'about',
-     once() {
-        // do something once on the initial page load
-        initLoader();
-        aboutanimations()
-       
-        
-         console.log("ABOUT");
-      },
+
 
      async leave({current}) {
        // animate loading screen in
