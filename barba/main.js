@@ -362,13 +362,13 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-    ScrollTrigger.getAll().forEach(t => t.kill());
-      console.log("KRUMBAMMAMAMA!!!");
+   // ScrollTrigger.getAll().forEach(t => t.kill());
+     // console.log("KRUMBAMMAMAMA!!!");
       
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-    ScrollTrigger.refresh(); 
+   // ScrollTrigger.refresh(); 
   
     console.log("---"); 
    
@@ -426,6 +426,7 @@ BARBA TRANSITIONS
 
 
      async leave({current}) {
+      data.current.container.remove();
        // animate loading screen in
        await pageTransitionIn(current);
        console.log("LEAVE");
@@ -437,7 +438,8 @@ BARBA TRANSITIONS
          console.log("NEXT");
      },
 
-     beforeEnter({next}) {
+     async beforeEnter({next}) {
+      ScrollTrigger.getAll().forEach(t => t.kill());
        console.log("BEFORE ENTER");
    //   
   // destroy all ScrollTriggers
