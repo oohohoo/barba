@@ -213,7 +213,7 @@ gsap.utils.toArray('.block1').forEach((el, i) => {
 
 /*
 ================================================================================
-HOME ANIMATIONS
+HOME ENTER ANIMATIONS
 ================================================================================
 */
 
@@ -239,7 +239,7 @@ tl
 
 /*
 ================================================================================
-LEAVE ANIMATIONS
+HOME LEAVE ANIMATIONS
 ================================================================================
 */
 
@@ -263,6 +263,35 @@ function leaveanimations() {
      console.log("leave animation triggered");
      return tl
   }   
+
+
+  /*
+================================================================================
+ABOUT ANIMATIONS
+================================================================================
+*/
+
+function aboutanimations() {
+ 
+  const mask = select('.b-img');
+  const text = select('.b-header');
+  const homeimg = select('.homeimg');
+  homeimg
+  const tl = gsap.timeline({
+  defaults: {
+  
+    duration: 0.4, ease: 'power4.out'
+  }
+  });
+  
+  tl
+     .from(mask, {rotate:-23},0)
+     .from(homeimg, {rotate:45},0)
+     .from(text, {rotate:360},0);
+     console.log("leave animation triggered");
+     return tl
+  }   
+
 
 /*
 ================================================================================
@@ -343,7 +372,7 @@ barba.init({
         homeanimations();
       
        
-        console.log("MAKNI FOTKU");
+        console.log("ONCE");
      },
      async leave({current}) {
        // animate loading screen in
