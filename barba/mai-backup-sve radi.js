@@ -1,3 +1,4 @@
+
 gsap.registerPlugin(ScrollTrigger);
 
 let locoScroll;
@@ -186,10 +187,12 @@ function initLocomotiveScroll() {
   });
 
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+console.log("refreshed scrolltrigger!");
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
+
+  
 
 /*
 ================================================================================
@@ -265,7 +268,7 @@ function leaveanimations() {
   }   
 
 
-  /*
+/*
 ================================================================================
 ABOUT ANIMATIONS
 ================================================================================
@@ -280,18 +283,29 @@ function aboutanimations() {
   const tl = gsap.timeline({
   defaults: {
   
-    duration: 0.4, ease: 'power4.out'
+    duration: 5, ease: 'power4.out'
   }
   });
   
   tl
-     .from(mask, {rotate:-23},0)
-     .from(homeimg, {rotate:45},0)
-     .from(text, {rotate:360},0);
+     .to(mask, {rotate:-23},0)
+     .to(homeimg, {rotate:45},0)
+     .to(text, {rotate:360},0);
      console.log("leave animation triggered");
      return tl
   }   
 
+/*
+================================================================================
+KILL SCROLLTRIGGER FUNCTION
+================================================================================
+*/
+function killscrolltrigger() {
+let triggers = ScrollTrigger.getAll();
+triggers.forEach( trigger => {			
+	trigger.kill();
+});
+}
 
 /*
 ================================================================================
@@ -356,19 +370,63 @@ function initPageTransitions() {
 
   // scroll to the top of the page
   barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
+   
   });
+   //kill scrolltrigger
+   barba.hooks.beforeEnter(() => {
+   // killscrolltrigger();
+    //  console.log("KILLSCROLLTRIGGER!!!");
+      
+  });
+  //init scrolltrigger
+   barba.hooks.afterEnter(() => {
+    // initLocomotiveScroll();
+  
+    console.log("---"); 
+   
+      
+  });
+ 
 
 /*
 ================================================================================
-BARBA 
+BARBA PREFETCH
+================================================================================
+*/
+
+barba.use(barbaPrefetch);
+console.log("Prefetch loaded");
+/*
+================================================================================
+BARBA INIT 
 ================================================================================
 */
 barba.init({
   debug: true,
+  prefetch: true,
+/*
+================================================================================
+BARBA VIEWS
+================================================================================
+*/  
+  views: [{
+    namespace: 'about',
+    beforeEnter(){
+  
+        aboutanimations();
+        console.log("About anomations tregered!");
+    } 
+
+
+}],
+/*
+================================================================================
+BARBA TRANSITIONS
+================================================================================
+*/  
    transitions: [
-     
-    {
+         {
     // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
     
 
@@ -384,7 +442,7 @@ barba.init({
        // animate loading screen in
        await pageTransitionIn(current);
        console.log("LEAVE");
-       aboutanimations();
+       
      },
      enter({next}) {
        // animate loading screen away
@@ -394,17 +452,18 @@ barba.init({
 
      beforeEnter({next}) {
        console.log("BEFORE ENTER");
-   //   ScrollTrigger.refresh();
+   //   
   // destroy all ScrollTriggers
      // ScrollTrigger.getAll().forEach(t => t.kill());
-     //  console.log("scrolltrigger killed");
+       console.log("scrolltrigger killed");
      },
      
       afterEnter({next}) {
-       homeanimations();
+       // initLoader();
+       
 console.log("HOME ANIMATIONS LOADED");
-
-       console.log("AFTER ENTER");
+//ScrollTrigger.refresh();
+    //   console.log("SCROLLTRIGGER REFRESH");
 
      },
 
