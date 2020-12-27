@@ -226,7 +226,7 @@ homeimg
 const tl = gsap.timeline({
 defaults: {
 
-	duration: 3, ease: 'power4.out'
+	duration: 0.4, ease: 'power4.out'
 }
 });
 
