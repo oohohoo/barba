@@ -96,7 +96,7 @@ html.has-scroll-smooth {
     background-color: red;
     opacity: 0.5;
     width: 7px;
-    //border-radius: 10px;
+    /* border-radius: 10px; */
     margin: 2px;
     cursor: -webkit-grab;
     cursor: grab; }
