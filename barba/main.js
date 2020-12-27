@@ -415,7 +415,6 @@ BARBA VIEWS
     namespace: 'home',
     beforeEnter(){
         strigtest();
-        aboutanimations();
         console.log("home EEEEE tregered!");
     } 
 
