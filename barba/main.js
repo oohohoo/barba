@@ -358,6 +358,11 @@ function initPageTransitions() {
   barba.hooks.enter(() => {
     window.scrollTo(0, 0);
   });
+   //kill scrolltrigger
+   barba.hooks.beforeEnter(() => {
+    ScrollTrigger.getAll().forEach(t => t.kill());
+      console.log("scrolltrigger killed");
+  });
 
 /*
 ================================================================================
@@ -383,10 +388,7 @@ BARBA VIEWS
   views: [{
     namespace: 'about',
     beforeEnter(){
-      let triggers = ScrollTrigger.getAll();
-triggers.forEach( trigger => {			
-	trigger.kill();
-});
+  
         aboutanimations();
         console.log("About anomations tregered!");
     } 
