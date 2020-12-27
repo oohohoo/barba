@@ -265,7 +265,7 @@ function leaveanimations() {
   }   
 
 
-  /*
+/*
 ================================================================================
 ABOUT ANIMATIONS
 ================================================================================
@@ -292,6 +292,17 @@ function aboutanimations() {
      return tl
   }   
 
+/*
+================================================================================
+KILL SCROLLTRIGGER FUNCTION
+================================================================================
+*/
+function killscrolltrigger() {
+let triggers = ScrollTrigger.getAll();
+triggers.forEach( trigger => {			
+	trigger.kill();
+});
+}
 
 /*
 ================================================================================
@@ -356,21 +367,20 @@ function initPageTransitions() {
 
   // scroll to the top of the page
   barba.hooks.enter(() => {
-    
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
    
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-    ScrollTrigger.getAll().forEach(t => t.kill());
-      console.log("scrolltrigger killed");
+    killscrolltrigger();
+      console.log("KILLSCROLLTRIGGER!!!");
       
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
     // initLocomotiveScroll();
-    gsap.registerPlugin(ScrollTrigger);
-    console.log("novi lokomotiv"); 
+  
+    console.log("---"); 
    
       
   });
