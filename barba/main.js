@@ -231,8 +231,8 @@ defaults: {
 });
 
 tl
-   .from(mask, {xPercent:-101})
-   .from(homeimg, {xPercent:101});
+   .from(mask, {xPercent:-101},0)
+   .from(homeimg, {xPercent:101},0);
    console.log("image mask shit");
    return tl
 }        
