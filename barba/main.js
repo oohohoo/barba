@@ -374,7 +374,7 @@ BARBA INIT
 */
 barba.init({
   debug: true,
-
+  prefetch: true,
 /*
 ================================================================================
 BARBA VIEWS
