@@ -379,7 +379,7 @@ barba.init({
        
         console.log("ONCE");
      },
-
+// ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
      name: 'about',
      once() {
         // do something once on the initial page load
