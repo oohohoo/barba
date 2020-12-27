@@ -356,6 +356,7 @@ function initPageTransitions() {
 
   // scroll to the top of the page
   barba.hooks.enter(() => {
+    
     window.scrollTo(0, 0);
    
   });
@@ -365,9 +366,10 @@ function initPageTransitions() {
       console.log("scrolltrigger killed");
       
   });
-  //kill scrolltrigger
+  //init scrolltrigger
    barba.hooks.afterEnter(() => {
     // initLocomotiveScroll();
+    gsap.registerPlugin(ScrollTrigger);
     console.log("novi lokomotiv"); 
    
       
