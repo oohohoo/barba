@@ -357,12 +357,13 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
     window.scrollTo(0, 0);
+    initLocomotiveScroll(); 
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
     ScrollTrigger.getAll().forEach(t => t.kill());
       console.log("scrolltrigger killed");
-      initContent();
+      
   });
 
 /*
