@@ -5,7 +5,7 @@ let locoScroll;
 /*
 ================================================================================
 PRELOADER
-  ================================================================================
+================================================================================
 */
 
 
@@ -308,7 +308,7 @@ BARBA
     transitions: [{once() {
         // do something once on the initial page load
         initLoader();
-     		homeanimations();
+     	//	homeanimations();
        
         
          console.log("MAKNI FOTKU");
@@ -334,7 +334,7 @@ BARBA
       
        afterEnter({next}) {
         homeanimations();
-console.log("HOME ANIMATIONS LOADED");
+        console.log("HOME ANIMATIONS LOADED");
         console.log("AFTER ENTER");
 
       }
