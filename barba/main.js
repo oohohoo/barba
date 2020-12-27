@@ -372,13 +372,13 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-    killscrolltrigger();
-      console.log("KILLSCROLLTRIGGER!!!");
+   // killscrolltrigger();
+    //  console.log("KILLSCROLLTRIGGER!!!");
       
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-     initLocomotiveScroll();
+    // initLocomotiveScroll();
   
     console.log("---"); 
    
