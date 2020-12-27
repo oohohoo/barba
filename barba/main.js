@@ -205,7 +205,7 @@ gsap.utils.toArray('.block1').forEach((el, i) => {
     scrollTrigger: {
       trigger: el,
      // markers: true,
-      scroller: '[data-scroll-container]',
+      scroller: ".smooth-scroll",
       start: 'top bottom',
       end: "top top",
     },
@@ -307,7 +307,6 @@ triggers.forEach( trigger => {
 	trigger.kill();
 });
 }
-console.log("kill scrolltrigger function");
 /*
 ================================================================================
 BARBA
