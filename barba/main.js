@@ -193,12 +193,13 @@ console.log("refreshed scrolltrigger!");
   ScrollTrigger.refresh();
 
   
-
+ 
 /*
 ================================================================================
 SCROLLTRIGGER TEST
 ================================================================================
 */
+function scrolltriggertest() {
 gsap.utils.toArray('.block1').forEach((el, i) => {
   gsap.from(el, {
     scrollTrigger: {
@@ -213,7 +214,7 @@ gsap.utils.toArray('.block1').forEach((el, i) => {
   })
 });
 }
-
+}
 /*
 ================================================================================
 HOME ENTER ANIMATIONS
@@ -381,11 +382,13 @@ function initPageTransitions() {
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
+ 
     ScrollTrigger.update();
     console.log("SCROLLTRIGGER REFRESHED");
+    scrolltriggertest();
     // initLocomotiveScroll();
   
-    console.log("---"); 
+    console.log("SCROLLTRIGGER ANIMACIJE UČITANE"); 
    
       
   });
