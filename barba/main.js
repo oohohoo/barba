@@ -292,7 +292,17 @@ function aboutanimations() {
      return tl
   }   
 
-
+/*
+================================================================================
+KILL SCROLLTRIGGER FUNCTION
+================================================================================
+*/
+function killscrolltrigger() {
+let triggers = ScrollTrigger.getAll();
+triggers.forEach( trigger => {			
+	trigger.kill();
+});
+}
 
 /*
 ================================================================================
@@ -362,13 +372,13 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-   // ScrollTrigger.getAll().forEach(t => t.kill());
-     // console.log("KRUMBAMMAMAMA!!!");
+    killscrolltrigger();
+      console.log("KILLSCROLLTRIGGER!!!");
       
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-   // ScrollTrigger.refresh(); 
+     initLocomotiveScroll();
   
     console.log("---"); 
    
