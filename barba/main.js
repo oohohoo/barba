@@ -198,7 +198,7 @@ SCROLLTRIGGER TEST
     gsap.from(el, {
       scrollTrigger: {
         trigger: el,
-       // markers: true,
+        markers: true,
         scroller: '[data-scroll-container]',
         start: 'top bottom',
         end: "top top",
@@ -300,10 +300,10 @@ function initPageTransitions() {
 
 /*
 ================================================================================
-BARBA INIT
+BARBA 
 ================================================================================
 */
-barba.init({
+  barba.init({
    debug: true,
     transitions: [{once() {
         // do something once on the initial page load
@@ -326,7 +326,7 @@ barba.init({
 
       beforeEnter({next}) {
         console.log("BEFORE ENTER");
-       ScrollTrigger.refresh();
+    //   ScrollTrigger.refresh();
    // destroy all ScrollTriggers
       // ScrollTrigger.getAll().forEach(t => t.kill());
       //  console.log("scrolltrigger killed");
@@ -334,7 +334,7 @@ barba.init({
       
        afterEnter({next}) {
         homeanimations();
-        console.log("HOME ANIMATIONS LOADED");
+console.log("HOME ANIMATIONS LOADED");
         console.log("AFTER ENTER");
 
       }
