@@ -366,6 +366,13 @@ function initPageTransitions() {
       console.log("scrolltrigger killed");
       
   });
+  //kill scrolltrigger
+   barba.hooks.afterEnter(() => {
+    window.scrollTo(0, 500);
+      console.log("afterenteeeer");
+      
+  });
+ 
 
 /*
 ================================================================================
