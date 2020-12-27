@@ -292,17 +292,7 @@ function aboutanimations() {
      return tl
   }   
 
-/*
-================================================================================
-KILL SCROLLTRIGGER FUNCTION
-================================================================================
-*/
-function killscrolltrigger() {
-let triggers = ScrollTrigger.getAll();
-triggers.forEach( trigger => {			
-	trigger.kill();
-});
-}
+
 
 /*
 ================================================================================
@@ -372,7 +362,7 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-    killscrolltrigger();
+    ScrollTrigger.getAll().forEach(t => t.kill());
       console.log("KILLSCROLLTRIGGER!!!");
       
   });
