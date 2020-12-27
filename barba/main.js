@@ -413,7 +413,7 @@ BARBA VIEWS
   views: [{
     namespace: 'about',
     beforeEnter(){
-  
+        strigtest();
         aboutanimations();
         console.log("About anomations tregered!");
     } 
