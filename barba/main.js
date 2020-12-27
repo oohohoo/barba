@@ -224,7 +224,8 @@ const text = select('.b-header');
 
 const tl = gsap.timeline({
 defaults: {
-	duration: 0.9, ease: 'power4.out'
+
+	duration: 0.9, delay:1, ease: 'power4.out'
 }
 });
 
