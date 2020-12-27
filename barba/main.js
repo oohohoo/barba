@@ -239,6 +239,33 @@ tl
 
 /*
 ================================================================================
+LEAVE ANIMATIONS
+================================================================================
+*/
+
+function leaveanimations() {
+ 
+  const mask = select('.b-img');
+  const text = select('.b-header');
+  const homeimg = select('.homeimg');
+  homeimg
+  const tl = gsap.timeline({
+  defaults: {
+  
+    duration: 0.4, ease: 'power4.out'
+  }
+  });
+  
+  tl
+     .from(mask, {xPercent:101},0)
+     .from(homeimg, {xPercent:-101},0)
+     .from(text, {rotate:360},0);
+     console.log("leave animation triggered");
+     return tl
+  }   
+
+/*
+================================================================================
 BARBA
 ================================================================================
 */
