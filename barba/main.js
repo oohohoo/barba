@@ -367,7 +367,7 @@ function initPageTransitions() {
   });
   //kill scrolltrigger
    barba.hooks.afterEnter(() => {
-    initLocomotiveScroll();
+    // initLocomotiveScroll();
     console.log("novi lokomotiv"); 
    
       
