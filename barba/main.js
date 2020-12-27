@@ -446,8 +446,8 @@ BARBA TRANSITIONS
      },
      
       afterEnter({next}) {
-        
-       homeanimations();
+        initLoader();
+       
 console.log("HOME ANIMATIONS LOADED");
 //ScrollTrigger.refresh();
     //   console.log("SCROLLTRIGGER REFRESH");
