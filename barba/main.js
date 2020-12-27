@@ -377,7 +377,7 @@ barba.init({
     once() {
        // do something once on the initial page load
        initLoader();
-       aboutanimations()
+       
       
        
         console.log("ABOUT");
@@ -419,6 +419,7 @@ barba.init({
       afterEnter({next}) {
        homeanimations();
 console.log("HOME ANIMATIONS LOADED");
+aboutanimations();
        console.log("AFTER ENTER");
 
      },
