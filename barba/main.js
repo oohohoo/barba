@@ -192,14 +192,14 @@ console.log("refreshed scrolltrigger!");
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 
-  
+}
  
 /*
 ================================================================================
 SCROLLTRIGGER TEST
 ================================================================================
 */
-function scrolltriggertest() {
+function strigtest() {
 gsap.utils.toArray('.block1').forEach((el, i) => {
   gsap.from(el, {
     scrollTrigger: {
@@ -213,7 +213,7 @@ gsap.utils.toArray('.block1').forEach((el, i) => {
     opacity: 0
   })
 });
-}
+
 }
 /*
 ================================================================================
@@ -385,7 +385,7 @@ function initPageTransitions() {
  
     //ScrollTrigger.update();
     console.log("SCROLLTRIGGER REFRESHED");
-    scrolltriggertest();
+    strigtest();
     // initLocomotiveScroll();
   
     console.log("SCROLLTRIGGER ANIMACIJE"); 
