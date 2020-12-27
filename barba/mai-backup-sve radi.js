@@ -188,23 +188,24 @@ function initLocomotiveScroll() {
 
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-console.log("refreshed scrolltrigger!");
+
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 
-  
-
+}
+ 
 /*
 ================================================================================
 SCROLLTRIGGER TEST
 ================================================================================
 */
+function strigtest() {
 gsap.utils.toArray('.block1').forEach((el, i) => {
   gsap.from(el, {
     scrollTrigger: {
       trigger: el,
      // markers: true,
-      scroller: '[data-scroll-container]',
+      scroller: ".smooth-scroll",
       start: 'top bottom',
       end: "top top",
     },
@@ -212,8 +213,8 @@ gsap.utils.toArray('.block1').forEach((el, i) => {
     opacity: 0
   })
 });
-}
 
+}
 /*
 ================================================================================
 HOME ENTER ANIMATIONS
@@ -291,7 +292,7 @@ function aboutanimations() {
      .to(mask, {rotate:-23},0)
      .to(homeimg, {rotate:45},0)
      .to(text, {rotate:360},0);
-     console.log("leave animation triggered");
+     console.log("about animation triggered");
      return tl
   }   
 
@@ -306,7 +307,6 @@ triggers.forEach( trigger => {
 	trigger.kill();
 });
 }
-
 /*
 ================================================================================
 BARBA
@@ -371,21 +371,22 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
         window.scrollTo(0, 0);
+        strigtest();
    
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
    // killscrolltrigger();
-    //  console.log("KILLSCROLLTRIGGER!!!");
+      console.log("SCROLLTRIGGER KILLED");
       
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-    // initLocomotiveScroll();
-  
-    console.log("---"); 
-   
-      
+ 
+    //ScrollTrigger.update();
+    
+    console.log("SCROLLTRIGGER REFRESHED");
+    
   });
  
 
@@ -410,16 +411,16 @@ barba.init({
 BARBA VIEWS
 ================================================================================
 */  
-  views: [{
+ /* views: [{
     namespace: 'about',
     beforeEnter(){
-  
+        strigtest();
         aboutanimations();
         console.log("About anomations tregered!");
     } 
 
 
-}],
+}],*/
 /*
 ================================================================================
 BARBA TRANSITIONS
@@ -433,7 +434,8 @@ BARBA TRANSITIONS
     once() {
        // do something once on the initial page load
        initLoader();
-        homeanimations();
+     
+        //homeanimations();
         console.log("ONCE");
      },
 
@@ -455,17 +457,10 @@ BARBA TRANSITIONS
    //   
   // destroy all ScrollTriggers
      // ScrollTrigger.getAll().forEach(t => t.kill());
-       console.log("scrolltrigger killed");
+     //  console.log("scrolltrigger killed");
      },
      
-      afterEnter({next}) {
-       // initLoader();
-       
-console.log("HOME ANIMATIONS LOADED");
-//ScrollTrigger.refresh();
-    //   console.log("SCROLLTRIGGER REFRESH");
-
-     },
+  
 
    
 

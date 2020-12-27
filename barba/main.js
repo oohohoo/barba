@@ -163,8 +163,17 @@ function initLocomotiveScroll() {
     smooth: true,
     getDirection: true,
     scrollFromAnywhere: true,
-
+    touchMultiplier: 4,
+    smartphone: {
+          smooth: true,
+      },
+      tablet: {
+          smooth: true,
+      
+      }
   });
+
+
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -192,8 +201,23 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 
+  /*
+================================================================================
+LOCOMOTIVE 4 SCROLL TO TOP
+================================================================================
+*/
+	locoScroll.scrollTo( '#top', {
+		'offset': 0,
+		'duration': 5000,
+		//'easing': [0.25, 0.00, 0.35, 1.00],
+		'disableLerp': true
+	});
+  
+  
 }
  
+	 
+
 /*
 ================================================================================
 SCROLLTRIGGER TEST
