@@ -357,8 +357,7 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
     window.scrollTo(0, 0);
-    initLocomotiveScroll();
-    console.log("novi lokomotiv"); 
+   
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
@@ -368,7 +367,8 @@ function initPageTransitions() {
   });
   //kill scrolltrigger
    barba.hooks.afterEnter(() => {
-    window.scrollTo(0, 500);
+    initLocomotiveScroll();
+    console.log("novi lokomotiv"); 
       console.log("afterenteeeer");
       
   });
