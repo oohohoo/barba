@@ -411,16 +411,16 @@ barba.init({
 BARBA VIEWS
 ================================================================================
 */  
- /* views: [{
-    namespace: 'about',
+  views: [{
+    namespace: 'home',
     beforeEnter(){
         strigtest();
         aboutanimations();
-        console.log("About anomations tregered!");
+        console.log("home EEEEE tregered!");
     } 
 
 
-}],*/
+}],
 /*
 ================================================================================
 BARBA TRANSITIONS
