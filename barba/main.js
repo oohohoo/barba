@@ -388,7 +388,7 @@ function initPageTransitions() {
     scrolltriggertest();
     // initLocomotiveScroll();
   
-    console.log("SCROLLTRIGGER ANIMACIJE UČITANE"); 
+    console.log("SCROLLTRIGGER ANIMACIJE"); 
    
       
   });
