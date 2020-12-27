@@ -303,7 +303,7 @@ function initPageTransitions() {
 BARBA INIT
 ================================================================================
 */
-  barba.init({
+barba.init({
    debug: true,
     transitions: [{once() {
         // do something once on the initial page load
@@ -326,7 +326,7 @@ BARBA INIT
 
       beforeEnter({next}) {
         console.log("BEFORE ENTER");
-    //   ScrollTrigger.refresh();
+       ScrollTrigger.refresh();
    // destroy all ScrollTriggers
       // ScrollTrigger.getAll().forEach(t => t.kill());
       //  console.log("scrolltrigger killed");
@@ -334,7 +334,7 @@ BARBA INIT
       
        afterEnter({next}) {
         homeanimations();
-console.log("HOME ANIMATIONS LOADED");
+        console.log("HOME ANIMATIONS LOADED");
         console.log("AFTER ENTER");
 
       }
