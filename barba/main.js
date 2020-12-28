@@ -251,6 +251,7 @@ function homeanimations() {
 const mask = select('.b-img');
 const text = select('.b-header');
 const homeimg = select('.homeimg');
+const navlink = select('.nav-link');
 homeimg
 const tl = gsap.timeline({
 defaults: {
@@ -260,6 +261,7 @@ defaults: {
 });
 
 tl
+ .from(navlink, {duration, 0.6, yPercent:100, stagger:0.2, ease: 'power1.out'},0)
    .from(mask, {xPercent:-101},0)
    .from(homeimg, {xPercent:101},0);
    console.log("image mask shit");
@@ -475,13 +477,7 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
        resetActiveLink();
-       gsap.from('.nav-link'), {
-          duration: 0.6,
-          yPercent:100,
-          stagger:0.2,
-          ease: 'power1.out'
-
-       }
+       homeanimations(); 
         //homeanimations();
         console.log("ONCE");
      },
