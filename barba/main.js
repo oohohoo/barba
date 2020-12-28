@@ -475,6 +475,13 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
        resetActiveLink();
+       gsap.from('.nav-link'), {
+          duration: 0.6,
+          yPercent:100,
+          stagger:0.2,
+          ease: 'power1.out'
+
+       }
         //homeanimations();
         console.log("ONCE");
      },
