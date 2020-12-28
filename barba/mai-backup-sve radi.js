@@ -164,7 +164,7 @@ function initLocomotiveScroll() {
     getDirection: true,
     scrollFromAnywhere: true,
     touchMultiplier: 4,
-    scrollbarContainer: document.querySelector('#primary'),
+   // scrollbarContainer: document.querySelector('#primary'),
     smartphone: {
           smooth: true,
       },
@@ -264,7 +264,7 @@ defaults: {
 
 tl
  //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
- .fromTo(underline, {scaleX:0.1},{duration: 1, scaleX:1, ease: 'power1.out'})
+ .fromTo(underline, {scaleX:0.1},{duration: 0.3, scaleX:1, ease: 'power1.out'})
    //.from(mask, {xPercent:-101},0)
    //.from(homeimg, {xPercent:101},0);
    console.log("underline");
@@ -406,8 +406,9 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-   // killscrolltrigger();
-     // console.log("SCROLLTRIGGER KILLED");
+    locoScroll.destroy();
+   killscrolltrigger();
+      console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
       
   });
   //init scrolltrigger

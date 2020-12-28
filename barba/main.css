@@ -106,7 +106,10 @@ html.has-scroll-smooth {
   cursor: progress;
 }
 
-
+.smooth-scroll {
+  will-change: transform;
+  backface-visibility: hidden;
+}
 
 
 
