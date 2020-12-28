@@ -241,12 +241,9 @@ LOCOMOTIVE 4 SCROLL TO TOP
 }
 
  
-	 
-
-
 /*
 ================================================================================
-HOME ENTER ANIMATIONS
+UNDERLINE
 ================================================================================
 */
 
@@ -350,7 +347,6 @@ function initPageTransitions() {
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
    // console.log("BEFORE ENTER");
-
     
   });
  
@@ -364,7 +360,7 @@ BARBA PREFETCH
 barba.use(barbaPrefetch);
 console.log("Prefetch loaded");
 /*
-dd
+
 /*
 ================================================================================
 ACTIVE UNDERLINE LINK
@@ -376,18 +372,12 @@ scaleX:0.1,
 transformOrigin: 'left'
 });
 
-//console.log("reset active link");
 /*
 
-
-
 ================================================================================
-BARBA & LOCOMOTIVE SCROLL  INIT 
+BARBA INIT 
 ================================================================================
 */
-
-
-
 
 barba.init({
   debug: true,
@@ -421,12 +411,10 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
         resetActiveLink();
-    
-      
+          
         //homeanimations();
         console.log("ONCE");
      },
-
 
      async leave({current}) {
        // animate loading screen in
@@ -440,7 +428,6 @@ BARBA TRANSITIONS
          console.log("NEXT");
      },
      
-
      afterEnter({next}) {
       console.log("AFTER ENTER");
      // animationEnter(); 
@@ -455,7 +442,7 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-     locoScroll.destroy(container);
+     //locoScroll.destroy(container);
       
      //console.log("NOVO");
      //ScrollTrigger.getAll().forEach(t => t.kill());
@@ -466,7 +453,6 @@ BARBA TRANSITIONS
   
      },
   
-
    
 
 
