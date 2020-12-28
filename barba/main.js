@@ -476,9 +476,10 @@ BARBA TRANSITIONS
     // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
     
 
-    once() {
+    once({next}) {
        // do something once on the initial page load
        initLoader();
+       initLocomotiveScroll(next.container); // ovo izbaci
        resetActiveLink();
     
       
