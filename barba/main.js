@@ -175,68 +175,6 @@ SCROLLTRIGGER TEST
   });
   console.log("Scrolltrigger animacija loaded");
 
-  // HORIZZONTAL SCROLL WITH CHILD ANIMATION
-
-let sections = gsap.utils.toArray(".h-scroll--slide");
-let containerx = document.querySelector(".h-scroll--wrapper");
-let pinner = document.querySelector(".h-scroll--");
-let elements = gsap.utils.toArray(document.querySelectorAll(".h-scroll--slide > *"));
-
-let timeline = gsap.timeline();
-
-timeline.to(sections, {
-    x: () =>
-        -(containerx.scrollWidth - document.documentElement.clientWidth) + "px",
-    ease: "none",
-    scrollTrigger: {
-	      scroller: '[data-scroll-container]',
-        //  pin:'.horiz-pin',
-	   // pin: true,
-	    pin: pinner,
-        scrub: 1,
-        overwrite: "auto",
-        trigger: pinner,
-        end: () => containerx.scrollWidth - document.documentElement.clientWidth
-    }
-});
-
-let scrollTriggerTimeline = gsap.timeline();
-
-elements.forEach((element) => {
-    scrollTriggerTimeline.from(element, {
-        yPercent: 50,
-        opacity: 0,
-        overwrite: "auto",
-        scrollTrigger: {
-	scroller: '[data-scroll-container]',
-            scrub: 1,
-            start: () => element.parentNode.offsetLeft - window.innerWidth,
-            end: () =>
-                element.parentNode.offsetLeft -
-                window.innerWidth +
-                element.parentNode.getBoundingClientRect().width
-        }
-    });
-});
-
-elements.forEach((element) => {
-    scrollTriggerTimeline.to(element, {
-        yPercent: 50,
-        opacity: 0,
-        overwrite: "auto",
-        scrollTrigger: {
-	scroller: '[data-scroll-container]',
-            scrub: 1,
-            immediateRender: false,
-            start: () =>
-                element.parentNode.offsetLeft -
-                element.parentNode.getBoundingClientRect().width / 2,
-            end: () =>
-                element.parentNode.offsetLeft +
-                element.parentNode.getBoundingClientRect().width
-        }
-    });
-});
   /*
 ================================================================================
 LOCOMOTIVE 4 SCROLL TO TOP
