@@ -521,11 +521,14 @@ prevent: ({
   }
 }
 });
+
+
 /*
 ================================================================================
 UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
 ================================================================================
 */
+/*
 function updateMenu(url) {
   const active = document.querySelector('.g-header .nav-link.active');
 
@@ -553,4 +556,5 @@ barba.hooks.before((data) => {
 function init() {
   initLoader();
 }
+*/
 }
