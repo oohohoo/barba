@@ -406,10 +406,7 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-    locoScroll.destroy();
-    console.log("Hdistroj loco");
-   killscrolltrigger();
-      console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
+  
       
   });
   //init scrolltrigger
@@ -500,11 +497,12 @@ BARBA TRANSITIONS
        pageTransitionOut(next);
          console.log("NEXT");
      },
+     
 
      afterEnter({next}) {
       animationEnter(); 
 
-       console.log("linkoviiii");
+       //console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
      // initLocomotiveScroll(); 
 //console.log("locoscroll init again");
@@ -513,6 +511,15 @@ BARBA TRANSITIONS
      //  console.log("scrolltrigger killed");
      },
      
+     beforeEnter({next}) {
+      locoScroll.destroy();
+     console.log("distrojloco");
+    killscrolltrigger();
+       console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
+
+       
+  
+     },
   
 
    
