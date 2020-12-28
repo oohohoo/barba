@@ -141,7 +141,7 @@ CONTENT INITIALISATION
 */
 function initContent() {
 
-  select('body').classList.remove('is-loading');
+ // select('body').classList.remove('is-loading');
   initLocomotiveScroll();
 console.log("CONTENT FUNCTIONS LOADED");
 
@@ -164,7 +164,7 @@ function initLocomotiveScroll() {
     getDirection: true,
     scrollFromAnywhere: true,
     touchMultiplier: 4,
-    scrollbarContainer: document.querySelector('#primary'),
+   // scrollbarContainer: document.querySelector('#primary'),
     smartphone: {
           smooth: true,
       },
