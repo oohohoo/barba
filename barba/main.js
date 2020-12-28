@@ -433,16 +433,7 @@ BARBA TRANSITIONS
      
      afterEnter({next}) {
       console.log("AFTER ENTER");
-     // animationEnter(); 
 
-       //console.log("linkoviiii");
-      //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
-      //locoScroll.destroy();
-      // initLocomotiveScroll(); 
-//console.log("locoscroll init again");
-  // destroy all ScrollTriggers
-     // ScrollTrigger.getAll().forEach(t => t.kill());
-     //  console.log("scrolltrigger killed");
      },
      
      beforeEnter({next}) {
