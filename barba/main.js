@@ -82,7 +82,111 @@ function init() {
 
 init();
 
+/*
+================================================================================
+LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
+================================================================================
+*/
+function initScroll(container) {
 
+   locoScroll = new LocomotiveScroll({
+    el: document.querySelector(".smooth-scroll"),
+    smooth: true,
+    getDirection: true,
+    scrollFromAnywhere: true,
+    touchMultiplier: 4,
+   // scrollbarContainer: document.querySelector('#primary'),
+    smartphone: {
+          smooth: true,
+      },
+      tablet: {
+          smooth: true,
+      
+      }
+  });
+
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy(".smooth-scroll", {
+    scrollTop(value) {
+      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {top: 0, left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    },
+
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, 
+    // we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    // UKLJUČITI SAMO NA MOBILNOJ VERZIJI
+    // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
+  });
+
+/* ===== 
+// Remove Old Locomotive Scrollbar.
+const scrollbar = document.querySelectorAll( '.c-scrollbar' );
+    
+if ( scrollbar.length > 1 ) {
+    scrollbar[0].remove();
+}
+/* ===== */
+
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh();
+  console.log("Scrolltrigger refreshed!");
+
+/* ===== */
+//locoScroll.update();
+//console.log("Locomotive Updated once more");;
+//locoScroll.scrollTo( 'top' );
+                // When window reszie, need to update locomotive scroll.
+               /* $( window ).on( 'resize', function() {
+                  locoScroll.update();
+                  console.log("JEBOTE RESIZED!");
+} 
+
+);*/
+/* ===== */
+
+/*
+================================================================================
+SCROLLTRIGGER TEST
+================================================================================
+*/
+  gsap.utils.toArray('.block1').forEach((el, i) => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+       // markers: true,
+        scroller: ".smooth-scroll",
+        start: 'top bottom',
+        end: "top top",
+      },
+      y: 100,
+      opacity: 0
+    })
+  });
+  console.log("Scrolltrigger animacija loaded");
+  /*
+================================================================================
+LOCOMOTIVE 4 SCROLL TO TOP
+================================================================================
+*//*
+	locoScroll.scrollTo( '#top', {
+		'offset': 0,
+		'duration': 5000,
+		//'easing': [0.25, 0.00, 0.35, 1.00],
+		'disableLerp': true
+	});
+  */
+}
 /*
 ================================================================================
 PRELOADER --> vodi na --> INIT CONTENT
@@ -149,6 +253,9 @@ console.log("Locoscroll+Scrolltrigger loaded after preloader done");
   //initHeaderTilt();
 
 }
+
+
+
 /*
 ================================================================================
 BARBA PAGE TRANSITION IN
@@ -219,111 +326,7 @@ function initPageTransitions() {
     
   });
  
-/*
-================================================================================
-LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
-================================================================================
-*/
-function initScroll(container) {
 
-  locoScroll = new LocomotiveScroll({
-   el: document.querySelector(".smooth-scroll"),
-   smooth: true,
-   getDirection: true,
-   scrollFromAnywhere: true,
-   touchMultiplier: 4,
-  // scrollbarContainer: document.querySelector('#primary'),
-   smartphone: {
-         smooth: true,
-     },
-     tablet: {
-         smooth: true,
-     
-     }
- });
-
- // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
- locoScroll.on("scroll", ScrollTrigger.update);
-
- // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
- ScrollTrigger.scrollerProxy(".smooth-scroll", {
-   scrollTop(value) {
-     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-   }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-   getBoundingClientRect() {
-     return {top: 0, left: 0,
-       width: window.innerWidth,
-       height: window.innerHeight
-     };
-   },
-
-   // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, 
-   // we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-   // UKLJUČITI SAMO NA MOBILNOJ VERZIJI
-   // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
- });
-
-/* ===== 
-// Remove Old Locomotive Scrollbar.
-const scrollbar = document.querySelectorAll( '.c-scrollbar' );
-   
-if ( scrollbar.length > 1 ) {
-   scrollbar[0].remove();
-}
-/* ===== */
-
- // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
- // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
- ScrollTrigger.refresh();
- console.log("Scrolltrigger refreshed!");
-
-/* ===== */
-//locoScroll.update();
-//console.log("Locomotive Updated once more");;
-//locoScroll.scrollTo( 'top' );
-               // When window reszie, need to update locomotive scroll.
-              /* $( window ).on( 'resize', function() {
-                 locoScroll.update();
-                 console.log("JEBOTE RESIZED!");
-} 
-
-);*/
-/* ===== */
-
-/*
-================================================================================
-SCROLLTRIGGER TEST
-================================================================================
-*/
- gsap.utils.toArray('.block1').forEach((el, i) => {
-   gsap.from(el, {
-     scrollTrigger: {
-       trigger: el,
-      // markers: true,
-       scroller: ".smooth-scroll",
-       start: 'top bottom',
-       end: "top top",
-     },
-     y: 100,
-     opacity: 0
-   })
- });
- console.log("Scrolltrigger animacija loaded");
- /*
-================================================================================
-LOCOMOTIVE 4 SCROLL TO TOP
-================================================================================
-*//*
- locoScroll.scrollTo( '#top', {
-   'offset': 0,
-   'duration': 5000,
-   //'easing': [0.25, 0.00, 0.35, 1.00],
-   'disableLerp': true
- });
- */
-}
 /*
 ================================================================================
 BARBA PREFETCH
