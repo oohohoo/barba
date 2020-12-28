@@ -431,8 +431,9 @@ ACTIVE UNDERLINE LINK
 ================================================================================
 */
 
-const resetActiveLink = () => gsap.set('a.is-active span', {
+const resetActiveLink = () => gsap.set('a.active span', {
 xPercent:-100,
+rotate:34,
 transformOrigin: 'left'
 });
 
