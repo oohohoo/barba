@@ -144,10 +144,12 @@ console.log("Locoscroll refresh");
 
 /* ===== */
 locoScroll.update();
+console.log("JEBOTE UPDATED!");
 locoScroll.scrollTo( 'top' );
                 // When window reszie, need to update locomotive scroll.
                 $( window ).on( 'resize', function() {
                   locoScroll.update();
+                  console.log("JEBOTE RESIZED!");
 } );
 /* ===== */
 
