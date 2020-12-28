@@ -147,8 +147,8 @@ CONTENT INITIALISATION
 function initContent() {
 
   select('body').classList.remove('is-loading');
-  initLocomotiveScroll();
-console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADED");
+  initScroll();
+console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADEDoo");
 
   //initNavigation();
   //initHeaderTilt();
@@ -160,7 +160,7 @@ console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADED");
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initLocomotiveScroll() {
+function initScroll() {
 
 
   const locoScroll = new LocomotiveScroll({
@@ -437,7 +437,7 @@ BARBA TRANSITIONS
 
        //console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
-     locoScroll.destroy(container);
+      locoScroll.destroy();
       // initLocomotiveScroll(); 
 //console.log("locoscroll init again");
   // destroy all ScrollTriggers
