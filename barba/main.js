@@ -126,12 +126,31 @@ function initScroll(container) {
     // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
   });
 
+/* ===== 
+// Remove Old Locomotive Scrollbar.
+const scrollbar = document.querySelectorAll( '.c-scrollbar' );
+    
+if ( scrollbar.length > 1 ) {
+    scrollbar[0].remove();
+}
+/* ===== */
+
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 console.log("Locoscroll refresh");
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
   console.log("Scrolltrigger refreshed!");
+
+/* ===== */
+locoScroll.update();
+locoScroll.scrollTo( 'top' );
+                // When window reszie, need to update locomotive scroll.
+                $( window ).on( 'resize', function() {
+                  locoScroll.update();
+} );
+/* ===== */
+
 /*
 ================================================================================
 SCROLLTRIGGER TEST
