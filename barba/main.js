@@ -176,6 +176,7 @@ function initLocomotiveScroll() {
   });
 
   let locoScroll;
+// jebo ti locoscroll mater
 
 
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
