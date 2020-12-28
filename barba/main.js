@@ -570,9 +570,9 @@ function updateMenu(url) {
 barba.hooks.before((data) => {
   updateMenu(data.trigger.href);
 });
-
+*/
 function init() {
   initLoader();
 }
-*/
+
 }
