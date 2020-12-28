@@ -20,7 +20,7 @@ html {
     --bcg-lightbrown: #b0a7a4;
     --bcg-lightblue: #B6FA00;
   
-    --bcg-loaderblue: #758A94;
+    --bcg-loaderblue: #24e9ae;
     --bcg-loaderbluedark: #566C76;
   
     --loader-width: 27.36vw;
@@ -236,7 +236,7 @@ main {
   width: var(--loader-width);
   height: var(--loader-height);
 }
-/*
+
 .fill-background {
   top: 0;
   left: 0;
@@ -247,7 +247,7 @@ main {
   background-color: var(--bcg-fill-color);
   transition: background-color 0.3s linear;
 }
-*/
+
 
 /* The trick to viewport units on mobile */
 /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
