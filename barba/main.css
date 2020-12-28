@@ -64,7 +64,7 @@ html.has-scroll-smooth {
     position: absolute;
     right: 0;
     top: 0;
-    width: 7px;
+    width: 5px;
     height: 100%;
     transform-origin: center right;
     transition: transform 0.3s, opacity 0.3s;
@@ -88,7 +88,7 @@ html.has-scroll-smooth {
     right: 0;
     background-color: rgb(24, 21, 21);
   /*   opacity: 0.5; */
-    width: 7px;
+    width: 6px;
     /* border-radius: 10px; */
     margin: 2px;
     cursor: -webkit-grab;
