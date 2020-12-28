@@ -399,19 +399,13 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-     //locoScroll.destroy(container);
-      
-     //console.log("NOVO");
-     //ScrollTrigger.getAll().forEach(t => t.kill());
-    //killscrolltrigger();
+ 
        
      
   
      },
   
    
-
-
 
    }],
 
@@ -477,7 +471,7 @@ barba.hooks.before((data) => {
 */
 /*
 ================================================================================
-UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
+FUNCTION INIT LOADER
 ================================================================================
 */
 
@@ -522,11 +516,9 @@ function animationEnter() {
      return tl
   }        
 
-/*
-================================================================================
+/*================================================================================
 ACTIVE UNDERLINE LINK
-================================================================================
-*/
+==============================================================================*/
 
 const resetActiveLink = () => gsap.set('.underline', {
   scaleX:0.1,
