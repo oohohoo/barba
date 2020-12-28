@@ -407,7 +407,7 @@ function initPageTransitions() {
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
- 
+    console.log("BEFORE ENTER");
     //ScrollTrigger.update();
     
     console.log("SCROLLTRIGGER REFRESHED");
