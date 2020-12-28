@@ -433,7 +433,7 @@ ACTIVE UNDERLINE LINK
 
 const resetActiveLink = () => gsap.set('.underline', {
 scaleX:0.5,
-rotate:34,
+rotate:90,
 transformOrigin: 'left'
 });
 
