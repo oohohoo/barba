@@ -432,7 +432,7 @@ ACTIVE UNDERLINE LINK
 */
 
 const resetActiveLink = () => gsap.set('.active', {
-xPercent:-100,
+xScale:0.5,
 rotate:34,
 transformOrigin: 'left'
 });
