@@ -424,6 +424,21 @@ BARBA PREFETCH
 barba.use(barbaPrefetch);
 console.log("Prefetch loaded");
 /*
+
+/*
+================================================================================
+ACTIVE UNDERLINE LINK
+================================================================================
+*/
+
+const resetActiveLink = () => gsap.set('a.is-active span', {
+xPercent:-100,
+transformOrigin: 'left'
+});
+
+console.log("active link span");
+/*
+
 ================================================================================
 BARBA INIT 
 ================================================================================
@@ -459,7 +474,7 @@ BARBA TRANSITIONS
     once() {
        // do something once on the initial page load
        initLoader();
-     
+       resetActiveLink();
         //homeanimations();
         console.log("ONCE");
      },
