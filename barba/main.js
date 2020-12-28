@@ -204,7 +204,25 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
+/*
+================================================================================
+SCROLLTRIGGER TEST
+================================================================================
+*/
 
+  gsap.utils.toArray('.block1').forEach((el, i) => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+       // markers: true,
+        scroller: ".smooth-scroll",
+        start: 'top bottom',
+        end: "top top",
+      },
+      y: 100,
+      opacity: 0
+    })
+  });
   /*
 ================================================================================
 LOCOMOTIVE 4 SCROLL TO TOP
@@ -222,27 +240,7 @@ LOCOMOTIVE 4 SCROLL TO TOP
  
 	 
 
-/*
-================================================================================
-SCROLLTRIGGER TEST
-================================================================================
-*/
-function strigtest() {
-gsap.utils.toArray('.block1').forEach((el, i) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-     // markers: true,
-      scroller: ".smooth-scroll",
-      start: 'top bottom',
-      end: "top top",
-    },
-    y: 100,
-    opacity: 0
-  })
-});
 
-}
 /*
 ================================================================================
 HOME ENTER ANIMATIONS
