@@ -407,6 +407,7 @@ function initPageTransitions() {
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
     locoScroll.destroy();
+    console.log("Hdistroj loco");
    killscrolltrigger();
       console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
       
