@@ -1,7 +1,7 @@
 
 
 
-let locoScroll;
+
 
 /*
 ================================================================================
@@ -444,10 +444,16 @@ transformOrigin: 'left'
 console.log("reset active link");
 /*
 
+
+
 ================================================================================
-BARBA INIT 
+BARBA & LOCOMOTIVE SCROLL  INIT 
 ================================================================================
 */
+
+let locoScroll;
+
+
 barba.init({
   debug: true,
   prefetch: true,
