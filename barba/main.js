@@ -1,5 +1,5 @@
 
-
+let locoScroll;
 
 
 
@@ -386,7 +386,7 @@ BARBA & LOCOMOTIVE SCROLL  INIT
 ================================================================================
 */
 
-let locoScroll;
+
 
 
 barba.init({
