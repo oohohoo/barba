@@ -455,12 +455,12 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-     // locoScroll.destroy(container);
+     locoScroll.destroy(container);
       
      //console.log("NOVO");
      //ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
-       //console.log("SCROLLTRIGGERDISTRY");
+       console.log("LOCOSCROLL D E S T R O Y");
 
        
   
