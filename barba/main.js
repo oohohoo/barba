@@ -483,7 +483,7 @@ BARBA TRANSITIONS
        animationEnter(); 
       
         //homeanimations();
-        console.log("ONCE + link animations");
+        console.log("ONCE + animation enter");
      },
 
 
