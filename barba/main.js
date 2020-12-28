@@ -1,10 +1,10 @@
 
 
 gsap.registerPlugin(ScrollTrigger);
-console.log("UČITAN LCROLLTRIGGER!");
+console.log("ScrollTrigger Loaded!");
 
 let locoScroll;
-console.log("UČITAN LOCOSCROLL!");
+console.log("Locomotive Loaded");
 
 /*
 ================================================================================
@@ -137,15 +137,15 @@ if ( scrollbar.length > 1 ) {
 
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-console.log("Locoscroll refresh");
+
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
   console.log("Scrolltrigger refreshed!");
 
 /* ===== */
 locoScroll.update();
-console.log("JEBOTE UPDATED!");
-locoScroll.scrollTo( 'top' );
+console.log("Locomotive Updated once more");;
+//locoScroll.scrollTo( 'top' );
                 // When window reszie, need to update locomotive scroll.
                /* $( window ).on( 'resize', function() {
                   locoScroll.update();
@@ -173,7 +173,7 @@ SCROLLTRIGGER TEST
       opacity: 0
     })
   });
-  console.log("Scrolltrigger test loaded!");
+  console.log("Scrolltrigger animacija loaded");
   /*
 ================================================================================
 LOCOMOTIVE 4 SCROLL TO TOP
@@ -247,7 +247,7 @@ function initContent() {
 
   select('body').classList.remove('is-loading');
   initScroll();
-console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADEDoo");
+console.log("Locoscroll+Scrolltrigger loaded after preloader done");
 
   //initNavigation();
   //initHeaderTilt();
@@ -318,6 +318,7 @@ function initPageTransitions() {
    //kill scrolltrigger
    barba.hooks.beforeLeave(() => {
     locoScroll.destroy();
+    console.log("Locomotive scroll destroyed!");
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
