@@ -147,10 +147,12 @@ locoScroll.update();
 console.log("JEBOTE UPDATED!");
 locoScroll.scrollTo( 'top' );
                 // When window reszie, need to update locomotive scroll.
-                $( window ).on( 'resize', function() {
+               /* $( window ).on( 'resize', function() {
                   locoScroll.update();
                   console.log("JEBOTE RESIZED!");
-} );
+} 
+
+);*/
 /* ===== */
 
 /*
@@ -314,8 +316,8 @@ function initPageTransitions() {
    
   });
    //kill scrolltrigger
-   barba.hooks.beforeEnter(() => {
-        
+   barba.hooks.beforeLeave(() => {
+    locoScroll.destroy();
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
