@@ -174,7 +174,7 @@ function initLocomotiveScroll() {
       }
   });
 
-}
+
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -195,6 +195,9 @@ function initLocomotiveScroll() {
     // UKLJUČITI SAMO NA MOBILNOJ VERZIJI
     // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
   });
+
+
+}
 
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
