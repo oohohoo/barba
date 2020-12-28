@@ -520,14 +520,14 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-      locoScroll.destroy(container);
+     // locoScroll.destroy(container);
       
-     console.log("LOCO DISTRYOOOOYYYYYYY");
+     console.log("NOVO");
      ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
        console.log("SCROLLTRIGGERDISTRY");
 
-       initLocomotiveScroll(next.container); // ovo izbaci
+       initLoader(); // ovo izbaci
   
      },
   
