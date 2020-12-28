@@ -141,7 +141,7 @@ CONTENT INITIALISATION
 */
 function initContent() {
 
- // select('body').classList.remove('is-loading');
+  select('body').classList.remove('is-loading');
   initLocomotiveScroll();
 console.log("CONTENT FUNCTIONS LOADED");
 
