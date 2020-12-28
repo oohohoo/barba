@@ -437,7 +437,8 @@ BARBA TRANSITIONS
 
        //console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
-     // initLocomotiveScroll(); 
+     locoScroll.destroy(container);
+      // initLocomotiveScroll(); 
 //console.log("locoscroll init again");
   // destroy all ScrollTriggers
      // ScrollTrigger.getAll().forEach(t => t.kill());
