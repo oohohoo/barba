@@ -479,7 +479,7 @@ BARBA TRANSITIONS
     once({next}) {
        // do something once on the initial page load
        initLoader();
-       initLocomotiveScroll(next.container); // ovo izbaci
+       
        resetActiveLink();
     
       
@@ -515,12 +515,13 @@ BARBA TRANSITIONS
      
      beforeEnter({next}) {
       locoScroll.destroy();
+      
      console.log("LOCO DISTRY");
      ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
        console.log("SCROLLTRIGGERDISTRY");
 
-       
+       initLocomotiveScroll(next.container); // ovo izbaci
   
      },
   
