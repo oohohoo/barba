@@ -349,7 +349,7 @@ function initPageTransitions() {
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-    console.log("možda ode učitat locoscroll");
+   // console.log("možda ode učitat locoscroll");
     
   });
  
@@ -437,7 +437,7 @@ BARBA TRANSITIONS
 
        //console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
-      locoScroll.destroy();
+      //locoScroll.destroy();
       // initLocomotiveScroll(); 
 //console.log("locoscroll init again");
   // destroy all ScrollTriggers
