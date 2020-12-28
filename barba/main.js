@@ -143,7 +143,7 @@ function initContent() {
 
   select('body').classList.remove('is-loading');
   initLocomotiveScroll();
-console.log("CONTENT FUNCTIONS LOADED");
+console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADED");
 
   //initNavigation();
   //initHeaderTilt();
@@ -276,72 +276,6 @@ tl
 
 /*
 ================================================================================
-HOME LEAVE ANIMATIONS
-================================================================================
-*/
-
-function leaveanimations() {
- 
-  const mask = select('.b-img');
-  const text = select('.b-header');
-  const homeimg = select('.homeimg');
-  homeimg
-  const tl = gsap.timeline({
-  defaults: {
-  
-    duration: 0.4, ease: 'power4.out'
-  }
-  });
-  
-  tl
-     .from(mask, {xPercent:101},0)
-     .from(homeimg, {xPercent:-101},0)
-     .from(text, {rotate:360},0);
-     console.log("leave animation triggered");
-     return tl
-  }   
-
-
-/*
-================================================================================
-ABOUT ANIMATIONS
-================================================================================
-*/
-
-function aboutanimations() {
- 
-  const mask = select('.b-img');
-  const text = select('.b-header');
-  const homeimg = select('.homeimg');
-  homeimg
-  const tl = gsap.timeline({
-  defaults: {
-  
-    duration: 5, ease: 'power4.out'
-  }
-  });
-  
-  tl
-     .to(mask, {rotate:-23},0)
-     .to(homeimg, {rotate:45},0)
-     .to(text, {rotate:360},0);
-     console.log("about animation triggered");
-     return tl
-  }   
-
-/*
-================================================================================
-KILL SCROLLTRIGGER FUNCTION
-================================================================================
-*/
-function killscrolltrigger() {
-let triggers = ScrollTrigger.getAll();
-triggers.forEach( trigger => {			
-	trigger.kill();
-});
-}
-/*
-================================================================================
 BARBA
 ================================================================================
 */
@@ -441,7 +375,7 @@ scaleX:0.1,
 transformOrigin: 'left'
 });
 
-console.log("reset active link");
+//console.log("reset active link");
 /*
 
 
@@ -485,12 +419,11 @@ BARBA TRANSITIONS
     once({next}) {
        // do something once on the initial page load
        initLoader();
-       
-       resetActiveLink();
+        resetActiveLink();
     
       
         //homeanimations();
-        console.log("ONCE + animation enter");
+        console.log("ONCE");
      },
 
 
@@ -508,7 +441,8 @@ BARBA TRANSITIONS
      
 
      afterEnter({next}) {
-      animationEnter(); 
+      console.log("AFTER ENTER");
+     // animationEnter(); 
 
        //console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
@@ -522,12 +456,12 @@ BARBA TRANSITIONS
      beforeEnter({next}) {
      // locoScroll.destroy(container);
       
-     console.log("NOVO");
-     ScrollTrigger.getAll().forEach(t => t.kill());
+     //console.log("NOVO");
+     //ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
-       console.log("SCROLLTRIGGERDISTRY");
+       //console.log("SCROLLTRIGGERDISTRY");
 
-       initLoader(); // ovo izbaci
+       
   
      },
   
