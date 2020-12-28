@@ -250,7 +250,7 @@ function animationEnter() {
  
 //const mask = select('.b-img');
 //const text = select('.b-header');
-//const homeimg = select('.homeimg');
+const homeimg = select('.homeimg');
 //const navlink = select('.nav-link');
 //const active = select('.w--current');
 const underline = select('.underline');
