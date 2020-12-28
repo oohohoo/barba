@@ -155,7 +155,7 @@ console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADED");
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initLocomotiveScroll(container) {
+function initLocomotiveScroll() {
 
 
   const locoScroll = new LocomotiveScroll({
@@ -225,6 +225,7 @@ SCROLLTRIGGER TEST
       opacity: 0
     })
   });
+  console.log("Scrolltrigger test loaded!");
   /*
 ================================================================================
 LOCOMOTIVE 4 SCROLL TO TOP
