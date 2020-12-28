@@ -495,7 +495,8 @@ BARBA TRANSITIONS
 
      beforeEnter({next}) {
        console.log("BEFORE ENTER");
-   //   
+      //  locoScroll.on("scroll", ScrollTrigger.update);
+locoScroll.destroy();
   // destroy all ScrollTriggers
      // ScrollTrigger.getAll().forEach(t => t.kill());
      //  console.log("scrolltrigger killed");
