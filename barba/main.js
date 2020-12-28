@@ -261,7 +261,7 @@ defaults: {
 });
 
 tl
- .from(navlink, {duration: 0.6, delay:4, yPercent:100, stagger:0.2, ease: 'power1.out'},0)
+ .from(navlink, {duration: 1, delay:4, yPercent:100, stagger:0.2, ease: 'power1.out'},0)
    //.from(mask, {xPercent:-101},0)
    //.from(homeimg, {xPercent:101},0);
    console.log("nav LINKS!");
@@ -477,9 +477,10 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
        resetActiveLink();
+       homeanimations(); 
       
         //homeanimations();
-        console.log("ONCE");
+        console.log("ONCE + link animations");
      },
 
 
@@ -496,7 +497,7 @@ BARBA TRANSITIONS
      },
 
      afterEnter({next}) {
-      homeanimations(); 
+     
        console.log("after ENTER");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
      // initLocomotiveScroll(); 
