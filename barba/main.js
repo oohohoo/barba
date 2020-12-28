@@ -1,7 +1,9 @@
 
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 let locoScroll;
-
-
 
 /*
 ================================================================================
@@ -174,7 +176,7 @@ function initLocomotiveScroll() {
       }
   });
 
-  gsap.registerPlugin(ScrollTrigger);
+
 
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
