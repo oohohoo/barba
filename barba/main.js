@@ -415,9 +415,7 @@ function initPageTransitions() {
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
    // console.log("BEFORE ENTER");
-    //ScrollTrigger.update();
-    
-    //console.log("SCROLLTRIGGER REFRESHED");
+
     
   });
  
@@ -515,10 +513,10 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-      locoScroll.destroy();
+      initLocomotiveScroll.destroy();
      console.log("distrojloco");
-    killscrolltrigger();
-       console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
+    //killscrolltrigger();
+     //  console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
 
        
   
