@@ -500,7 +500,8 @@ BARBA TRANSITIONS
      },
 
      afterEnter({next}) {
-      animationEnter(); 
+      animationEnter(); ddd
+      
        console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
      // initLocomotiveScroll(); 
