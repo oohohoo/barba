@@ -261,7 +261,7 @@ defaults: {
 });
 
 tl
- .from(navlink, {duration: 1, delay:4, yPercent:100, stagger:0.2, ease: 'power1.out'},0)
+ .from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'},0)
    //.from(mask, {xPercent:-101},0)
    //.from(homeimg, {xPercent:101},0);
    console.log("nav LINKS!");
