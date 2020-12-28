@@ -1,4 +1,4 @@
-
+// OVA VERZIJA RADI BARBA
 
 gsap.registerPlugin(ScrollTrigger);
 console.log("ScrollTrigger Loaded!");
@@ -143,8 +143,8 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   console.log("Scrolltrigger refreshed!");
 
 /* ===== */
-//locoScroll.update();
-//console.log("Locomotive Updated once more");;
+locoScroll.update();
+console.log("Locomotive Updated once more");;
 //locoScroll.scrollTo( 'top' );
                 // When window reszie, need to update locomotive scroll.
                /* $( window ).on( 'resize', function() {
@@ -345,7 +345,6 @@ BARBA INIT
 
 barba.init({
   debug: true,
-  timeout: 5000,
   prefetch: true,
 /*
 ================================================================================
@@ -399,13 +398,19 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
- 
+     //locoScroll.destroy(container);
+      
+     //console.log("NOVO");
+     //ScrollTrigger.getAll().forEach(t => t.kill());
+    //killscrolltrigger();
        
      
   
      },
   
    
+
+
 
    }],
 
@@ -471,7 +476,7 @@ barba.hooks.before((data) => {
 */
 /*
 ================================================================================
-FUNCTION INIT
+UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
 ================================================================================
 */
 
