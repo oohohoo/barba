@@ -6,14 +6,11 @@ console.log("UČITAN LCROLLTRIGGER!");
 let locoScroll;
 console.log("UČITAN LOCOSCROLL!");
 
-
-
 /*
 ================================================================================
 PRELOADER
 ================================================================================
 */
-
 
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
@@ -92,7 +89,6 @@ LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 */
 function initScroll() {
 
-
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-scroll"),
     smooth: true,
@@ -130,9 +126,6 @@ function initScroll() {
     // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
   });
 
-
-
-
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 console.log("Locoscroll refresh");
@@ -144,7 +137,6 @@ console.log("Locoscroll refresh");
 SCROLLTRIGGER TEST
 ================================================================================
 */
-
   gsap.utils.toArray('.block1').forEach((el, i) => {
     gsap.from(el, {
       scrollTrigger: {
@@ -172,10 +164,9 @@ LOCOMOTIVE 4 SCROLL TO TOP
 	});
   */
 }
-
 /*
 ================================================================================
-PRELOADER ANIMATIONS & INIT
+PRELOADER --> vodi na --> INIT CONTENT
 ================================================================================
 */
 function initLoader() {
@@ -224,11 +215,9 @@ function initLoader() {
     .add(tlLoaderIn)
     .add(tlLoaderOut);
 }
-
-
 /*
 ================================================================================
-CONTENT INITIALISATION
+INIT CONTENT --> vodi na --> INIT SCROLL
 ================================================================================
 */
 function initContent() {
@@ -244,47 +233,9 @@ console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADEDoo");
 
 
 
- 
 /*
 ================================================================================
-UNDERLINE
-================================================================================
-*/
-
-function animationEnter() {
- 
-//const mask = select('.b-img');
-//const text = select('.b-header');
-const homeimg = select('.homeimg');
-//const navlink = select('.nav-link');
-//const active = select('.w--current');
-const underline = select('.underline');
-homeimg
-const tl = gsap.timeline({
-defaults: {
-
-	duration: 0.4, ease: 'power4.out'
-}
-});
-
-tl
- //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
- .fromTo(underline, {scaleX:0.1},{duration: 0.3, scaleX:1, ease: 'power1.out'})
-   //.from(mask, {xPercent:-101},0)
-   //.from(homeimg, {xPercent:101},0);
-   console.log("underline");
-   return tl
-}        
-
-/*
-================================================================================
-BARBA
-================================================================================
-*/
-
-/*
-================================================================================
-BARBA PAGE IN
+BARBA PAGE TRANSITION IN
 ================================================================================
 */
 function pageTransitionIn({
@@ -301,10 +252,9 @@ function pageTransitionIn({
 
   return tl;
 }
-
 /*
 ================================================================================
-BARBA PAGE OUT
+BARBA PAGE TRANSITION OUT
 ================================================================================
 */
 function pageTransitionOut({
@@ -321,10 +271,9 @@ function pageTransitionOut({
     .from(container, {y: -150}, 0);
   return tl;
 }
-
 /*
 ================================================================================
-BARBA HOOKS (GLOBAL?)
+BARBA GLOBAL HOOKS + PREFETCH + INIT + VIEWS + TRANSITIONS
 ================================================================================
 */
 function initPageTransitions() {
@@ -345,8 +294,7 @@ function initPageTransitions() {
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-  
-      
+        
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
@@ -365,18 +313,6 @@ barba.use(barbaPrefetch);
 console.log("Prefetch loaded");
 /*
 
-/*
-================================================================================
-ACTIVE UNDERLINE LINK
-================================================================================
-*/
-
-const resetActiveLink = () => gsap.set('.underline', {
-scaleX:0.1,
-transformOrigin: 'left'
-});
-
-/*
 
 ================================================================================
 BARBA INIT 
@@ -444,8 +380,7 @@ BARBA TRANSITIONS
      //ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
        
-
-       
+     
   
      },
   
@@ -515,8 +450,63 @@ barba.hooks.before((data) => {
   updateMenu(data.trigger.href);
 });
 */
+/*
+================================================================================
+UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
+================================================================================
+*/
+
 function init() {
   initLoader();
 }
 
 }
+
+/*
+================================================================================
+OSTALE FUNKCIJE
+================================================================================
+*/
+
+/*
+================================================================================
+UNDERLINE
+================================================================================
+*/
+function animationEnter() {
+ 
+  //const mask = select('.b-img');
+  //const text = select('.b-header');
+  const homeimg = select('.homeimg');
+  //const navlink = select('.nav-link');
+  //const active = select('.w--current');
+  const underline = select('.underline');
+  homeimg
+  const tl = gsap.timeline({
+  defaults: {
+  
+    duration: 0.4, ease: 'power4.out'
+  }
+  });
+  
+  tl
+   //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
+   .fromTo(underline, {scaleX:0.1},{duration: 0.3, scaleX:1, ease: 'power1.out'})
+     //.from(mask, {xPercent:-101},0)
+     //.from(homeimg, {xPercent:101},0);
+     console.log("underline");
+     return tl
+  }        
+
+/*
+================================================================================
+ACTIVE UNDERLINE LINK
+================================================================================
+*/
+
+const resetActiveLink = () => gsap.set('.underline', {
+  scaleX:0.1,
+  transformOrigin: 'left'
+  });
+  
+  
