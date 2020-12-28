@@ -64,11 +64,11 @@ html.has-scroll-smooth {
     position: absolute;
     right: 0;
     top: 0;
-    width: 11px;
+    width: 7px;
     height: 100%;
     transform-origin: center right;
     transition: transform 0.3s, opacity 0.3s;
-    opacity: 0; }
+    opacity: 1; }
     .c-scrollbar:hover {
       transform: scaleX(1.45); }
     .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
