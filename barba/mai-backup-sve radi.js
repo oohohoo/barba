@@ -1,10 +1,10 @@
-
+// OVA VERZIJA RADI BARBA
 
 gsap.registerPlugin(ScrollTrigger);
-console.log("UČITAN LCROLLTRIGGER!");
+console.log("ScrollTrigger Loaded!");
 
 let locoScroll;
-console.log("UČITAN LOCOSCROLL!");
+console.log("Locomotive Loaded");
 
 /*
 ================================================================================
@@ -87,9 +87,9 @@ init();
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initScroll() {
+function initScroll(container) {
 
-  const locoScroll = new LocomotiveScroll({
+   locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-scroll"),
     smooth: true,
     getDirection: true,
@@ -126,12 +126,35 @@ function initScroll() {
     // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
   });
 
+/* ===== 
+// Remove Old Locomotive Scrollbar.
+const scrollbar = document.querySelectorAll( '.c-scrollbar' );
+    
+if ( scrollbar.length > 1 ) {
+    scrollbar[0].remove();
+}
+/* ===== */
+
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-console.log("Locoscroll refresh");
+
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
   console.log("Scrolltrigger refreshed!");
+
+/* ===== */
+locoScroll.update();
+console.log("Locomotive Updated once more");;
+//locoScroll.scrollTo( 'top' );
+                // When window reszie, need to update locomotive scroll.
+               /* $( window ).on( 'resize', function() {
+                  locoScroll.update();
+                  console.log("JEBOTE RESIZED!");
+} 
+
+);*/
+/* ===== */
+
 /*
 ================================================================================
 SCROLLTRIGGER TEST
@@ -150,7 +173,7 @@ SCROLLTRIGGER TEST
       opacity: 0
     })
   });
-  console.log("Scrolltrigger test loaded!");
+  console.log("Scrolltrigger animacija loaded");
   /*
 ================================================================================
 LOCOMOTIVE 4 SCROLL TO TOP
@@ -224,7 +247,7 @@ function initContent() {
 
   select('body').classList.remove('is-loading');
   initScroll();
-console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADEDoo");
+console.log("Locoscroll+Scrolltrigger loaded after preloader done");
 
   //initNavigation();
   //initHeaderTilt();
@@ -293,8 +316,9 @@ function initPageTransitions() {
    
   });
    //kill scrolltrigger
-   barba.hooks.beforeEnter(() => {
-        
+   barba.hooks.beforeLeave(() => {
+    locoScroll.destroy();
+    console.log("Locomotive scroll destroyed!");
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {

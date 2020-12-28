@@ -143,8 +143,8 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   console.log("Scrolltrigger refreshed!");
 
 /* ===== */
-locoScroll.update();
-console.log("Locomotive Updated once more");;
+//locoScroll.update();
+//console.log("Locomotive Updated once more");;
 //locoScroll.scrollTo( 'top' );
                 // When window reszie, need to update locomotive scroll.
                /* $( window ).on( 'resize', function() {
