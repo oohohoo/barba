@@ -155,7 +155,7 @@ console.log("CONTENT FUNCTIONS LOADED");
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initLocomotiveScroll() {
+function initLocomotiveScroll(container) {
 
 
   const locoScroll = new LocomotiveScroll({
@@ -202,9 +202,10 @@ function initLocomotiveScroll() {
 
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
+console.log("Locoscroll refresh");
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
+  console.log("Scrolltrigger refreshed!");
 /*
 ================================================================================
 SCROLLTRIGGER TEST
@@ -513,9 +514,10 @@ BARBA TRANSITIONS
      
      beforeEnter({next}) {
       locoScroll.destroy();
-     console.log("distrojloco");
+     console.log("LOCO DISTRY");
+     ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
-     //  console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
+       console.log("SCROLLTRIGGERDISTRY");
 
        
   
