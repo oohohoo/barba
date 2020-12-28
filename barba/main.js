@@ -246,12 +246,14 @@ HOME ENTER ANIMATIONS
 ================================================================================
 */
 
-function homeanimations() {
+function animationEnter() {
  
-const mask = select('.b-img');
-const text = select('.b-header');
-const homeimg = select('.homeimg');
-const navlink = select('.nav-link');
+//const mask = select('.b-img');
+//const text = select('.b-header');
+//const homeimg = select('.homeimg');
+//const navlink = select('.nav-link');
+const active = select('.w--current');
+const underline = select('.underline');
 homeimg
 const tl = gsap.timeline({
 defaults: {
@@ -261,10 +263,11 @@ defaults: {
 });
 
 tl
- .from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
+ //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
+ .fromTo(underline, {xPercent:0},{duration: 1, xPercent:100, ease: 'power1.out'})
    //.from(mask, {xPercent:-101},0)
    //.from(homeimg, {xPercent:101},0);
-   console.log("nav LINKS!");
+   console.log("underline");
    return tl
 }        
 
@@ -404,7 +407,7 @@ function initPageTransitions() {
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
    // killscrolltrigger();
-      console.log("SCROLLTRIGGER KILLED");
+     // console.log("SCROLLTRIGGER KILLED");
       
   });
   //init scrolltrigger
@@ -477,7 +480,7 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
        resetActiveLink();
-       homeanimations(); 
+       animationEnter(); 
       
         //homeanimations();
         console.log("ONCE + link animations");
