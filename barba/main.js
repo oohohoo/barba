@@ -477,7 +477,7 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
        resetActiveLink();
-       homeanimations(); 
+      
       
         //homeanimations();
         console.log("ONCE + link animations");
@@ -497,8 +497,8 @@ BARBA TRANSITIONS
      },
 
      afterEnter({next}) {
-     
-       console.log("after ENTER");
+      homeanimations(); 
+       console.log("linkoviiii");
       //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
      // initLocomotiveScroll(); 
 //console.log("locoscroll init again");
