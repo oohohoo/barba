@@ -1,5 +1,5 @@
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 let locoScroll;
 
@@ -155,7 +155,7 @@ console.log("CONTENT FUNCTIONS LOADED");
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initLocomotiveScroll() {
+function initLocomotiveScroll(container) {
 
 
   const locoScroll = new LocomotiveScroll({
@@ -174,6 +174,7 @@ function initLocomotiveScroll() {
       }
   });
 
+  gsap.registerPlugin(ScrollTrigger);
 
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -511,7 +512,7 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-      initLocomotiveScroll.destroy();
+      locoScroll.destroy();
      console.log("distrojloco");
     //killscrolltrigger();
      //  console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
