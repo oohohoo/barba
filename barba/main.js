@@ -155,7 +155,7 @@ console.log("CONTENT FUNCTIONS LOADED");
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initLocomotiveScroll(container) {
+function initLocomotiveScroll() {
 
 
   const locoScroll = new LocomotiveScroll({
@@ -403,7 +403,7 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
         window.scrollTo(0, 0);
-        strigtest();
+        //strigtest();
    
   });
    //kill scrolltrigger
