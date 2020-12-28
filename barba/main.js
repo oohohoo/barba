@@ -522,7 +522,7 @@ BARBA TRANSITIONS
      beforeEnter({next}) {
       locoScroll.destroy(container);
       
-     console.log("LOCO DISTRY");
+     console.log("LOCO DISTRYOOOOYYYYYYY");
      ScrollTrigger.getAll().forEach(t => t.kill());
     //killscrolltrigger();
        console.log("SCROLLTRIGGERDISTRY");
