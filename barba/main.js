@@ -252,7 +252,7 @@ function animationEnter() {
 //const text = select('.b-header');
 //const homeimg = select('.homeimg');
 //const navlink = select('.nav-link');
-const active = select('.w--current');
+//const active = select('.w--current');
 const underline = select('.underline');
 homeimg
 const tl = gsap.timeline({
