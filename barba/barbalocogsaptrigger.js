@@ -93,9 +93,9 @@
  * @param {object} container Next Container from Barba.js
  */
             function smooth( container ) {
-                if ( ! remote_settings.locomotive ) {
-                    return;
-}
+               // if ( ! remote_settings.locomotive ) {
+              //      return;
+//}
                 scroll = new LocomotiveScroll({
                     el: container.querySelector( '[data-scroll-container]' ),
                     smooth: true,

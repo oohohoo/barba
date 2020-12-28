@@ -1,14 +1,16 @@
 
+
 gsap.registerPlugin(ScrollTrigger);
+console.log("UČITAN LCROLLTRIGGER!");
 
 let locoScroll;
+console.log("UČITAN LOCOSCROLL!");
 
 /*
 ================================================================================
 PRELOADER
 ================================================================================
 */
-
 
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
@@ -80,10 +82,91 @@ function init() {
 
 init();
 
-
 /*
 ================================================================================
-PRELOADER ANIMATIONS & INIT
+LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
+================================================================================
+*/
+function initScroll() {
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector(".smooth-scroll"),
+    smooth: true,
+    getDirection: true,
+    scrollFromAnywhere: true,
+    touchMultiplier: 4,
+   // scrollbarContainer: document.querySelector('#primary'),
+    smartphone: {
+          smooth: true,
+      },
+      tablet: {
+          smooth: true,
+      
+      }
+  });
+
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy(".smooth-scroll", {
+    scrollTop(value) {
+      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {top: 0, left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    },
+
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, 
+    // we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    // UKLJUČITI SAMO NA MOBILNOJ VERZIJI
+    // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
+  });
+
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+console.log("Locoscroll refresh");
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh();
+  console.log("Scrolltrigger refreshed!");
+/*
+================================================================================
+SCROLLTRIGGER TEST
+================================================================================
+*/
+  gsap.utils.toArray('.block1').forEach((el, i) => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+       // markers: true,
+        scroller: ".smooth-scroll",
+        start: 'top bottom',
+        end: "top top",
+      },
+      y: 100,
+      opacity: 0
+    })
+  });
+  console.log("Scrolltrigger test loaded!");
+  /*
+================================================================================
+LOCOMOTIVE 4 SCROLL TO TOP
+================================================================================
+*//*
+	locoScroll.scrollTo( '#top', {
+		'offset': 0,
+		'duration': 5000,
+		//'easing': [0.25, 0.00, 0.35, 1.00],
+		'disableLerp': true
+	});
+  */
+}
+/*
+================================================================================
+PRELOADER --> vodi na --> INIT CONTENT
 ================================================================================
 */
 function initLoader() {
@@ -132,220 +215,27 @@ function initLoader() {
     .add(tlLoaderIn)
     .add(tlLoaderOut);
 }
-
-
 /*
 ================================================================================
-CONTENT INITIALISATION
+INIT CONTENT --> vodi na --> INIT SCROLL
 ================================================================================
 */
 function initContent() {
 
   select('body').classList.remove('is-loading');
-  initLocomotiveScroll();
-console.log("CONTENT FUNCTIONS LOADED");
+  initScroll();
+console.log("INIT LOCOMOTIVE SCROLL & FUNCTIONS LOADEDoo");
 
   //initNavigation();
   //initHeaderTilt();
 
 }
 
-/*
-================================================================================
-LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
-================================================================================
-*/
-function initLocomotiveScroll() {
-
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".smooth-scroll"),
-    smooth: true,
-    getDirection: true,
-    scrollFromAnywhere: true,
-    touchMultiplier: 4,
-   // scrollbarContainer: document.querySelector('#primary'),
-    smartphone: {
-          smooth: true,
-      },
-      tablet: {
-          smooth: true,
-      
-      }
-  });
-
-
-  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-  ScrollTrigger.scrollerProxy(".smooth-scroll", {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-    getBoundingClientRect() {
-      return {top: 0, left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      };
-    },
-
-    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, 
-    // we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-    // UKLJUČITI SAMO NA MOBILNOJ VERZIJI
-    // pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
-  });
-
-  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-  ScrollTrigger.refresh();
-
-  /*
-================================================================================
-LOCOMOTIVE 4 SCROLL TO TOP
-================================================================================
-*/
-	locoScroll.scrollTo( '#top', {
-		'offset': 0,
-		'duration': 5000,
-		//'easing': [0.25, 0.00, 0.35, 1.00],
-		'disableLerp': true
-	});
-  
-  
-}
- 
-	 
-
-/*
-================================================================================
-SCROLLTRIGGER TEST
-================================================================================
-*/
-function strigtest() {
-gsap.utils.toArray('.block1').forEach((el, i) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-     // markers: true,
-      scroller: ".smooth-scroll",
-      start: 'top bottom',
-      end: "top top",
-    },
-    y: 100,
-    opacity: 0
-  })
-});
-
-}
-/*
-================================================================================
-HOME ENTER ANIMATIONS
-================================================================================
-*/
-
-function animationEnter() {
- 
-//const mask = select('.b-img');
-//const text = select('.b-header');
-const homeimg = select('.homeimg');
-//const navlink = select('.nav-link');
-//const active = select('.w--current');
-const underline = select('.underline');
-homeimg
-const tl = gsap.timeline({
-defaults: {
-
-	duration: 0.4, ease: 'power4.out'
-}
-});
-
-tl
- //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
- .fromTo(underline, {scaleX:0.1},{duration: 0.3, scaleX:1, ease: 'power1.out'})
-   //.from(mask, {xPercent:-101},0)
-   //.from(homeimg, {xPercent:101},0);
-   console.log("underline");
-   return tl
-}        
-
-/*
-================================================================================
-HOME LEAVE ANIMATIONS
-================================================================================
-*/
-
-function leaveanimations() {
- 
-  const mask = select('.b-img');
-  const text = select('.b-header');
-  const homeimg = select('.homeimg');
-  homeimg
-  const tl = gsap.timeline({
-  defaults: {
-  
-    duration: 0.4, ease: 'power4.out'
-  }
-  });
-  
-  tl
-     .from(mask, {xPercent:101},0)
-     .from(homeimg, {xPercent:-101},0)
-     .from(text, {rotate:360},0);
-     console.log("leave animation triggered");
-     return tl
-  }   
 
 
 /*
 ================================================================================
-ABOUT ANIMATIONS
-================================================================================
-*/
-
-function aboutanimations() {
- 
-  const mask = select('.b-img');
-  const text = select('.b-header');
-  const homeimg = select('.homeimg');
-  homeimg
-  const tl = gsap.timeline({
-  defaults: {
-  
-    duration: 5, ease: 'power4.out'
-  }
-  });
-  
-  tl
-     .to(mask, {rotate:-23},0)
-     .to(homeimg, {rotate:45},0)
-     .to(text, {rotate:360},0);
-     console.log("about animation triggered");
-     return tl
-  }   
-
-/*
-================================================================================
-KILL SCROLLTRIGGER FUNCTION
-================================================================================
-*/
-function killscrolltrigger() {
-let triggers = ScrollTrigger.getAll();
-triggers.forEach( trigger => {			
-	trigger.kill();
-});
-}
-/*
-================================================================================
-BARBA
-================================================================================
-*/
-
-/*
-================================================================================
-BARBA PAGE IN
+BARBA PAGE TRANSITION IN
 ================================================================================
 */
 function pageTransitionIn({
@@ -362,10 +252,9 @@ function pageTransitionIn({
 
   return tl;
 }
-
 /*
 ================================================================================
-BARBA PAGE OUT
+BARBA PAGE TRANSITION OUT
 ================================================================================
 */
 function pageTransitionOut({
@@ -382,10 +271,9 @@ function pageTransitionOut({
     .from(container, {y: -150}, 0);
   return tl;
 }
-
 /*
 ================================================================================
-BARBA HOOKS (GLOBAL?)
+BARBA GLOBAL HOOKS + PREFETCH + INIT + VIEWS + TRANSITIONS
 ================================================================================
 */
 function initPageTransitions() {
@@ -401,22 +289,16 @@ function initPageTransitions() {
   // scroll to the top of the page
   barba.hooks.enter(() => {
         window.scrollTo(0, 0);
-        strigtest();
+        //strigtest();
    
   });
    //kill scrolltrigger
    barba.hooks.beforeEnter(() => {
-    locoScroll.destroy();
-   killscrolltrigger();
-      console.log("SCROLLTRIGGER + LOCOMOTIVE KILLED");
-      
+        
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
-   // console.log("BEFORE ENTER");
-    //ScrollTrigger.update();
-    
-    //console.log("SCROLLTRIGGER REFRESHED");
+   // console.log("možda ode učitat locoscroll");
     
   });
  
@@ -430,25 +312,13 @@ BARBA PREFETCH
 barba.use(barbaPrefetch);
 console.log("Prefetch loaded");
 /*
-dd
-/*
-================================================================================
-ACTIVE UNDERLINE LINK
-================================================================================
-*/
 
-const resetActiveLink = () => gsap.set('.underline', {
-scaleX:0.1,
-transformOrigin: 'left'
-});
-
-console.log("reset active link");
-/*
 
 ================================================================================
 BARBA INIT 
 ================================================================================
 */
+
 barba.init({
   debug: true,
   prefetch: true,
@@ -477,16 +347,14 @@ BARBA TRANSITIONS
     // ROUTE AKO IDE NA ABOUT IDE DRUGA ANIMACIJA
     
 
-    once() {
+    once({next}) {
        // do something once on the initial page load
        initLoader();
-       resetActiveLink();
-    
-      
+        resetActiveLink();
+          
         //homeanimations();
-        console.log("ONCE + animation enter");
+        console.log("ONCE");
      },
-
 
      async leave({current}) {
        // animate loading screen in
@@ -499,21 +367,23 @@ BARBA TRANSITIONS
        pageTransitionOut(next);
          console.log("NEXT");
      },
-
+     
      afterEnter({next}) {
-      animationEnter(); 
+      console.log("AFTER ENTER");
 
-       console.log("linkoviiii");
-      //--------------------------  locoScroll.on("scroll", ScrollTrigger.update);
-     // initLocomotiveScroll(); 
-//console.log("locoscroll init again");
-  // destroy all ScrollTriggers
-     // ScrollTrigger.getAll().forEach(t => t.kill());
-     //  console.log("scrolltrigger killed");
      },
      
+     beforeEnter({next}) {
+     //locoScroll.destroy(container);
+      
+     //console.log("NOVO");
+     //ScrollTrigger.getAll().forEach(t => t.kill());
+    //killscrolltrigger();
+       
+     
   
-
+     },
+  
    
 
 
@@ -580,8 +450,62 @@ barba.hooks.before((data) => {
   updateMenu(data.trigger.href);
 });
 */
+/*
+================================================================================
+UPDATE ACTIVE CLASS ON THE MENU - BASED ON THE GIVEN URL
+================================================================================
+*/
+
 function init() {
   initLoader();
 }
 
 }
+
+/*
+================================================================================
+OSTALE FUNKCIJE
+================================================================================
+*
+*
+================================================================================
+UNDERLINE
+================================================================================
+*/
+function animationEnter() {
+ 
+  //const mask = select('.b-img');
+  //const text = select('.b-header');
+  const homeimg = select('.homeimg');
+  //const navlink = select('.nav-link');
+  //const active = select('.w--current');
+  const underline = select('.underline');
+  homeimg
+  const tl = gsap.timeline({
+  defaults: {
+  
+    duration: 0.4, ease: 'power4.out'
+  }
+  });
+  
+  tl
+   //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
+   .fromTo(underline, {scaleX:0.1},{duration: 0.3, scaleX:1, ease: 'power1.out'})
+     //.from(mask, {xPercent:-101},0)
+     //.from(homeimg, {xPercent:101},0);
+     console.log("underline");
+     return tl
+  }        
+
+/*
+================================================================================
+ACTIVE UNDERLINE LINK
+================================================================================
+*/
+
+const resetActiveLink = () => gsap.set('.underline', {
+  scaleX:0.1,
+  transformOrigin: 'left'
+  });
+  
+  

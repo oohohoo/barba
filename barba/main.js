@@ -87,9 +87,9 @@ init();
 LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
-function initScroll() {
+function initScroll(container) {
 
-  const locoScroll = new LocomotiveScroll({
+   locoScroll = new LocomotiveScroll({
     el: document.querySelector(".smooth-scroll"),
     smooth: true,
     getDirection: true,
