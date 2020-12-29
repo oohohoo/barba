@@ -37,7 +37,6 @@ function init() {
   // make a tween that scales the loader
   const progressTween = gsap.to(progressBar, {paused: true, scaleX: 0, ease: 'none', transformOrigin: 'right'});
 
-  // --- IMAGES LOADED
   // setup variables
   let loadedImageCount = 0,
     imageCount;
@@ -84,7 +83,7 @@ init();
 
 /*
 ================================================================================
-LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
+MAIN JS + LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
 function initScroll(container) {
@@ -188,6 +187,7 @@ LOCOMOTIVE 4 SCROLL TO TOP
 	});
   */
 }
+
 /*
 ================================================================================
 PRELOADER --> vodi na --> INIT CONTENT
@@ -239,6 +239,7 @@ function initLoader() {
     .add(tlLoaderIn)
     .add(tlLoaderOut);
 }
+
 /*
 ================================================================================
 INIT CONTENT --> vodi na --> INIT SCROLL
@@ -254,8 +255,6 @@ console.log("Locoscroll+Scrolltrigger loaded after preloader done");
   //initHeaderTilt();
 
 }
-
-
 
 /*
 ================================================================================
@@ -276,6 +275,7 @@ function pageTransitionIn({
 
   return tl;
 }
+
 /*
 ================================================================================
 BARBA PAGE TRANSITION OUT
@@ -295,6 +295,7 @@ function pageTransitionOut({
     .from(container, {y: -150}, 0);
   return tl;
 }
+
 /*
 ================================================================================
 BARBA GLOBAL HOOKS + PREFETCH + INIT + VIEWS + TRANSITIONS
@@ -489,11 +490,6 @@ function init() {
 
 /*
 ================================================================================
-OSTALE FUNKCIJE
-================================================================================
-*
-*
-================================================================================
 UNDERLINE
 ================================================================================
 */
@@ -527,7 +523,6 @@ function animationEnter() {
 ACTIVE UNDERLINE LINK
 ================================================================================
 */
-
 const resetActiveLink = () => gsap.set('.underline', {
   scaleX:0.1,
   transformOrigin: 'left'
