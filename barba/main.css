@@ -237,7 +237,7 @@ header a {
   overflow: hidden;
   position: relative;
 }*/
-/*header a::after,*/ header a.is-active span {
+/*header*/ a::after, header a.is-active span {
   display: block;
   content: ' ';
   background-color: #e8e8e8;
