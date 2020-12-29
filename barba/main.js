@@ -378,7 +378,7 @@ BARBA TRANSITIONS
        // do something once on the initial page load
        initLoader();
         resetActiveLink();
-          
+        animationEnter();
         //homeanimations();
         console.log("ONCE");
      },
