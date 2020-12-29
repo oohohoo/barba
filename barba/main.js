@@ -506,7 +506,7 @@ function animationEnter() {
   
   tl
    //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
-   .fromTo(underline, {scaleX:0},{duration: 0.6, scaleX:1, ease: 'power1.out'})
+   .fromTo(underline, {scaleX:0},{duration: 0.6, scaleX:1, ease: 'power1.out'}, 0.5)
      //.from(mask, {xPercent:-101},0)
      //.from(homeimg, {xPercent:101},0);
      console.log("underline");
