@@ -28,7 +28,7 @@ DEFINE ROOT VARIABLES
   --bcg-lightblue: #B6FA00;
 
   --bcg-loaderblue: #24e9ae;
-  --bcg-loaderbluedark: #566C76;
+  --bcg-loaderbluedark: #C35866;
 
   --loader-width: 27.36vw;
   --loader-height: 50vh;
@@ -213,7 +213,7 @@ LOADER
 }
 
 .inner-loader {
-  background-color: "#BE363A";
+  background-color: var(--bcg-loaderbluedark);
 }
 .loader__content {
   visibility: hidden;
