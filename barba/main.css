@@ -171,14 +171,14 @@ GSAP PERFORMANCE FIX
 
 /*
 ================================================================================
-IS LOADING BACKGROUND COLOR
+MAIN Z-INDEX
 ================================================================================
-*/ /*
+*/ 
 main {
   z-index: 1;
   position: relative;
 }
-*/
+
 
 /*
 ================================================================================
@@ -190,7 +190,7 @@ LOADER
   min-height: 100vh;
   position: fixed;
   flex-direction: column;
-   /* z-index: 10; */
+   z-index: 4; 
   top: 0;
   left: 0;
   width: 100%;
@@ -219,7 +219,7 @@ LOADER
 }
 .loader__content {
   visibility: hidden;
- /*  z-index: 11; */
+   z-index: 5; 
   display: flex;
   justify-content: center;
   align-items: center;
