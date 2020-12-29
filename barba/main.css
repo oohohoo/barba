@@ -189,7 +189,7 @@ MAIN Z-INDEX
 */ 
 header {
   text-align: center;
-  margin: 50px 15vw;
+ /*  margin: 50px 15vw; */
   overflow: hidden;
 }
 header a {
