@@ -208,7 +208,7 @@ header a {
 header a::after, header a.nav-link.active span {
   display: block;
   content: ' ';
-  background-color: #e8e8e8;
+  background-color: #1ab4d0;
   position: absolute;
   top: auto;
   bottom: 0;
