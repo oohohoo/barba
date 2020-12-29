@@ -145,9 +145,11 @@ GSAP PERFORMANCE FIX
 HIDE PAGE CONTENT BY DEFAULT
 ================================================================================
 */
-#main {
+.is-loading #main,
+.is-loading .fill-background {
   display: none;
 }
+
 /*
 ================================================================================
 IS LOADING BACKGROUND COLOR
