@@ -237,10 +237,10 @@ header a {
   overflow: hidden;
   position: relative;
 }*/
-a::after, a.w--current   span{
+/*a::after, */a.w--current::after   span{
   display: block;
   content: ' ';
-  background-color: red;
+  background-color: blue;
   position: absolute;
   top: auto;
   bottom: 0;
