@@ -216,7 +216,7 @@ header a::after, header a.w--current span {
 }
 header a.w--current span {
   background-color: #f70606;
-  z-index: 1;
+  z-index: 10;
 }
 
 
