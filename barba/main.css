@@ -237,7 +237,7 @@ header a {
   overflow: hidden;
   position: relative;
 }*/
- /*a::after,*/ a.w--current   span{
+a::after, a.w--current   span{
   display: block;
   content: ' ';
   background-color: red;
