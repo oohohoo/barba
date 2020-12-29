@@ -215,7 +215,7 @@ header a {
   height: 4px;
 }
 */
-header ::after a.nav-link.w--current span {
+header a::after, a.nav-link span {
   background-color: #f70606;
   z-index: 10;
 
