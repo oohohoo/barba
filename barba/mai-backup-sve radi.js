@@ -37,7 +37,6 @@ function init() {
   // make a tween that scales the loader
   const progressTween = gsap.to(progressBar, {paused: true, scaleX: 0, ease: 'none', transformOrigin: 'right'});
 
-  // --- IMAGES LOADED
   // setup variables
   let loadedImageCount = 0,
     imageCount;
@@ -84,7 +83,7 @@ init();
 
 /*
 ================================================================================
-LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
+MAIN JS + LOCOMOTIVE SCROLL + SCROLL TRIGGER PROXY
 ================================================================================
 */
 function initScroll(container) {
@@ -174,6 +173,7 @@ SCROLLTRIGGER TEST
     })
   });
   console.log("Scrolltrigger animacija loaded");
+
   /*
 ================================================================================
 LOCOMOTIVE 4 SCROLL TO TOP
@@ -187,6 +187,7 @@ LOCOMOTIVE 4 SCROLL TO TOP
 	});
   */
 }
+
 /*
 ================================================================================
 PRELOADER --> vodi na --> INIT CONTENT
@@ -238,6 +239,7 @@ function initLoader() {
     .add(tlLoaderIn)
     .add(tlLoaderOut);
 }
+
 /*
 ================================================================================
 INIT CONTENT --> vodi na --> INIT SCROLL
@@ -254,8 +256,6 @@ console.log("Locoscroll+Scrolltrigger loaded after preloader done");
 
 }
 
-
-
 /*
 ================================================================================
 BARBA PAGE TRANSITION IN
@@ -266,7 +266,7 @@ function pageTransitionIn({
 }) {
  // console.log('pageTransitionIn');
   // timeline to stretch the loader over the whole screen
-  const tl = gsap.timeline({defaults: {duration: 0.8,ease: 'power1.inOut'} });
+  const tl = gsap.timeline({defaults: {duration: 0.6,ease: 'power1.inOut'} });
   tl
     .set(loaderInner, {autoAlpha: 0})
     .fromTo(loader, {yPercent: -100}, {yPercent: 0})
@@ -275,6 +275,7 @@ function pageTransitionIn({
 
   return tl;
 }
+
 /*
 ================================================================================
 BARBA PAGE TRANSITION OUT
@@ -285,7 +286,7 @@ function pageTransitionOut({
 }) {
   //console.log('pageTransitionOut');
   // timeline to move loader away down
-  const tl = gsap.timeline({defaults: {duration: 0.8,ease: 'power1.inOut'},
+  const tl = gsap.timeline({defaults: {duration: 0.6,ease: 'power1.inOut'},
     onComplete: () => initContent()
   });
   tl
@@ -294,6 +295,7 @@ function pageTransitionOut({
     .from(container, {y: -150}, 0);
   return tl;
 }
+
 /*
 ================================================================================
 BARBA GLOBAL HOOKS + PREFETCH + INIT + VIEWS + TRANSITIONS
@@ -488,11 +490,6 @@ function init() {
 
 /*
 ================================================================================
-OSTALE FUNKCIJE
-================================================================================
-*
-*
-================================================================================
 UNDERLINE
 ================================================================================
 */
@@ -526,7 +523,6 @@ function animationEnter() {
 ACTIVE UNDERLINE LINK
 ================================================================================
 */
-
 const resetActiveLink = () => gsap.set('.underline', {
   scaleX:0.1,
   transformOrigin: 'left'
