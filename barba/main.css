@@ -144,10 +144,10 @@ GSAP PERFORMANCE FIX
 ================================================================================
 HIDE PAGE CONTENT BY DEFAULT
 ================================================================================
-*/
+*//*
 #main {
   display: none;
-}
+}*/
 /*
 ================================================================================
 IS LOADING BACKGROUND COLOR
@@ -188,7 +188,7 @@ LOADER
   min-height: 100vh;
   position: fixed;
   flex-direction: column;
-   z-index: 10;
+   /* z-index: 10; */
   top: 0;
   left: 0;
   width: 100%;
@@ -217,7 +217,7 @@ LOADER
 }
 .loader__content {
   visibility: hidden;
-  z-index: 11;
+ /*  z-index: 11; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,7 +273,7 @@ LOADER
 }
 
 .progress {
-  /* background-color: var(--bcg-lightblue);*/
+  background-color: var(--bcg-lightblue);
   position: absolute;
   left: 0;
   top: 0;
