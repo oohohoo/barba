@@ -218,6 +218,15 @@ header a {
 header a::after.nav-link.w--current span {
   background-color: #f70606;
   z-index: 10;
+
+  display: block;
+  content: ' ';
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
 }
 
 
