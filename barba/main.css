@@ -203,7 +203,7 @@ MAIN Z-INDEX
   overflow: hidden;
   position: relative;
 } */
- a::after, a.w--current span {
+ a::after, a.nav-link .w-inline-block .w--current span {
   display: block;
   content: ' ';
   background-color: red;
@@ -214,7 +214,7 @@ MAIN Z-INDEX
   width: 100%;
   height: 4px;
 }
-a.w--current span {
+a.nav-link .w-inline-block .w--current span {
   background-color: #202020;
   z-index: 1;
 }
