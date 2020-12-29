@@ -500,17 +500,17 @@ function animationEnter() {
   const tl = gsap.timeline({
   defaults: {
   
-    duration: 0.4, ease: 'power4.out'
+    duration: 5, ease: 'power4.out'
   }
   });
   
   tl
    //.from(navlink, {duration: 0.6, autoAlpha:0, yPercent:100, stagger:0.2, ease: 'power1.out'})
-   .fromTo(underline, {scaleX:0},{duration: 0.6, scaleX:1, ease: 'power1.out'}, 0.5)
-   .from(text, {yPercent:101, autoAlpha:0},0.6);
+   .fromTo(underline, {scaleX:0},{duration: 0.6, scaleX:1, ease: 'power1.out'})
+   .from(text, {yPercent:101, autoAlpha:0};
      //.from(mask, {xPercent:-101},0)
      //.from(homeimg, {xPercent:101},0);
-     console.log("underline");
+     console.log("animation enter triggered");
      return tl
   }        
 
