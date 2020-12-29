@@ -203,7 +203,7 @@ header a {
   overflow: hidden;
   position: relative;
 }
-header a::after, header a.nav-link .w-inline-block .w--current span {
+header a::after/*, header a.nav-link .w-inline-block .w--current span*/ {
   display: block;
   content: ' ';
   background-color: #e8e8e8;
