@@ -214,12 +214,13 @@ header a::after, header a.nav-link .w-inline-block .w--current span {
   width: 100%;
   height: 4px;
 }
+/*
 header a.nav-link .w-inline-block .w--current span {
   background-color: #f70606;
   z-index: 10;
 }
 
-
+*/
 
 /*
 ================================================================================
