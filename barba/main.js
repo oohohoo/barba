@@ -520,7 +520,7 @@ ACTIVE UNDERLINE LINK
 ================================================================================
 */
 const resetActiveLink = () => gsap.set('.underline, w--current', {
-  scaleX:0,
+  scaleX:0.4,
   transformOrigin: 'left'
   });
   
