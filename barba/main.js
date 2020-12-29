@@ -396,18 +396,12 @@ BARBA TRANSITIONS
      },
      
      afterEnter({next}) {
+      animationEnter();
       console.log("AFTER ENTER");
 
      },
      
      beforeEnter({next}) {
-     //locoScroll.destroy(container);
-      
-     //console.log("NOVO");
-     //ScrollTrigger.getAll().forEach(t => t.kill());
-    //killscrolltrigger();
-       
-     
   
      },
   
@@ -525,7 +519,7 @@ ACTIVE UNDERLINE LINK
 ================================================================================
 */
 const resetActiveLink = () => gsap.set('.underline', {
-  scaleX:0.1,
+  scaleX:0,
   transformOrigin: 'left'
   });
   
