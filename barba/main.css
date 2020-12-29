@@ -12,7 +12,7 @@ html {
 
 /*
 ================================================================================
-DEFINE ROOT VARIABLES
+DEFINE ROOT VARIABLES / definiraj svoje
 ================================================================================
 */
 :root {
@@ -27,8 +27,8 @@ DEFINE ROOT VARIABLES
   --bcg-lightbrown: #b0a7a4;
   --bcg-lightblue: #B6FA00;
 
-  --bcg-loaderblue: #24e9ae;
-  --bcg-loaderbluedark: #C35866;
+  --bcg-loaderblue: #EDC4AC;
+  --bcg-loaderbluedark: #394F42;
 
   --loader-width: 27.36vw;
   --loader-height: 50vh;
@@ -152,6 +152,7 @@ HIDE PAGE CONTENT BY DEFAULT
 .is-loading .fill-background {
   display: none;
 }
+
 /*
 ================================================================================
 IS LOADING BACKGROUND COLOR
