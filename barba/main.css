@@ -240,7 +240,7 @@ header a {
 nav a::after,/* nav a.nav-link.w--current */  span{
   display: block;
   content: ' ';
-  background-color: #e8e8e8;
+  background-color: red;
   position: absolute;
   top: auto;
   bottom: 0;
