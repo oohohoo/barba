@@ -237,7 +237,7 @@ header a {
   overflow: hidden;
   position: relative;
 }*/
-nav a::after, nav a.nav-link.w--current span {
+/*nav a::after,*/ nav a.nav-link.w--current span {
   display: block;
   content: ' ';
   background-color: #e8e8e8;
