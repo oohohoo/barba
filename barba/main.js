@@ -520,7 +520,7 @@ function animationEnter() {
 ACTIVE UNDERLINE LINK
 ================================================================================
 */
-const resetActiveLink = () => gsap.set('.underline w--current', {
+const resetActiveLink = () => gsap.set('.underline, w--current', {
   scaleX:0,
   transformOrigin: 'left'
   });
