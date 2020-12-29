@@ -182,7 +182,6 @@ main {
   position: relative;
 }
 
-
 /*
 ================================================================================
 LOADER
@@ -259,7 +258,6 @@ LOADER
   position: absolute;
   object-fit: cover;
   object-position: 50% 50%;
-
 }
 
 .loader__title--mask {
@@ -296,7 +294,6 @@ LOADER
   background-color: var(--bcg-fill-color);
   transition: background-color 0.3s linear;
 }
-
 
 /*
 ================================================================================
