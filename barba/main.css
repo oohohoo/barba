@@ -205,7 +205,7 @@ header a {
 }
 
 
-header a::after, header a.nav-link.active span {
+header a::after, header .nav-link.active span {
   display: block;
   content: ' ';
   background-color: #1ab4d0;
