@@ -379,8 +379,9 @@ BARBA TRANSITIONS
        initLoader();
         resetActiveLink();
         animationEnter();
+        customCursor();
         //homeanimations();
-        console.log("ONCE");
+        console.log("ONCE +++ CUSTOM CURSOR");
      },
 
      async leave({current}) {
@@ -525,3 +526,201 @@ const resetActiveLink = () => gsap.set('.underline, w--current', {
   });
   
   
+
+
+/*
+================================================================================
+THE CURSOR - under construction
+================================================================================
+*/
+function customCursor() {
+  
+
+
+/*
+================================================================================
+CUSTOM CURSOR QUICK SETTER BLAKE + SVG TRANSFORMS
+================================================================================
+*/
+
+/*
+================================================================================
+SET TO CENTER
+================================================================================
+*/
+
+gsap.set(".cursory", {xPercent: -50, yPercent: -50});
+
+/*
+================================================================================
+SET VARIABLE
+================================================================================
+*/
+var ball = document.querySelector(".cursory");
+var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+var mouse = { x: pos.x, y: pos.y };
+var speed = 0.2;
+
+var fpms = 60 / 1000;
+
+var xSet = gsap.quickSetter(ball, "x", "px");
+var ySet = gsap.quickSetter(ball, "y", "px");
+
+
+/*
+================================================================================
+SET OUT OF WINDOW ANIMATION 
+================================================================================
+*/
+var showAnimation = gsap.to(ball, {
+  opacity: 1,
+  paused: true
+
+});
+
+var timer = gsap.delayedCall(5, () => {
+  showAnimation.reverse();
+}).pause();
+
+/*
+================================================================================
+MOUSE MOVE LISTENER
+================================================================================
+*/
+
+window.addEventListener("mousemove", init);
+
+function init() {
+   
+  window.removeEventListener("mousemove", init);
+  
+  window.addEventListener("mousemove", e => {    
+    mouse.x = e.x;
+    mouse.y = e.y;  
+  });
+  
+/*
+================================================================================
+OUT OF WINDOW LISTENER
+================================================================================
+*/  
+  document.addEventListener("mouseleave", e => {
+    showAnimation.reverse();
+      console.log("Mouse Leave");
+  });
+  
+  document.addEventListener("mouseenter", e => {
+    showAnimation.play();
+    console.log("Mouse Enter");
+  
+/*
+================================================================================
+GSAP TICKER -- NE ZNAM DETALJE
+================================================================================
+*/  
+  
+    mouse.x = pos.x = e.x;
+    mouse.y = pos.y = e.y;
+  });
+
+  gsap.ticker.add((time, deltaTime) => {
+
+    var delta = deltaTime * fpms;
+    var dt = 1.0 - Math.pow(1.0 - speed, delta); 
+
+    pos.x += (mouse.x - pos.x) * dt;
+    pos.y += (mouse.y - pos.y) * dt;
+    xSet(pos.x);
+    ySet(pos.y);
+  });
+  
+  showAnimation.play();
+}
+
+/*
+================================================================================
+SET VARIABLES & SELECTORS
+================================================================================
+*/  
+const $bigCircle = document.querySelector('.cursor__circle--big');
+const $linkhover = document.querySelectorAll('.linkhover');
+const imghover = document.querySelectorAll('.imghover');
+const vidhover = document.querySelectorAll('.video');
+const playtxt = document.querySelectorAll('.playtxt');
+const imgtext = document.querySelectorAll('.imgtext');
+/*
+================================================================================
+ON HOVER LINKS
+================================================================================
+*/  
+
+for (let i = 0; i < $linkhover.length; i++) {
+	$linkhover[i].addEventListener('mouseenter', onMouseHover);
+	$linkhover[i].addEventListener('mouseleave', onMouseHoverOut);
+}
+
+// LINK ON HOVER
+function onMouseHover() {
+	//gsap.to('#bigCircle', {attr: {r: 6, stroke: 5 }})
+  gsap.to('#bigCircle', {duration:0.3, scale: 0.2, transformOrigin: 'center center', strokeWidth:18});
+}
+// LINK ON HOVER OUT
+function onMouseHoverOut() {
+//	gsap.to('#bigCircle', {attr: {r: 18, stroke: 2}})
+   gsap.to('#bigCircle', {duration:0.3, scale: 1,  transformOrigin: 'center center', strokeWidth:2});
+}
+
+/*
+================================================================================
+ON HOVER IMAGES
+================================================================================
+*/  
+
+for (let i = 0; i < imghover.length; i++) {
+	imghover[i].addEventListener('mouseenter', onMouseHoverArea);
+	imghover[i].addEventListener('mouseleave', onMouseHoverAreaOut);
+}
+
+
+// IMAGE ON HOVER
+function onMouseHoverArea() {
+	gsap.to($bigCircle, {duration:0.6, scale: 4, fill: '#1801E6', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
+  gsap.to(imgtext, {duration:0.6, autoAlpha:1, scale: 1, /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "-=0.3")
+}
+
+// IMAGE ON HOVER OUT
+function onMouseHoverAreaOut() {
+	gsap.to($bigCircle, {duration:0.3, scale: 1, fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
+  gsap.to(imgtext, {duration:0.3, scale: 0, /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "<")
+}
+
+
+/*
+================================================================================
+ON HOVER VIDEO
+================================================================================
+*/  
+
+for (let i = 0; i < vidhover.length; i++) {
+	vidhover[i].addEventListener('mouseenter', onMouseHoverVid);
+	vidhover[i].addEventListener('mouseleave', onMouseHoverVidOut);
+}
+
+
+
+// VIDEO ON HOVER
+function onMouseHoverVid() {
+	gsap.to($bigCircle, {duration:0.6, scale: 4, fill: '#E3C8CB', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
+  gsap.to(playtxt, {duration:0.6, autoAlpha:1, scale: 1, mixBlendMode: 'difference', ease: "expo.inOut"}, "-=0.3")
+
+}
+
+// VIDEO ON HOVER OUT
+function onMouseHoverVidOut() {
+	gsap.to($bigCircle, {duration:0.3, scale: 1, fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
+  gsap.to(playtxt, {duration:0.3, autoAlpha:0, scale: 0, mixBlendMode: 'difference', ease: "expo.inOut"}, "<")
+
+}
+
+
+}
