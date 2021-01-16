@@ -384,6 +384,7 @@ BARBA TRANSITIONS
         console.log("ONCE +++ CUSTOM CURSOR");
      },
 
+     
      async leave({current}) {
        // animate loading screen in
        await pageTransitionIn(current);
