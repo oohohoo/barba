@@ -381,7 +381,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ ALL LINKS");
+        console.log("ONCE +++ HOOKS");
      },
 
      
@@ -404,7 +404,7 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-  
+      customCursor();
      },
   
    
