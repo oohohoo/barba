@@ -381,7 +381,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ CUSTOM CURSOR");
+        console.log("ONCE +++ ALL LINKS");
      },
 
      
@@ -644,7 +644,7 @@ SET VARIABLES & SELECTORS
 ================================================================================
 */  
 const $bigCircle = document.querySelector('.cursor__circle--big');
-const $linkhover = document.querySelectorAll('a');
+const $linkhover = document.querySelectorAll('.linkhover');
 const imghover = document.querySelectorAll('.imghover');
 const vidhover = document.querySelectorAll('.video');
 const playtxt = document.querySelectorAll('.playtxt');
