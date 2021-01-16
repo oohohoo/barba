@@ -608,12 +608,12 @@ OUT OF WINDOW LISTENER
 */  
   window.addEventListener("mouseleave", e => {
     showAnimation.reverse();
-      console.log("Mouse Leave");
+      console.log("Mouse Leave !!!");
   });
   
   window.addEventListener("mouseenter", e => {
     showAnimation.play();
-    console.log("Mouse Enter");
+    console.log("Mouse Enter !!!");
   
 /*
 ================================================================================
