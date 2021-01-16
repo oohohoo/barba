@@ -583,6 +583,7 @@ var timer = gsap.delayedCall(5, () => {
   showAnimation.reverse();
 }).pause();
 
+console.log("out of windowwwwwwwww");
 /*
 ================================================================================
 MOUSE MOVE LISTENER
