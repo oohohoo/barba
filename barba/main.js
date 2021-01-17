@@ -745,8 +745,8 @@ THE CURSOR - THINKING
 */
 function cursorThinking() {
   $('a').off();
-  $('.cursor__circle').removeClass("hover"); 
-  $('.cursor__circle').addClass("thinking");
+  $('#bigCircle').removeClass("hover"); 
+  $('#bigCircle').addClass("thinking");
   $('#cover').css({display:"block",opacity:0});
   $('.cursor__circle svg path').css({ stroke: "" });
 }
@@ -767,8 +767,10 @@ function cursorActive() {
       $('#bigCircle svg path').css({ stroke: colour });
     }*/
   });
+
+
   $('a').on('mouseout', function(){
-    $('.cursor__circle').removeClass("hover");
+    $('#bigCircle').removeClass("hover");
     $('.cursor__circle svg path').css({ stroke: ""});
   });
   $('#cover').css({display:"none"});
