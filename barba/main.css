@@ -206,7 +206,7 @@ body {
     top: 0;
     left: 0;*/
   /*   z-index: 10;  */
-  stroke: #dedede;
+  stroke: red;
     fill: transparent;
     mix-blend-mode: difference !important; 
    
