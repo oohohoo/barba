@@ -127,7 +127,7 @@ IS TRANSITIONING / BLUE PROGRESS CURSOR & POINTER EVENTS
 */
 .is-transitioning {
   pointer-events: none;
-  cursor: progress;
+/*   cursor: progress; */
 }
 
 /*

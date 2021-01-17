@@ -322,9 +322,11 @@ function initPageTransitions() {
    barba.hooks.beforeLeave(() => {
     locoScroll.destroy();
     console.log("Locomotive scroll destroyed!");
+    cursorThinking();
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
+    cursorActive();
    // console.log("možda ode učitat locoscroll");
     
   });
@@ -724,5 +726,51 @@ function onMouseHoverVidOut() {
 
 }
 
+// UNDER CONSTRUCTION !!!!!!!!!!!!
+$( document ).ready(function() {
+  $('body').addClass('cursoractive');
+  $($bigCircle).addClass('active');
+});
+
 
 }
+
+
+
+/*
+================================================================================
+THE CURSOR - THINKING
+================================================================================
+*/
+function cursorThinking() {
+  $('a').off();
+  $($bigCircle).removeClass("hover");
+  $($bigCircle).addClass("thinking");
+  $('#cover').css({display:"block",opacity:0});
+  $('$bigCircle svg path').css({ stroke: "" });
+}
+
+
+/*
+================================================================================
+THE CURSOR - ACTIVE
+================================================================================
+*/
+function cursorActive() {
+  $('a').addClass('cursoractive');
+  $($bigCircle).removeClass("thinking");
+  $('a').on('mouseover', function(){
+    $($bigCircle).addClass("hover");
+    if($(this).parent().hasClass('project')){
+      var colour = $(this).data('colour');
+      $('$bigCircle svg path').css({ stroke: colour });
+    }
+  });
+  $('a').on('mouseout', function(){
+    $($bigCircle).removeClass("hover");
+    $('$bigCircle svg path').css({ stroke: ""});
+  });
+  $('#cover').css({display:"none"});
+}
+
+
