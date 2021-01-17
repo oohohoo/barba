@@ -323,11 +323,12 @@ function initPageTransitions() {
     locoScroll.destroy();
     console.log("Locomotive scroll destroyed!");
     cursorThinking();
+    console.log("CURSOR THINKING");
   });
   //init scrolltrigger
    barba.hooks.afterEnter(() => {
     cursorActive();
-   // console.log("možda ode učitat locoscroll");
+    console.log("CURSOR ACTIVE");
     
   });
  
@@ -383,7 +384,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ BLA!");
+        console.log("ONCE +++ ojha!");
      },
 
      
@@ -647,7 +648,7 @@ SET VARIABLES & SELECTORS
 ================================================================================
 */  
 const $bigCircle = document.querySelector('.cursor__circle');
-const $linkhover = document.querySelectorAll('.linkhover');
+//const $linkhover = document.querySelectorAll('.linkhover');
 const imghover = document.querySelectorAll('.imghover');
 const vidhover = document.querySelectorAll('.video');
 const playtxt = document.querySelectorAll('.playtxt');
@@ -744,10 +745,10 @@ THE CURSOR - THINKING
 */
 function cursorThinking() {
   $('a').off();
- /*  $('#bigCircle').removeClass("hover"); */
-  $('#bigCircle').addClass("thinking");
+  $('.cursor__circle').removeClass("hover"); 
+  $('.cursor__circle').addClass("thinking");
   $('#cover').css({display:"block",opacity:0});
-  $('#bigCircle svg path').css({ stroke: "" });
+  $('.cursor__circle svg path').css({ stroke: "" });
 }
 
 
@@ -758,17 +759,17 @@ THE CURSOR - ACTIVE
 */
 function cursorActive() {
   $('a').addClass('cursoractive');
-  $('#bigCircle').removeClass("thinking");
+  $('.cursor__circle').removeClass("thinking");
   $('a').on('mouseover', function(){
-    //$('#bigCircle').addClass("hover");
+   $('.cursor__circle').addClass("hover");
    /* if($(this).parent().hasClass('project')){
       var colour = $(this).data('colour');
       $('#bigCircle svg path').css({ stroke: colour });
     }*/
   });
   $('a').on('mouseout', function(){
-    //$('#bigCircle').removeClass("hover");
-    $('#bigCircle svg path').css({ stroke: ""});
+    $('.cursor__circle').removeClass("hover");
+    $('.cursor__circle svg path').css({ stroke: ""});
   });
   $('#cover').css({display:"none"});
 }
