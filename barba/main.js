@@ -768,7 +768,7 @@ function cursorActive() {
   });
   $('a').on('mouseout', function(){
     //$('#bigCircle').removeClass("hover");
-    $('$bigCircle svg path').css({ stroke: ""});
+    $('#bigCircle svg path').css({ stroke: ""});
   });
   $('#cover').css({display:"none"});
 }

@@ -226,6 +226,61 @@ body {
 ================================================================================
 */ 
 
+/*
+================================================================================
+CURSOR THINKING AND ACTIVE CSS
+================================================================================
+*/ 
+
+.cursor__circle svg {
+  transition: transform 0.1s
+}
+
+.cursor__circle svg path {
+  stroke-width: 2;
+  transform-origin: center;
+  transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
+  stroke-dashoffset: 0;
+  transform: scale(1)
+}
+
+.cursor__circle.active {
+  visibility: visible
+}
+
+body.cursoractive {
+  overflow: hidden
+}
+
+@media screen and (orientation: landscape) {
+  body.cursoractive {
+      cursor:none
+  }
+}
+
+@media screen and (orientation: landscape) {
+  a.cursoractive {
+      cursor:none
+  }
+}
+/* 
+.hover svg path {
+  stroke-width: 20;
+  transform: scale(0.25)
+} */
+
+.thinking svg path {
+  stroke-width: 2;
+  animation: dash 1s infinite;
+  transform: scale(1.2)
+}
+
+@keyframes dash {
+  to {
+      stroke-dashoffset: 126;
+      transform: rotate(180deg)
+  }
+}
 
 
 
