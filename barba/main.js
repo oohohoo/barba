@@ -383,7 +383,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ HOOKS");
+        console.log("ONCE +++ THINKING");
      },
 
      
