@@ -270,7 +270,7 @@ body.cursoractive {
   transform: scale(0.25)
 }
 
-.thinking svg path {
+#bigCircle.thinking svg path {
   stroke-width: 2;
   animation: dash 1s infinite;
   transform: scale(1.2)

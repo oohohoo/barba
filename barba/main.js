@@ -384,7 +384,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ majka!");
+        console.log("ONCE +++ jebaaaa!");
      },
 
      
@@ -747,8 +747,8 @@ function cursorThinking() {
   $('a').off();
   $('#bigCircle').removeClass("hover"); 
   $('#bigCircle').addClass("thinking");
-  $('#cover').css({display:"block",opacity:0});
-  $('.cursor__circle svg path').css({ stroke: "" });
+  /*$('#cover').css({display:"block",opacity:0});
+  $('.cursor__circle svg path').css({ stroke: "" });*/
 }
 
 
@@ -759,9 +759,9 @@ THE CURSOR - ACTIVE
 */
 function cursorActive() {
   $('a').addClass('cursoractive');
-  $('.cursor__circle').removeClass("thinking");
+  $('#bigCircle').removeClass("thinking");
   $('a').on('mouseover', function(){
-   $('.cursor__circle').addClass("hover");
+   $('#bigCircle').addClass("hover");
    /* if($(this).parent().hasClass('project')){
       var colour = $(this).data('colour');
       $('#bigCircle svg path').css({ stroke: colour });
@@ -771,9 +771,9 @@ function cursorActive() {
 
   $('a').on('mouseout', function(){
     $('#bigCircle').removeClass("hover");
-    $('.cursor__circle svg path').css({ stroke: ""});
+   /* $('.cursor__circle svg path').css({ stroke: ""});*/
   });
-  $('#cover').css({display:"none"});
+  /*$('#cover').css({display:"none"}); */
 }
 
 
