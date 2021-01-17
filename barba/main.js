@@ -729,7 +729,7 @@ function onMouseHoverVidOut() {
 // UNDER CONSTRUCTION !!!!!!!!!!!!
 $( document ).ready(function() {
   $('body').addClass('cursoractive');
-  $($bigCircle).addClass('active');
+  $('#bigCircle').addClass('active');
 });
 
 
@@ -744,10 +744,10 @@ THE CURSOR - THINKING
 */
 function cursorThinking() {
   $('a').off();
-  $($bigCircle).removeClass("hover");
-  $($bigCircle).addClass("thinking");
+ /*  $('#bigCircle').removeClass("hover"); */
+  $('#bigCircle').addClass("thinking");
   $('#cover').css({display:"block",opacity:0});
-  $('$bigCircle svg path').css({ stroke: "" });
+  $('#bigCircle svg path').css({ stroke: "" });
 }
 
 
@@ -758,16 +758,16 @@ THE CURSOR - ACTIVE
 */
 function cursorActive() {
   $('a').addClass('cursoractive');
-  $($bigCircle).removeClass("thinking");
+  $('#bigCircle').removeClass("thinking");
   $('a').on('mouseover', function(){
-    $($bigCircle).addClass("hover");
-    if($(this).parent().hasClass('project')){
+    //$('#bigCircle').addClass("hover");
+   /* if($(this).parent().hasClass('project')){
       var colour = $(this).data('colour');
-      $('$bigCircle svg path').css({ stroke: colour });
-    }
+      $('#bigCircle svg path').css({ stroke: colour });
+    }*/
   });
   $('a').on('mouseout', function(){
-    $($bigCircle).removeClass("hover");
+    //$('#bigCircle').removeClass("hover");
     $('$bigCircle svg path').css({ stroke: ""});
   });
   $('#cover').css({display:"none"});
