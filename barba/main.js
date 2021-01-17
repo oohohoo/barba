@@ -664,12 +664,12 @@ for (let i = 0; i < $linkhover.length; i++) {
 // LINK ON HOVER
 function onMouseHover() {
 	//gsap.to('#bigCircle', {attr: {r: 6, stroke: 5 }})
-  gsap.to('#bigCircle', {duration:0.3, scale: 0.2, transformOrigin: 'center center', strokeWidth:18});
+  gsap.to('#bigCircle', {duration:0.3, scale: 0.2, overwrite: true, transformOrigin: 'center center', strokeWidth:18});
 }
 // LINK ON HOVER OUT
 function onMouseHoverOut() {
 //	gsap.to('#bigCircle', {attr: {r: 18, stroke: 2}})
-   gsap.to('#bigCircle', {duration:0.3, scale: 1,  transformOrigin: 'center center', strokeWidth:2});
+   gsap.to('#bigCircle', {duration:0.3, scale: 1, overwrite: true,  transformOrigin: 'center center', strokeWidth:2});
 }
 
 /*
@@ -686,14 +686,14 @@ for (let i = 0; i < imghover.length; i++) {
 
 // IMAGE ON HOVER
 function onMouseHoverArea() {
-	gsap.to($bigCircle, {duration:0.6, scale: 4, fill: '#1801E6', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
-  gsap.to(imgtext, {duration:0.6, autoAlpha:1, scale: 1, /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "-=0.3")
+	gsap.to($bigCircle, {duration:0.6, scale: 4, overwrite: true, fill: '#1801E6', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
+  gsap.to(imgtext, {duration:0.6, autoAlpha:1, scale: 1, overwrite: true,  /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "-=0.3")
 }
 
 // IMAGE ON HOVER OUT
 function onMouseHoverAreaOut() {
-	gsap.to($bigCircle, {duration:0.3, scale: 1, fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
-  gsap.to(imgtext, {duration:0.3, scale: 0, /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "<")
+	gsap.to($bigCircle, {duration:0.3, scale: 1, overwrite: true,  fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
+  gsap.to(imgtext, {duration:0.3, scale: 0, overwrite: true, /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "<")
 }
 
 
@@ -712,15 +712,15 @@ for (let i = 0; i < vidhover.length; i++) {
 
 // VIDEO ON HOVER
 function onMouseHoverVid() {
-	gsap.to($bigCircle, {duration:0.6, scale: 4, fill: '#E3C8CB', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
-  gsap.to(playtxt, {duration:0.6, autoAlpha:1, scale: 1, mixBlendMode: 'difference', ease: "expo.inOut"}, "-=0.3")
+	gsap.to($bigCircle, {duration:0.6, scale: 4, overwrite: true, fill: '#E3C8CB', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
+  gsap.to(playtxt, {duration:0.6, autoAlpha:1, scale: 1, overwrite: true, mixBlendMode: 'difference', ease: "expo.inOut"}, "-=0.3")
 
 }
 
 // VIDEO ON HOVER OUT
 function onMouseHoverVidOut() {
-	gsap.to($bigCircle, {duration:0.3, scale: 1, fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
-  gsap.to(playtxt, {duration:0.3, autoAlpha:0, scale: 0, mixBlendMode: 'difference', ease: "expo.inOut"}, "<")
+	gsap.to($bigCircle, {duration:0.3, scale: 1, overwrite: true, fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
+  gsap.to(playtxt, {duration:0.3, autoAlpha:0, scale: 0, overwrite: true, mixBlendMode: 'difference', ease: "expo.inOut"}, "<")
 
 }
 
