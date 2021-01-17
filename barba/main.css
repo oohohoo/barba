@@ -267,13 +267,14 @@ body.cursoractive {
 */
 #bigCircle.hover {
   stroke-width: 20;
-  transform: scale(.25)
+  transform: scale(.25);
+  stroke: "red";
 }
 
 #bigCircle.thinking {
-  stroke-width: 6;
+  stroke-width: 2;
   animation: dash 1s infinite;
-  transform: scale(1.9)
+  transform: scale(1.2)
 }
 
 @keyframes dash {
