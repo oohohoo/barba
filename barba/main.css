@@ -199,6 +199,7 @@ body {
   
   body .cursory {
     pointer-events: none;
+    mix-blend-mode: difference;
   
   }
   .cursor__circle {
