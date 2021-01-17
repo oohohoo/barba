@@ -206,16 +206,17 @@ body {
     top: 0;
     left: 0;*/
   /*   z-index: 10;  */
+  stroke: #dedede;
+    fill: transparent;
     mix-blend-mode: difference; 
    
     transform: translateX(-50%) translateY(-50%);
   }
-  body .cursor__circle--big {
-    stroke: #dedede;
-    fill: transparent;
+ /*  body .cursor__circle--big {
+    
        mix-blend-mode: difference; 
     transform: translateX(-50%) translateY(-50%);
-  }
+  } */
   
 
 
