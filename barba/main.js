@@ -384,7 +384,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ nećeš!");
+        console.log("ONCE +++ nidemo!");
      },
 
      
@@ -654,6 +654,7 @@ const imghover = document.querySelectorAll('.imghover');
 const vidhover = document.querySelectorAll('.video');
 const playtxt = document.querySelectorAll('.playtxt');
 const imgtext = document.querySelectorAll('.imgtext');
+gsap.set($bigCircle, {mixBlendMode: 'difference'});
 /*
 ================================================================================
 ON HOVER LINKS
