@@ -201,7 +201,7 @@ body {
     pointer-events: none;
   
   }
-  body .cursor__circle {
+  .cursor__circle {
     /*position: fixed;
     top: 0;
     left: 0;*/
@@ -212,7 +212,7 @@ body {
    
     transform: translateX(-50%) translateY(-50%);
   }
-  
+
  /*  body .cursor__circle--big {
     
        mix-blend-mode: difference; 
