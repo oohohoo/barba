@@ -247,7 +247,7 @@ CURSOR THINKING AND ACTIVE CSS
 #bigCircle.active {
   visibility: visible
 }
-/*
+
 body.cursoractive {
   overflow: hidden
 }
@@ -264,7 +264,7 @@ body.cursoractive {
   }
 }
 
-*/
+
 #bigCircle.hover {
   stroke-width: 20;
   transform: scale(.25)
