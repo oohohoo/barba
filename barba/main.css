@@ -208,7 +208,7 @@ body {
   /*   z-index: 10;  */
   stroke: red;
     fill: transparent;
-    
+    mix-blend-mode: difference; 
    
     transform: translateX(-50%) translateY(-50%);
   }
@@ -238,7 +238,7 @@ CURSOR THINKING AND ACTIVE CSS
 }
 
 #bigCircle {
-  mix-blend-mode: difference !important; 
+  
   stroke-width: 6;
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
