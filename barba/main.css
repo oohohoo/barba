@@ -237,7 +237,7 @@ CURSOR THINKING AND ACTIVE CSS
 }
 
 #bigCircle svg path {
-  stroke-width: 2;
+  stroke-width: 6;
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
   stroke-dashoffset: 0;
