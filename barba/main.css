@@ -265,17 +265,17 @@ body.cursoractive {
 }
 
 */
-circle #bigCircle.hover {
+#bigCircle.hover {
   stroke-width: 20;
   transform: scale(.25);
  
 }
 
 
-circle #bigCircle.thinking {
-  stroke-width: 2;
+#bigCircle.thinking {
+  stroke-width: 5;
   animation: dash 1s infinite;
-  transform: scale(1.2);
+  transform: scale(1.5);
 
 }
 
