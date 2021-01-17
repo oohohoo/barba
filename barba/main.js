@@ -657,7 +657,7 @@ const imgtext = document.querySelectorAll('.imgtext');
 ON HOVER LINKS
 ================================================================================
 */  
-
+/*
 for (let i = 0; i < $linkhover.length; i++) {
 	$linkhover[i].addEventListener('mouseenter', onMouseHover);
 	$linkhover[i].addEventListener('mouseleave', onMouseHoverOut);
@@ -673,7 +673,7 @@ function onMouseHoverOut() {
 //	gsap.to('#bigCircle', {attr: {r: 18, stroke: 2}})
    gsap.to('#bigCircle', {duration:0.3, scale: 1, overwrite: true,  transformOrigin: 'center center', strokeWidth:2});
 }
-
+*/
 /*
 ================================================================================
 ON HOVER IMAGES
