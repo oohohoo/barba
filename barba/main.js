@@ -383,7 +383,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ UF!");
+        console.log("ONCE +++ JAO!");
      },
 
      

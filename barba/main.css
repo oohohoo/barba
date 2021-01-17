@@ -232,11 +232,11 @@ CURSOR THINKING AND ACTIVE CSS
 ================================================================================
 */ 
 
-#bigCircle svg {
+#bigCircle {
   transition: transform 0.1s
 }
 
-#bigCircle svg path {
+#bigCircle {
   stroke-width: 2;
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
@@ -269,7 +269,7 @@ body.cursoractive {
   transform: scale(0.25)
 } */
 
-.thinking svg path {
+.thinking {
   stroke-width: 2;
   animation: dash 1s infinite;
   transform: scale(1.2)
