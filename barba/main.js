@@ -692,13 +692,13 @@ for (let i = 0; i < imghover.length; i++) {
 // IMAGE ON HOVER
 function onMouseHoverArea() {
 	gsap.to($bigCircle, {duration:0.6, scale: 4, overwrite: true, fill: '#1801E6', stroke: 'transparent', mixBlendMode: 'difference', ease: "expo.inOut"})
-  gsap.to(imgtext, {duration:0.6, autoAlpha:1, scale: 1, overwrite: true,  /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "-=0.3")
+  gsap.to(imgtext, {duration:0.6, autoAlpha:1, scale: 1, overwrite: true,  mixBlendMode: 'difference', ease: "expo.inOut"}, "-=0.3")
 }
 
 // IMAGE ON HOVER OUT
 function onMouseHoverAreaOut() {
 	gsap.to($bigCircle, {duration:0.3, scale: 1, overwrite: true,  fill: 'transparent', stroke: "#000000", mixBlendMode: 'difference'})
-  gsap.to(imgtext, {duration:0.3, scale: 0, overwrite: true, /*mixBlendMode: 'difference',*/ ease: "expo.inOut"}, "<")
+  gsap.to(imgtext, {duration:0.3, scale: 0, overwrite: true, mixBlendMode: 'difference', ease: "expo.inOut"}, "<")
 }
 
 
