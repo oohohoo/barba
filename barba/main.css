@@ -232,11 +232,11 @@ CURSOR THINKING AND ACTIVE CSS
 ================================================================================
 */ 
 
-.cursor__circle svg {
+#bigCircle svg {
   transition: transform 0.1s
 }
 
-.cursor__circle svg path {
+#bigCircle svg path {
   stroke-width: 2;
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
@@ -244,10 +244,10 @@ CURSOR THINKING AND ACTIVE CSS
   transform: scale(1)
 }
 
-.cursor__circle.active {
+#bigCircle.active {
   visibility: visible
 }
-
+/*
 body.cursoractive {
   overflow: hidden
 }
@@ -263,7 +263,7 @@ body.cursoractive {
       cursor:none
   }
 }
-
+*/
 .hover svg path {
   stroke-width: 20;
   transform: scale(0.25)
