@@ -271,6 +271,7 @@ circle #bigCircle.hover {
  
 }
 
+
 circle #bigCircle.thinking {
   stroke-width: 2;
   animation: dash 1s infinite;
