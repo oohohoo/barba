@@ -267,7 +267,7 @@ body.cursoractive {
 */
 #bigCircle.hover {
   stroke-width: 20;
-  transform: scale(0.25)
+  transform: scale(1.25)
 }
 
 #bigCircle.thinking svg path {
