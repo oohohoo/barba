@@ -251,6 +251,7 @@ CURSOR THINKING AND ACTIVE CSS
 body.cursoractive {
   overflow: hidden
 }
+
 /*
 @media screen and (orientation: landscape) {
   body.cursoractive {
