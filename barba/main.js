@@ -1,4 +1,4 @@
-// OVA VERZIJA RADI BARBA nekužim
+// OVA VERZIJA RADI BARBA
 
 gsap.registerPlugin(ScrollTrigger);
 console.log("ScrollTrigger Loaded!");
@@ -384,10 +384,10 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ MRKONJA s!");
+        console.log("ONCE +++ ULALA!");
      },
 
-
+     
      
      async leave({current}) {
        // animate loading screen in

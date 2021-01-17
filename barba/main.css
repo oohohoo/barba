@@ -237,7 +237,7 @@ CURSOR THINKING AND ACTIVE CSS
 }
 
 #bigCircle {
-  stroke-width: 2;
+  stroke-width: 6;
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
   stroke-dashoffset: 0;
@@ -247,12 +247,11 @@ CURSOR THINKING AND ACTIVE CSS
 #bigCircle.active {
   visibility: visible
 }
-
+/*
 body.cursoractive {
   overflow: hidden
 }
 
-/*
 @media screen and (orientation: landscape) {
   body.cursoractive {
       cursor:none
@@ -266,18 +265,15 @@ body.cursoractive {
 }
 
 */
-.hover {
+#bigCircle.hover {
   stroke-width: 20;
-  transform: scale(.25);
- 
+  transform: scale(.25)
 }
 
-
-.thinking {
-  stroke-width: 5;
+#bigCircle.thinking {
+  stroke-width: 2;
   animation: dash 1s infinite;
-  transform: scale(1.5);
-
+  transform: scale(1.2)
 }
 
 @keyframes dash {
