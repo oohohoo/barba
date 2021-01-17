@@ -384,10 +384,10 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ ULALA!");
+        console.log("ONCE +++ ULALAf!");
      },
 
-     
+
      
      async leave({current}) {
        // animate loading screen in
