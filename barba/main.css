@@ -271,9 +271,9 @@ body.cursoractive {
 }
 
 #bigCircle.thinking {
-  stroke-width: 2;
+  stroke-width: 6;
   animation: dash 1s infinite;
-  transform: scale(1.2)
+  transform: scale(1.9)
 }
 
 @keyframes dash {
