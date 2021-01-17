@@ -384,7 +384,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ ULALA!");
+        console.log("ONCE +++ nećeš!");
      },
 
      
@@ -408,7 +408,7 @@ BARBA TRANSITIONS
      },
      
      beforeEnter({next}) {
-      customCursor();
+     
      },
   
    
