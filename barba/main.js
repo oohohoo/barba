@@ -1,4 +1,4 @@
-// OVA VERZIJA RADI BARBA
+// OVA VERZIJA RADI BARBA nekužim
 
 gsap.registerPlugin(ScrollTrigger);
 console.log("ScrollTrigger Loaded!");
