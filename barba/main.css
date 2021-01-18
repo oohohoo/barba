@@ -242,6 +242,7 @@ CURSOR THINKING AND ACTIVE CSS
 #bigCircle {
   
   stroke-width: 2;
+  fill: transparent;
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
   stroke-dashoffset: 0; 
