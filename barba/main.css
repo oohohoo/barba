@@ -235,10 +235,10 @@ CURSOR THINKING AND ACTIVE CSS
 ================================================================================
 */ 
 
-#bigCircle {
+/*#bigCircle {
   transition: transform 0.1s
 }
-
+*/
 #bigCircle {
   
   stroke-width: 2;
@@ -254,6 +254,7 @@ CURSOR THINKING AND ACTIVE CSS
   visibility: visible
 }
 
+/*
 body.cursoractive {
   overflow: hidden
 }
@@ -269,7 +270,7 @@ body.cursoractive {
       cursor:none
   }
 }
-
+*/
 
 #bigCircle.hover {
   stroke-width: 20;

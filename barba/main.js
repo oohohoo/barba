@@ -384,7 +384,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ ghghgllh");
+        console.log("ONCE +++ uhihi!");
      },
 
      
@@ -648,7 +648,7 @@ GSAP TICKER -- NE ZNAM DETALJE
 SET VARIABLES & SELECTORS
 ================================================================================
 */  
-const $bigCircle = document.querySelector('#bigCircle');
+const $bigCircle = document.querySelector('.cursor__circle');
 //const $linkhover = document.querySelectorAll('.linkhover');
 const imghover = document.querySelectorAll('.imghover');
 const vidhover = document.querySelectorAll('.video');
