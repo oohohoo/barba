@@ -281,6 +281,7 @@ body.cursoractive {
 #bigCircle.thinking {
   stroke-width: 5;
   animation: dash 2s infinite;
+  transform: skew(45);
   transform: scale(1.2)
 }
 
