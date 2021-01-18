@@ -384,7 +384,7 @@ BARBA TRANSITIONS
         animationEnter();
         customCursor();
         //homeanimations();
-        console.log("ONCE +++ rubmalla!");
+        console.log("ONCE +++ rubmallda!");
      },
 
      
