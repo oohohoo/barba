@@ -648,7 +648,7 @@ GSAP TICKER -- NE ZNAM DETALJE
 SET VARIABLES & SELECTORS
 ================================================================================
 */  
-const $bigCircle = document.querySelector('.cursor__circle');
+const $bigCircle = document.querySelector('#bigCircle');
 //const $linkhover = document.querySelectorAll('.linkhover');
 const imghover = document.querySelectorAll('.imghover');
 const vidhover = document.querySelectorAll('.video');
