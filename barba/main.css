@@ -202,17 +202,18 @@ body {
    
   
   }
+  /*
   .cursor__circle {
-    /*position: fixed;
+    position: fixed;
     top: 0;
-    left: 0;*/
-  /*   z-index: 10;  */
+    left: 0;
+  /*   z-index: 10;  
   stroke: white;
     fill: transparent;
     mix-blend-mode: difference; 
-   
-   /*  transform: translateX(-50%) translateY(-50%); */
-  }
+   */
+   /*  transform: translateX(-50%) translateY(-50%); 
+  } */
 
  /*  body .cursor__circle--big {
     
@@ -244,7 +245,9 @@ CURSOR THINKING AND ACTIVE CSS
   transform-origin: center;
   transition: transform 0.1s, stroke-width 0.1s, stroke 0.1s;
   stroke-dashoffset: 0; 
-  transform: scale(1)
+  transform: scale(1);
+  stroke: white;
+  mix-blend-mode: difference; 
 }
 
 #bigCircle.active {
