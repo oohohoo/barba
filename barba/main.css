@@ -211,7 +211,7 @@ body {
     fill: transparent;
     mix-blend-mode: difference; 
    
-    transform: translateX(-50%) translateY(-50%);
+   /*  transform: translateX(-50%) translateY(-50%); */
   }
 
  /*  body .cursor__circle--big {
