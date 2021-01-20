@@ -281,12 +281,13 @@ body.cursoractive {
 #bigCircle.thinking {
   stroke-width: 5;
   animation: dash 2s infinite;
-  transform: scale(4)
+  transform: scale(1.2)
 }
 
 @keyframes dash {
   to {
       stroke-dashoffset: 90;
+      y: 10;
       transform: rotate(320deg)
   }
 }
