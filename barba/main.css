@@ -192,17 +192,17 @@ main {
 /* body {
   cursor: none;
   } */
-  
+
   
     .hide {
   visibility: hidden;
   }
   
-  body .cursory {
+  /* body .cursory {
     pointer-events: none;
    
   
-  }
+  } */
   /*
   .cursor__circle {
     position: fixed;
